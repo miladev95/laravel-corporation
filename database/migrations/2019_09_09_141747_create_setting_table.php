@@ -15,10 +15,21 @@ class CreateSettingTable extends Migration
     {
         Schema::create('setting', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title');
+            $table->string('telephone');
+            $table->string('email');
+            $table->string('facebook');
+            $table->string('instagram');
+            $table->string('twitter');
+            $table->string('telegram');
+            $table->string('youtube');
+            $table->string('linkedin');
+            $table->string('address');
+            $table->string('phone_number');
+            $table->string('fax');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
