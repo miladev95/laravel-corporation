@@ -27,6 +27,7 @@ class CreateSettingTable extends Migration
             $table->string('address');
             $table->string('phone_number');
             $table->string('fax');
+            $table->string('brief_about');
             $table->timestamps();
         });
     }
