@@ -13,6 +13,7 @@ return [
     |
     */
 
+    'password' => 'Passwords must be at least eight characters and match the confirmation.',
     'password' => 'رمز عبور حداقل باید هشت کاراکتر باشد و با تایید رمز عبور همخوانی داشته باشد.',
     'reset' => 'رمز عبور شما ریست شد',
     'sent' => 'لینک ریست کردن رمز عبور را به شما ایمیل کردیم. لطفا ایمیل خود را چک کنید',
