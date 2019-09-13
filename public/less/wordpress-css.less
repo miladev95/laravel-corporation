@@ -1,0 +1,544 @@
+
+/**
+ * *************************************************************************************************
+ * *************************************************************************************************
+ * *************************************************************************************************
+ * WordPress default Widgets and Plugins Custom Styles for Pages & Widgets
+ * *************************************************************************************************
+ * *************************************************************************************************
+ * *************************************************************************************************
+ */
+
+.widget {
+
+	h1, h2, h3, h4 {
+		color: @brand-primary; //#fff; //@brand-primary;
+	}
+
+}
+
+.qt-footer {
+
+	.widget {
+
+		.qt-widget-header h3 {
+			color: #fff; //@brand-primary;
+		}
+
+	}
+
+}
+
+
+/**
+ * *************************************************************************************************
+ * WordPress: Custom Menu Widget
+ * *************************************************************************************************
+ */
+
+
+.widget {
+
+	ul.menu{
+
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		li {
+			padding: 0;
+			margin: 0;
+			a {
+				display: block;
+				color: @brand-primary;
+				padding: 8px 0;
+				border-bottom: 1px solid @brand-primary;
+				text-decoration: none;
+
+				&:visited {
+					color: @brand-primary-darken;
+					text-decoration: none;
+				}
+
+				&:hover, &:active {
+					color: @brand-primary-darken;
+					text-decoration: none;
+				}
+
+				&:before{
+					content: "\f0a9";
+					font-family: FontAwesome;
+					//padding-left: @grid-gutter-width;
+					padding-right: 10px;
+				}
+			}
+
+			&:last-child {
+				a {
+					border-bottom: 0;
+				}
+			}
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+
+			li {
+				border-left: 5px solid @brand-primary;
+				a {
+					&:before{
+						padding-left: 10px;
+					}
+				}
+
+				&:last-child {
+					a {
+						border-bottom: 1px solid @brand-primary;
+					}
+				}
+			}
+		}
+
+	}
+
+}
+
+
+.qt-footer {
+	.widget {
+		ul.menu{
+			li {
+				a {
+					color: #fff;
+					&:hover, &:active {
+						color: @brand-primary-darken;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+/**
+ * *************************************************************************************************
+ * WordPress: RSS Widget
+ * *************************************************************************************************
+ */
+
+
+.widget.widget_rss {
+
+	ul {
+		padding: 0;
+		margin: 0;
+
+		li {
+			padding: 0 0 0 0px;
+			margin: 0 0 10px 15px;
+
+			a {
+				color: @brand-primary;
+			}
+
+			.rss-date {
+				display: block;
+				font-size: .8em
+			}
+
+			.rssSummary {
+				display: block;
+				padding: 5px 0;
+				font-size: .8em
+			}
+			cite {
+				display: block;
+				font-size: .8em
+			}
+		}
+	}
+
+}
+
+
+/**
+ * *************************************************************************************************
+ * WordPress: Recent Posts Widget
+ * *************************************************************************************************
+ */
+
+
+.widget_recent_entries {
+
+	ul {
+		padding: 0;
+		margin: 0;
+
+		li {
+			padding: 0 0 0 0px;
+			margin: 0 0 10px 15px;
+
+			a {
+				color: @brand-primary;
+			}
+
+			.post-date {
+				display: block;
+				font-size: .9em;
+			}
+
+
+		}
+	}
+
+}
+
+
+/**
+ * *************************************************************************************************
+ * WordPress: Archive Widget
+ * *************************************************************************************************
+ */
+
+
+.widget_archive {
+
+	ul {
+		padding: 0;
+		margin: 0;
+
+		li {
+			padding: 0 0 0 0px;
+			margin: 0 0 10px 15px;
+
+			a {
+				color: @brand-primary;
+			}
+		}
+	}
+
+	select {
+		width: 100%;
+		padding: 4%;
+		color: @brand-primary;
+	}
+
+}
+
+
+
+/**
+ * *************************************************************************************************
+ * WordPress: Categories Widget
+ * *************************************************************************************************
+ */
+
+.widget_categories {
+
+	ul {
+		padding: 0;
+		margin: 0;
+
+		li {
+			padding: 0 0 0 0px;
+			margin: 0 0 10px 15px;
+
+			a {
+				color: @brand-primary;
+			}
+		}
+	}
+
+	select {
+		width: 100%;
+		padding: 4%;
+		color: @brand-primary;
+	}
+
+}
+
+
+/**
+ * *************************************************************************************************
+ * WordPress: Tag Could Widget
+ * *************************************************************************************************
+ */
+
+
+.widget_tag_cloud {
+
+	.tagcloud {
+
+		a {
+			color: @brand-primary;
+		}
+	}
+
+}
+
+
+/**
+ * *************************************************************************************************
+ * WordPress: Search Widget
+ * *************************************************************************************************
+ */
+
+.widget_search {
+
+	.screen-reader-text {
+		display: none;
+	}
+
+}
+
+
+
+/**
+ * *************************************************************************************************
+ * WordPress: Meta Widget
+ * *************************************************************************************************
+ */
+
+
+.widget_meta {
+
+	ul {
+		padding: 0;
+		margin: 0;
+
+		li {
+			padding: 0 0 0 0px;
+			margin: 0 0 10px 15px;
+
+			a {
+				color: @brand-primary;
+			}
+		}
+	}
+
+}
+
+
+/**
+ * *************************************************************************************************
+ * WordPress: Recent Comments Widget
+ * *************************************************************************************************
+ */
+
+
+.widget_recent_comments {
+
+	ul{
+		padding: 0;
+		margin: 0;
+
+		li {
+			padding: 0 0 0 0px;
+			margin: 0 0 10px 15px;
+
+			a {
+				color: @brand-primary;
+			}
+		}
+	}
+
+}
+
+
+/**
+ * *************************************************************************************************
+ * WordPress: Calendar Widget
+ * Note: http://www.wpexplorer.com/wordpres-calendar-style/
+ * *************************************************************************************************
+ */
+
+
+.widget_calendar {
+
+	#wp-calendar {
+		width: 100%;
+
+		caption {
+			text-align: center;
+			color: @brand-primary;
+			font-size: 14px;
+			font-weight: bold;
+			margin-top: px;
+			margin-bottom: 10px;
+		}
+
+		thead {
+		}
+
+		thead th {
+			padding-bottom: 10px;
+			text-align: center;
+			font-weight: bold;
+		}
+
+		tbody {
+			color: #aaa;
+		}
+
+		tbody td {
+			background: @gray-site-lightest;
+			border: 1px solid @gray-site-light;
+			text-align: center;
+			padding:8px;
+			color: @brand-primary;
+
+			a {
+				display: block;
+				color: @brand-primary;
+				font-weight: bold;
+			}
+		}
+
+		tbody td:hover {
+			//background: @brand-primary;
+			//color: #fff;
+		}
+
+		tbody .pad {
+			background: none;
+		}
+
+		tfoot #next {
+			font-size: 10px;
+			text-transform: uppercase;
+			text-align: right;
+		}
+
+		tfoot #prev {
+			font-size: 10px;
+			text-transform: uppercase;
+			padding-top: 10px;
+		}
+
+	}
+
+}
+
+
+/**
+ * *************************************************************************************************
+ * Plugin: Rotating Tweets
+ * NOTE: https://wordpress.org/plugins/rotatingtweets/
+ * *************************************************************************************************
+ */
+
+
+.widget_rotatingtweets_widget {
+
+	/* h3 {
+		padding-top: 0 !important;
+		margin-top: 0 !important;
+	} */
+
+}
+
+/**
+ * *************************************************************************************************
+ * Plugin: Social Sharing Pluging
+ * NOTE: https://wordpress.org/plugins/add-to-any/
+ * *************************************************************************************************
+ */
+
+.addtoany_share_save_container.addtoany_content_bottom {
+
+	.well();
+
+	.addtoany_header {
+		font-weight: bold;
+	}
+
+	margin: 35px 0;
+
+	/* mobile-tablets, up to 992px */
+	@media (max-width: @screen-md-min) {
+		margin: 35px 0 0 0;
+	}
+
+}
+
+
+/**
+ * *************************************************************************************************
+ * Plugin: Seamless Donation
+ * NOTE: https://wordpress.org/plugins/seamless-donations/
+ * *************************************************************************************************
+ */
+
+
+.seamless-donations-forms-engine {
+
+	#donation_header {
+
+		h2 {
+			.h2();
+		}
+
+		#header_desc {
+			padding-bottom: 20px;
+		}
+
+	}
+
+	span {
+
+		&.horiz, &#dgx_donate_giving_level_1000 {
+			font-weight: bold;
+			font-size: 1.5em;
+			padding-bottom: 5px;
+
+			input {
+				margin-right: 10px;
+				margin-bottom: 5px;
+			}
+		}
+	}
+
+	#designated_fund_label {
+		font-size: 1.2em;
+		font-weight: bold;
+	}
+
+	#_dgx_donate_designated_fund {
+		display: block;
+		padding: 5px;
+		font-size: 1.2em;
+	}
+
+}
+
+
+/**
+ * *************************************************************************************************
+ * Plugin: Recent Posts Widget With Thumbnails
+ * NOTE: https://wordpress.org/plugins/recent-posts-widget-with-thumbnails/
+ * *************************************************************************************************
+ */
+
+.recent-posts-widget-with-thumbnails {
+
+	ul{
+		padding: 0;
+		margin: 0;
+
+		li {
+			padding: 0 0 0 0px;
+			margin: 0 0 10px 0px;
+
+			a {
+				color: @brand-primary;
+			}
+		}
+	}
+
+}
+
+
+
+

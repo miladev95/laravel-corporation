@@ -1,0 +1,411 @@
+
+
+/**
+ * *************************************************************************************************
+ * Usefull styles
+ * *************************************************************************************************
+ */
+
+.fade {
+	opacity: 1;
+	transition: opacity .25s ease-in-out;
+	-moz-transition: opacity .25s ease-in-out;
+	-webkit-transition: opacity .25s ease-in-out;
+
+	&:hover {
+		opacity: 0.75;
+	}
+}
+
+.qt-fade {
+	.fade();
+}
+
+.qt-box-shadow {
+	box-shadow: 0px 3px 3px rgba(0,0,0,0.1);
+}
+
+.qt-one-edge-shadow {
+	box-shadow: 0 8px 6px -6px black;
+}
+
+// Typography
+// ========================
+
+.text-secondary {
+	color: @brand-secondary;
+}
+.text-tertiary {
+	color: @brand-tertiary;
+}
+
+
+// Background
+// =======================
+
+.bg-secondary {
+	background: @brand-secondary;
+}
+.bg-tertiary {
+	background: @brand-tertiary;
+}
+
+
+// *************************************************************************************************
+// Mixins
+// *************************************************************************************************
+
+.qt-heading-1-font {
+	font-size: 28px;
+}
+
+.qt-heading-2-font {
+	font-size: 24px;
+}
+
+.qt-heading-3-font {
+	font-size: 20px;
+}
+
+.qt-heading-1 {
+	.qt-heading-1-font();
+	padding-bottom: 10px;
+	border-bottom: 2px solid @brand-primary;
+	margin-bottom: 15px;
+}
+
+.qt-heading-2 {
+	.qt-heading-2-font();
+	padding-bottom: 10px;
+	border-bottom: 2px solid @brand-primary;
+	margin-bottom: 15px;
+}
+
+.qt-heading-3 {
+	.qt-heading-3-font();
+	padding-bottom: 10px;
+	border-bottom: 2px solid @brand-primary;
+	margin-bottom: 15px;
+}
+
+.vertical-middle-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+
+  /* for an image, use 100% width to cover it full */
+  /* make sure to set overflow hidden for the parent item if you want to hide the rest */
+}
+
+.no-vertical-middle-align {
+  position: static;
+  top: 0%;
+  -webkit-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transform: 0%;
+}
+
+.row.no-gutter {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.qt-clean-bottom {
+
+	/* mobile-tablets, up to 992px */
+	@media (min-width: @screen-md-min) {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+
+}
+
+
+
+/**
+ * *************************************************************************************************
+ * Custom List
+ * *************************************************************************************************
+ */
+
+ul.qt-list {
+
+	list-style-type: none;
+	padding-left: 0;
+	margin-left: 0;
+
+	li {
+		padding-left: 0;
+		margin-left: 0;
+
+		&:before {
+			content: "\f138"; //fa-chevron-circle-right
+			font-family: FontAwesome;
+			padding-right: 10px;
+		}
+	}
+
+	/* Primary color list style */
+
+	&.qt-list-primary {
+		li {
+			&:before {
+				color: @brand-primary;
+			}
+		}
+	}
+
+	/* Secondar color list style */
+
+	&.qt-list-secondary {
+		li {
+			&:before {
+				color: @brand-secondary;
+			}
+		}
+	}
+
+	/* Tertiary color list style */
+
+	&.qt-list-tertiary {
+		li {
+			&:before {
+				color: @brand-tertiary;
+			}
+		}
+	}
+
+	/* ============== */
+
+	&.qt-list-check {
+		li {
+			&:before {
+				content: "\f00c"; //fa-check
+			}
+		}
+	}
+
+	&.qt-list-check-circle {
+		li {
+			&:before {
+			content: "\f058"; // fa-check-circle
+			}
+		}
+	}
+
+	&.qt-list-check-circle-o {
+		li {
+			&:before {
+			content: "\f05d"; //fa-check-circle-o
+			}
+		}
+	}
+
+	&.qt-list-check-square {
+		li {
+			&:before {
+			content: "\f14a"; //fa-check-squar
+			}
+		}
+	}
+
+	&.qt-list-check-square-o {
+		li {
+			&:before {
+				content: "\f046"; //fa-check-square-o
+			}
+		}
+	}
+
+	&.qt-list-chevron {
+		li {
+			&:before {
+				content: "\f054"; //fa-chevron-right
+			}
+		}
+	}
+
+	&.qt-list-circle {
+		li {
+			&:before {
+				content: "\f111"; //fa-circle
+			}
+		}
+	}
+
+	&.qt-list-circle-o {
+		li {
+			&:before {
+				content: "\f10c"; //fa-circle-o
+			}
+		}
+	}
+
+	&.qt-list-dot-circle-o {
+		li {
+			&:before {
+				content: "\f192"; //fa-circle-o
+			}
+		}
+	}
+
+	&.qt-list-circle-thin {
+		li {
+			&:before {
+				content: "\f1db"; //fa-circle-thin
+			}
+		}
+	}
+
+	&.qt-list-hand {
+		li {
+			&:before {
+				content: "\f0a4"; //fa-circle-thin
+			}
+		}
+	}
+
+	/* ============== */
+
+}
+
+
+/**
+ * *************************************************************************************************
+ * Buttons
+ * *************************************************************************************************
+ */
+
+.btn-secondary {
+  //.button-variant( @brand-primary; @brand-secondary; @brand-secondary);
+  .button-variant( #fff; @brand-secondary; @brand-secondary);
+}
+
+.btn-tertiary {
+  .button-variant(#fff; @brand-tertiary; @brand-tertiary);
+}
+
+/* .btn.btn-primary {
+	border-color: @brand-primary;
+	box-shadow: none;
+} */
+
+/* .btn {
+	border: none;
+	box-shadow: none;
+} */
+
+/**
+ * *************************************************************************************************
+ * Custom Panels
+ * *************************************************************************************************
+ */
+
+.panel.panel-primary {
+	box-shadow: none;
+}
+
+.panel.qt-panel-clean {
+
+	background-color: none;
+	border: 0;
+	padding: 0;
+	box-shadow: none;
+
+  & > .panel-heading {
+
+    color: @brand-primary;
+    background-color: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+
+    .panel-title {
+			.qt-heading-2();
+    	color: @brand-primary;
+    }
+
+    .badge {
+      color: #fff;
+      background-color: @brand-primary;
+    }
+
+  }
+
+  & > .panel-body {
+  	padding: 0;
+		background-color: none;
+
+		a {
+			color: @brand-primary;
+
+			&:hover {
+				color: @brand-primary-darken;
+			}
+
+		}
+
+
+  }
+
+  ul.list-group {
+
+  	li {
+
+  		a.list-group-item {
+	  		display: block;
+	  		border-bottom: 1px solid @gray-lighter !important;
+	  		font-size: 1em;
+			}
+		}
+
+  }
+
+  & > .panel-footer {
+    + .panel-collapse > .panel-body {
+      border: 0;
+    }
+  }
+
+  hr {
+  	border-color: darken(@brand-primary, 5%);
+  	margin-top: 10px;
+  	margin-bottom: 21px;
+  }
+
+}
+
+/**
+ * *************************************************************************************************
+ * Custom Well
+ * *************************************************************************************************
+ */
+
+.well {
+	box-shadow: none;
+	//background: #eee;
+}
+
+
+/**
+ * *************************************************************************************************
+ * Custom Well
+ * *************************************************************************************************
+ */
+
+.no-top-padding {
+	padding-top: 0;
+}
+
+.no-top-margin {
+	margin-top: 0;
+}
+
