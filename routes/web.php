@@ -17,3 +17,4 @@ Route::get('/', 'IndexController@index');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/home/setting', 'SettingController@index');
+Route::post('/home/setting', 'SettingController@edit');
