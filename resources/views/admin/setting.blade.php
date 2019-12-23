@@ -1,12 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-
-
-
-            <!-- ============================================================== -->
-            <!-- Start right Content here -->
-            <!-- ============================================================== -->
+            
             <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
@@ -27,31 +22,90 @@
                                                           </ul>
                                                       </div>
 
-                                          			<h4 class="header-title m-t-0 m-b-30">انواع ورودی</h4>
+                                          			<h4 class="header-title m-t-0 m-b-30">تنظیمات عمومی</h4>
 
                                           			<div class="row">
                                           				<div class="col-lg-6">
                                           					<form class="form-horizontal" role="form" method="post">
-                                                      <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+                                                               <input type="hidden" name="_token" value="{!! csrf_token() !!}">
+                                                                @if(session('status'))
+                                                                <label class="col-md-2 control-label" for="example-email">{{ session('status') }}</label>
+                                                                @endif
                   	                                            <div class="form-group">
                   	                                                <label class="col-md-2 control-label" for="example-email">عنوان سایت</label>
                   	                                                <div class="col-md-10">
-                  	                                                    <input type="text" id="title" class="form-control" placeholder="شرکت xCo">
+                  	                                                    <input type="text" id="title" class="form-control" placeholder="شرکت xCo" value="{!! $setting[0]['title'] !!}">
                   	                                                </div>
                   	                                            </div>
+                                                                  
                   	                                            <div class="form-group">
                   	                                                <label class="col-md-2 control-label">تلفن</label>
                   	                                                <div class="col-md-10">
-                  	                                                    <input type="text" id="telephone"class="form-control" placeholder="...۰۲۱">
+                  	                                                    <input type="number" id="telephone"class="form-control" placeholder="...۰۲۱" value="{!! $setting[0]['telephone'] !!}">
                   	                                                </div>
                   	                                            </div>
 
                   	                                            <div class="form-group">
                   	                                                <label class="col-md-2 control-label">ایمیل</label>
                   	                                                <div class="col-md-10">
-                  	                                                    <input type="email" id="email" class="form-control" placeholder="...@info">
+                  	                                                    <input type="email" id="email" class="form-control" placeholder="milad@gmail.com" value="{!! $setting[0]['email'] !!}">
                   	                                                </div>
                   	                                            </div>
+                                                                  <div class="form-group">
+                  	                                                <label class="col-md-2 control-label">فیسبوک</label>
+                  	                                                <div class="col-md-10">
+                  	                                                    <input type="text" id="email" class="form-control" placeholder="facebook.com/milad" value="{!! $setting[0]['facebook'] !!}">
+                  	                                                </div>
+                  	                                            </div>
+                                                                  <div class="form-group">
+                  	                                                <label class="col-md-2 control-label">اینستاگرام</label>
+                  	                                                <div class="col-md-10">
+                  	                                                    <input type="text" id="email" class="form-control" placeholder="instagram.com/milad" value="{!! $setting[0]['instagram'] !!}">
+                  	                                                </div>
+                  	                                            </div>
+                                                                  <div class="form-group">
+                  	                                                <label class="col-md-2 control-label">توییتر</label>
+                  	                                                <div class="col-md-10">
+                  	                                                    <input type="text" id="email" class="form-control" placeholder="twitter.com/milad" value="{!! $setting[0]['twitter'] !!}">
+                  	                                                </div>
+                  	                                            </div>
+                                                                  <div class="form-group">
+                  	                                                <label class="col-md-2 control-label">تلگرام</label>
+                  	                                                <div class="col-md-10">
+                  	                                                    <input type="text" id="email" class="form-control" placeholder="t.me/milad" value="{!! $setting[0]['telegram'] !!}">
+                  	                                                </div>
+                  	                                            </div>
+                                                                  <div class="form-group">
+                  	                                                <label class="col-md-2 control-label">لینکدین</label>
+                  	                                                <div class="col-md-10">
+                  	                                                    <input type="text" id="email" class="form-control" placeholder="linkedin.com/milad" value="{!! $setting[0]['linkedin'] !!}">
+                  	                                                </div>
+                  	                                            </div>
+                                                                  <div class="form-group">
+                  	                                                <label class="col-md-2 control-label">آدرس</label>
+                  	                                                <div class="col-md-10">
+                  	                                                    <input type="text" id="email" class="form-control" placeholder="تهران ، خیابان امام..." value="{!! $setting[0]['address'] !!}">
+                  	                                                </div>
+                  	                                            </div>
+                                                                  <div class="form-group">
+                  	                                                <label class="col-md-2 control-label">شماره همراه</label>
+                  	                                                <div class="col-md-10">
+                  	                                                    <input type="number" id="email" class="form-control" placeholder="0912...." value="{!! $setting[0]['phone_number'] !!}">
+                  	                                                </div>
+                  	                                            </div>
+                                                                  <div class="form-group">
+                  	                                                <label class="col-md-2 control-label">فکس</label>
+                  	                                                <div class="col-md-10">
+                  	                                                    <input type="text" id="email" class="form-control" placeholder="" value="{!! $setting[0]['fax'] !!}">
+                  	                                                </div>
+                  	                                            </div>
+                                                                  <div class="form-group">
+                  	                                                <label class="col-md-2 control-label">توضیحات مختصر</label>
+                  	                                                <div class="col-md-10">
+                  	                                                    <input type="text" id="email" class="form-control" placeholder="" value="{!! $setting[0]['brief_about'] !!}">
+                  	                                                </div>
+                  	                                            </div>
+                                                                  
                                                         <button type="submit" class="btn btn-success btn-rounded w-md waves-effect waves-light m-b-5">ثبت تغییرات</button>
                   	                               </form>
                                           				</div><!-- end col -->
@@ -65,86 +119,6 @@
                 </footer>
 
             </div>
-
-
-            <!-- ============================================================== -->
-            <!-- End Right content here -->
-            <!-- ============================================================== -->
-
-
-            <!-- Right Sidebar -->
-            <div class="side-bar right-bar">
-                <a href="javascript:void(0);" class="right-bar-toggle">
-                    <i class="zmdi zmdi-close-circle-o"></i>
-                </a>
-                <h4 class="">اعلانات</h4>
-                <div class="notification-list nicescroll">
-                    <ul class="list-group list-no-border user-list">
-                        <li class="list-group-item">
-                            <a href="#" class="user-list-item">
-                                <div class="avatar">
-                                    <img src="images/users/avatar-2.jpg/images/users/avatar-2.jpg" alt="">
-                                </div>
-                                <div class="user-desc">
-                                    <span class="name">کاربر شماره یک</span>
-                                    <span class="desc">متن کاربر شماره یک</span>
-                                    <span class="time">2 ساعت قبل</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#" class="user-list-item">
-                                <div class="icon bg-info">
-                                    <i class="zmdi zmdi-account"></i>
-                                </div>
-                                <div class="user-desc">
-                                    <span class="name">ثبت نام جدید</span>
-                                    <span class="desc">کاربری جدید در سایت ثبت نام کرده است</span>
-                                    <span class="time">5 ساعت قبل</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#" class="user-list-item">
-                                <div class="icon bg-pink">
-                                    <i class="zmdi zmdi-comment"></i>
-                                </div>
-                                <div class="user-desc">
-                                    <span class="name">پیام جدید</span>
-                                    <span class="desc">متن پیام جدید از کاریی جدید</span>
-                                    <span class="time">1 روز قبل</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="list-group-item active">
-                            <a href="#" class="user-list-item">
-                                <div class="avatar">
-                                    <img src="{{ asset('images/users/avatar-3.jpg') }}" alt="">
-                                </div>
-                                <div class="user-desc">
-                                    <span class="name">کاربر شماره 2</span>
-                                    <span class="desc">با سلام من یک متن کاملا آزمایشی هستم</span>
-                                    <span class="time">2 روز قبل</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="list-group-item active">
-                            <a href="#" class="user-list-item">
-                                <div class="icon bg-warning">
-                                    <i class="zmdi zmdi-settings"></i>
-                                </div>
-                                <div class="user-desc">
-                                    <span class="name">تنظیمات</span>
-                                    <span class="desc">تنظیمات جدید برای دسترسی و راحتی شما موجود است</span>
-                                    <span class="time">1 روز قبل</span>
-                                </div>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-            <!-- /Right-bar -->
 
 
 @endsection

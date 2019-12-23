@@ -8,13 +8,13 @@ use App\Setting;
 class SettingController extends Controller
 {
     public function index(){
-      return view('admin.setting');
+      $setting = Setting::all();
+      return view('admin.setting',compact('setting'));
     }
 
-    public function edit(Request $request){
+    public function edit(SettingFormRequest $request){
       $setting = Setting::whereId(1)->firstOrFail();
-      print($request->get('title'));
-
+      return redirect('/home/setting')->with('status',$request->get('title'));
       // $setting->title = $request->get('title');
       // $setting->telephone = $request->get('telephone');
       // $setting->email = $request->get('email');
