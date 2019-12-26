@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-            
+
             <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
@@ -27,85 +27,87 @@
                                           			<div class="row">
                                           				<div class="col-lg-6">
                                           					<form class="form-horizontal" role="form" method="post">
+                                                      @if (session('status'))
+                                                      <div class="alert alert-success">
+                                                        {{ session('status') }}
+                                                      </div>
+                                                      @endif
                                                                <input type="hidden" name="_token" value="{!! csrf_token() !!}">
-                                                                @if(session('status'))
-                                                                <label class="col-md-2 control-label" for="example-email">{{ session('status') }}</label>
-                                                                @endif
                   	                                            <div class="form-group">
                   	                                                <label class="col-md-2 control-label" for="example-email">عنوان سایت</label>
                   	                                                <div class="col-md-10">
-                  	                                                    <input type="text" id="title" class="form-control" placeholder="شرکت xCo" value="{!! $setting[0]['title'] !!}">
+                  	                                                    <input type="text" name="title"class="form-control" placeholder="شرکت xCo" value="{!! $setting[0]['title'] !!}">
                   	                                                </div>
                   	                                            </div>
-                                                                  
+
                   	                                            <div class="form-group">
                   	                                                <label class="col-md-2 control-label">تلفن</label>
                   	                                                <div class="col-md-10">
-                  	                                                    <input type="number" id="telephone"class="form-control" placeholder="...۰۲۱" value="{!! $setting[0]['telephone'] !!}">
+                  	                                                    <input type="number" name="telephone" class="form-control" placeholder="...۰۲۱" value="{!! $setting[0]['telephone'] !!}">
                   	                                                </div>
                   	                                            </div>
 
                   	                                            <div class="form-group">
                   	                                                <label class="col-md-2 control-label">ایمیل</label>
                   	                                                <div class="col-md-10">
-                  	                                                    <input type="email" id="email" class="form-control" placeholder="milad@gmail.com" value="{!! $setting[0]['email'] !!}">
+                  	                                                    <input type="email" name="email"  class="form-control" placeholder="milad@gmail.com" value="{!! $setting[0]['email'] !!}">
                   	                                                </div>
                   	                                            </div>
                                                                   <div class="form-group">
                   	                                                <label class="col-md-2 control-label">فیسبوک</label>
                   	                                                <div class="col-md-10">
-                  	                                                    <input type="text" id="email" class="form-control" placeholder="facebook.com/milad" value="{!! $setting[0]['facebook'] !!}">
+                  	                                                    <input type="text" name="facebook" class="form-control" placeholder="facebook.com/milad" value="{!! $setting[0]['facebook'] !!}">
                   	                                                </div>
                   	                                            </div>
                                                                   <div class="form-group">
                   	                                                <label class="col-md-2 control-label">اینستاگرام</label>
                   	                                                <div class="col-md-10">
-                  	                                                    <input type="text" id="email" class="form-control" placeholder="instagram.com/milad" value="{!! $setting[0]['instagram'] !!}">
+                  	                                                    <input type="text" name="instagram" class="form-control" placeholder="instagram.com/milad" value="{!! $setting[0]['instagram'] !!}">
                   	                                                </div>
                   	                                            </div>
                                                                   <div class="form-group">
                   	                                                <label class="col-md-2 control-label">توییتر</label>
                   	                                                <div class="col-md-10">
-                  	                                                    <input type="text" id="email" class="form-control" placeholder="twitter.com/milad" value="{!! $setting[0]['twitter'] !!}">
+                  	                                                    <input type="text" name="twitter" class="form-control" placeholder="twitter.com/milad" value="{!! $setting[0]['twitter'] !!}">
                   	                                                </div>
                   	                                            </div>
                                                                   <div class="form-group">
                   	                                                <label class="col-md-2 control-label">تلگرام</label>
                   	                                                <div class="col-md-10">
-                  	                                                    <input type="text" id="email" class="form-control" placeholder="t.me/milad" value="{!! $setting[0]['telegram'] !!}">
+                  	                                                    <input type="text" name="telegram" class="form-control" placeholder="t.me/milad" value="{!! $setting[0]['telegram'] !!}">
                   	                                                </div>
                   	                                            </div>
                                                                   <div class="form-group">
                   	                                                <label class="col-md-2 control-label">لینکدین</label>
                   	                                                <div class="col-md-10">
-                  	                                                    <input type="text" id="email" class="form-control" placeholder="linkedin.com/milad" value="{!! $setting[0]['linkedin'] !!}">
+                  	                                                    <input type="text" name="linkedin" class="form-control" placeholder="linkedin.com/milad" value="{!! $setting[0]['linkedin'] !!}">
                   	                                                </div>
                   	                                            </div>
                                                                   <div class="form-group">
                   	                                                <label class="col-md-2 control-label">آدرس</label>
                   	                                                <div class="col-md-10">
-                  	                                                    <input type="text" id="email" class="form-control" placeholder="تهران ، خیابان امام..." value="{!! $setting[0]['address'] !!}">
+                  	                                                    <input type="text" name="address" class="form-control" placeholder="تهران ، خیابان امام..." value="{!! $setting[0]['address'] !!}">
                   	                                                </div>
                   	                                            </div>
                                                                   <div class="form-group">
                   	                                                <label class="col-md-2 control-label">شماره همراه</label>
                   	                                                <div class="col-md-10">
-                  	                                                    <input type="number" id="email" class="form-control" placeholder="0912...." value="{!! $setting[0]['phone_number'] !!}">
+                  	                                                    <input type="number" name="phone_number" class="form-control" placeholder="0912...." value="{!! $setting[0]['phone_number'] !!}">
                   	                                                </div>
                   	                                            </div>
                                                                   <div class="form-group">
                   	                                                <label class="col-md-2 control-label">فکس</label>
                   	                                                <div class="col-md-10">
-                  	                                                    <input type="text" id="email" class="form-control" placeholder="" value="{!! $setting[0]['fax'] !!}">
+                  	                                                    <input type="text" name="fax" class="form-control" placeholder="" value="{!! $setting[0]['fax'] !!}">
                   	                                                </div>
                   	                                            </div>
                                                                   <div class="form-group">
                   	                                                <label class="col-md-2 control-label">توضیحات مختصر</label>
                   	                                                <div class="col-md-10">
-                  	                                                    <input type="text" id="email" class="form-control" placeholder="" value="{!! $setting[0]['brief_about'] !!}">
+                  	                                                    <input type="text" name="brief_about" class="form-control" placeholder="" value="{!! $setting[0]['brief_about'] !!}">
                   	                                                </div>
                   	                                            </div>
-                                                                  
+
                                                         <button type="submit" class="btn btn-success btn-rounded w-md waves-effect waves-light m-b-5">ثبت تغییرات</button>
                   	                               </form>
                                           				</div><!-- end col -->
