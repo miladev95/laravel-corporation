@@ -14,6 +14,8 @@
       </button>
     </div>
 
+    {!! $menu[0]['title'] !!}
+
     <div class="collapse navbar-collapse">
 
       <ul class="nav navbar-nav">

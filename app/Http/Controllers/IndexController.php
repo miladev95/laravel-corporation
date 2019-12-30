@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Setting;
+use App\Menu;
 class IndexController extends Controller
 {
       public function index(){
          $setting = Setting::all();
-         return view('index',compact('setting'));
+         $menu = Menu::all();
+         return view('index',compact('setting','menu'));
       }
 }
