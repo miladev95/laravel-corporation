@@ -86,13 +86,12 @@
 
         <!-- All Slides Container -->
         <div class="carousel-inner">
-
           <div class="item active">
-            <img src="{{ asset('img/slider/slider-1.jpg') }}" alt="Slider 1">
+            <img src="{!! $slider[0]->image !!}" alt="Slider 1">
              <div class="carousel-caption">
               <div class="qt-carousel-caption-box">
-                <h3>عنوان برای اسلاید شماره 1</h3>
-                <p>لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید</p>
+                <h3>{!! $slider[0]->title !!}</h3>
+                <p>{!! $slider[0]->brief !!}</p>
 
 
                 <a href="#" class="btn btn-primary btn-lg qt-carosel-caption-btn">ادامه <i class="fa fa-arrow-circle-right"></i></a>
@@ -100,26 +99,25 @@
               </div>
             </div>
           </div><!-- item -->
-
-          <div class="item">
-            <img src="{{ asset('img/slider/slider-2.jpg') }}" alt="Slider 2">
+          <div class="item ">
+            <img src="{!! $slider[1]->image !!}" alt="Slider 2">
              <div class="carousel-caption">
               <div class="qt-carousel-caption-box">
-                <h3>عنوان برای اسلاید شماره 2</h3>
-                <p>لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید</p>
+                <h3>{!! $slider[1]->title !!}</h3>
+                <p>{!! $slider[1]->brief !!}</p>
 
                 <a href="#" class="btn btn-primary btn-lg qt-carosel-caption-btn">ادامه <i class="fa fa-arrow-circle-right"></i></a>
 
               </div>
             </div>
-          </div><!-- item -->
+          </div>
 
           <div class="item">
-            <img src="{{ asset('img/slider/slider-3.jpg') }}" alt="Slider 3">
+            <img src="{!! $slider[2]->image !!}" alt="Slider 3">
              <div class="carousel-caption">
               <div class="qt-carousel-caption-box">
-                <h3>عنوان برای اسلاید شماره 3</h3>
-                <p>لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید</p>
+                <h3>{!! $slider[2]->title !!}</h3>
+                <p>{!! $slider[2]->brief !!}</p>
 
                 <a href="#" class="btn btn-primary btn-lg qt-carosel-caption-btn">ادامه <i class="fa fa-arrow-circle-right"></i></a>
 
@@ -138,8 +136,7 @@
                   <i class="fa fa-list"></i>
                 </div>
                 <div class="col-xs-10  qt-carosel-nav-text">
-                  <h3>پروژه های ما</h3>
-                  <p>لورم ایپسوم یا طرح‌نما متنی آزمایشی و بی‌معنی</p>
+                  <h3>{!! $slider[0]->title !!}</h3>
                 </div>
               </div>
             </a>
@@ -151,8 +148,7 @@
                   <i class="fa fa-cogs"></i>
                 </div>
                 <div class="col-xs-10  qt-carosel-nav-text">
-                  <h3>ارائه خدمات ما</h3>
-                  <p>لورم ایپسوم یا طرح‌نما متنی آزمایشی و بی‌معنی</p>
+                  <h3>{!! $slider[1]->title !!}</h3>
                 </div>
               </div>
             </a>
@@ -164,8 +160,7 @@
                   <i class="fa fa-users"></i>
                 </div>
                 <div class="col-xs-10  qt-carosel-nav-text">
-                  <h3>تیم قوی و حرفه ای</h3>
-                  <p>لورم ایپسوم یا طرح‌نما متنی آزمایشی و بی‌معنی</p>
+                  <h3>{!! $slider[2]->title !!}</h3>
                 </div>
               </div>
             </a>
