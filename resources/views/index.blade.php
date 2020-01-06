@@ -187,7 +187,7 @@
     <div class="well well-lg">
       <div class="row">
         <div class="col-md-8">
-          <p class="qt-clean-bottom">لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید</p>
+          <p class="qt-clean-bottom">{!! $notification->brief !!}</p>
         </div>
         <div class="col-md-4">
           <a class="btn btn-lg btn-primary btn-block" href="#">اطلاعیه <i class="fa fa-arrow-circle-right"></i> </a>
