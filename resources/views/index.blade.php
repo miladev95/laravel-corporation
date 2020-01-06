@@ -19,18 +19,27 @@
     <div class="collapse navbar-collapse">
 
       <ul class="nav navbar-nav">
-
         @foreach ($Menu as $menu)
+          <?php  $hasChild = false ;?>
+          @foreach ($Menu as $child)
+            @if($menu->id == $child->parent)
+              <?php $hasChild = true; ?>
+            @endif
+          @endforeach
           @if($menu-> parent == 0)
             <li class="dropdown">
-              <a href="{!! $menu->link !!}" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-gear"></i>{!! $menu->title !!}</a>
-              <ul class="dropdown-menu">
-                @foreach ($Menu as $child)
-                  @if($menu->id == $child->parent)
-                    <li class=""><a href="{!! $child->link !!}">{!! $child->title !!}</a></li>
-                  @endif
-                @endforeach
-              </ul>
+              @if($hasChild)
+                  <a href="{!! $menu->link !!}" class="dropdown-toggle" data-toggle="dropdown">{!! $menu->title !!}<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    @foreach ($Menu as $child)
+                      @if($menu->id == $child->parent)
+                        <li class=""><a href="{!! $child->link !!}">{!! $child->title !!}</a></li>
+                      @endif
+                    @endforeach
+                  </ul>
+              @else
+                <a href="{!! $menu->link !!}" class="dropdown-toggle" data-toggle="dropdown">{!! $menu->title !!}</a>
+              @endif
             </li>
           @endif
         @endforeach
