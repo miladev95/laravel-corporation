@@ -14,65 +14,28 @@
       </button>
     </div>
 
-    {!! $menu[0]['title'] !!}
+
 
     <div class="collapse navbar-collapse">
 
       <ul class="nav navbar-nav">
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-envelope"></i> تماس با ما <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class=""><a href="contact-us.html">تماس با ما 1</a></li>
-            <li class=""><a href="contact-us-2.html">تماس با ما 2</a></li>
-          </ul>
-        </li>
+        @foreach ($Menu as $menu)
+          @if($menu-> parent == 0)
+            <li class="dropdown">
+              <a href="{!! $menu->link !!}" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-gear"></i>{!! $menu->title !!}</a>
+              <ul class="dropdown-menu">
+                @foreach ($Menu as $child)
+                  @if($menu->id == $child->parent)
+                    <li class=""><a href="{!! $child->link !!}">{!! $child->title !!}</a></li>
+                  @endif
+                @endforeach
+              </ul>
+            </li>
+          @endif
+        @endforeach
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-navicon"></i> دیگر <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class=""><a href="faq.html">پرسش و پاسخ</a></li>
-            <li class=""><a href="pricing-tables.html">جدول قیمت</a></li>
-            <li class=""><a href="404.html">پیغام خطا 404</a></li>
-          </ul>
-        </li>
-
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-camera"></i> تصاویر<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class=""><a href="photo-albums-2-col.html"> آلبوم تصاویر 2 ستونه</a></li>
-            <li class=""><a href="photo-albums-3-col.html"> آلبوم تصاویر 3 ستونه</a></li>
-            <li class=""><a href="photo-gallery-4-col.html">آلبوم تصاویر 4 ستونه</a></li>
-            <li class=""><a href="photo-gallery-6-col.html">آلبوم تصاویر 6 ستونه</a></li>
-          </ul>
-        </li>
-
-
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-folder-open"></i> نمونه کار <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class=""><a href="portfolio-1-col.html">نمونه کار 1 ستونه</a></li>
-            <li class=""><a href="portfolio-2-col.html">نمونه کار 2 ستونه</a></li>
-            <li class=""><a href="portfolio-3-col.html">نمونه کار 3 ستونه</a></li>
-            <li class=""><a href="portfolio-single-item-1.html">نمونه کار تکی 1</a></li>
-            <li class=""><a href="portfolio-single-item-2.html">نمونه کار تکی 2</a></li>
-          </ul>
-        </li>
-
-
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-calendar"></i> وبلاگ <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class=""><a href="blog-listing-1.html">همه نوشته ها 1</a></li>
-            <li class=""><a href="blog-listing-2.html">همه نوشته ها 2</a></li>
-            <li class=""><a href="blog-single-post.html">نوشته تکی</a></li>
-          </ul>
-        </li>
-
-        <li class=""><a href="services.html"> <i class="fa fa-gear"></i> خدمات</a></li>
+        <!-- <li class=""><a href="services.html"> <i class="fa fa-gear"></i> خدمات</a></li>
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-group"></i> درباره ما <b class="caret"></b></a>
@@ -90,7 +53,7 @@
             <li class="active"><a href="index.html">صفحه اصلی حالت 1</a></li>
             <li class=" "><a href="index-2.html">صفحه اصلی حالت 2</a></li>
           </ul>
-        </li>
+        </li> -->
 
       </ul>
 

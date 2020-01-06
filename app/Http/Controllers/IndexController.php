@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
       public function index(){
          $setting = Setting::all();
-         $menu = Menu::all();
-         return view('index',compact('setting','menu'));
+         $Menu = Menu::all();
+         return view('index',compact('setting','Menu'));
       }
 }
