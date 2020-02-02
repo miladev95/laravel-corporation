@@ -14,6 +14,8 @@
 
 Auth::routes();
 Route::get('/', 'IndexController@index');
+Route::post('/','IndexController@joinNews');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/home/setting', 'SettingController@index');
