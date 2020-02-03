@@ -238,11 +238,11 @@
           <div class="qt-widget-body">
             <p>برای دریافت آخرین اخبار سایت ابتدا ایمیل خود را وارد و روی گزینه عضویت کلیک کنید</p>
 
-            <form method="post">
-
+            <form role="form" method="post">
+                <input type="hidden" name="_token" value="{!! csrf_token() !!}">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
-              <input type="text" id="email" name="email" class="form-control" placeholder="ایمیل خود را وارد کنید" required>
+              <input type="text" id="email" name="EMAIl" class="form-control" placeholder="ایمیل خود را وارد کنید" required>
               <span class="input-group-btn">
                 <button type="submit" class="btn btn-primary">عضویت</button>
               </span>
@@ -265,36 +265,17 @@
 
           <div class="qt-widget-body">
             <ul class="list-group row qt-sidebar-news-listing">
-
-              <li class="list-group-item col-sm-4 col-md-12 qt-sidebar-news-item">
-                <a class="fade qt-sidebar-news-item-img" href="blog-single-post.html">
-                  <img src="{{ asset('img/thumbnail-1-sm.jpg') }}" alt="A good news item title for the sidebar">
-                </a>
-                <h4><a href="blog-single-post.html">عنوان خبر 1</a></h4>
-                <p>
-                  لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود ... <a class="qt-sidebar-read-more" href="blog-single-post.html">ادامه <i class="fa fa-arrow-circle-right"></i></a>
-                </p>
-              </li>
-
-              <li class="list-group-item col-sm-4 col-md-12 qt-sidebar-news-item">
-                <a class="fade qt-sidebar-news-item-img" href="blog-single-post.html">
-                  <img src="{{ asset('img/thumbnail-2-sm.jpg') }}" alt="A good news item title for the sidebar">
-                </a>
-                <h4><a href="blog-single-post.html">عنوان خبر 2</a></h4>
-                <p>
-                  لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود ... <a class="qt-sidebar-read-more" href="blog-single-post.html">ادامه <i class="fa  fa-arrow-circle-right"></i></a>
-                </p>
-              </li>
-
-              <li class="list-group-item col-sm-4 col-md-12 qt-sidebar-news-item">
-                <a class="fade qt-sidebar-news-item-img" href="blog-single-post.html">
-                  <img src="{{ asset('img/thumbnail-3-sm.jpg') }}" alt="A good news item title for the sidebar">
-                </a>
-                <h4><a href="blog-single-post.html">عنوان خبر 3</a></h4>
-                <p>
-                  لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود ... <a class="qt-sidebar-read-more" href="blog-single-post.html">ادامه <i class="fa  fa-arrow-circle-right"></i></a>
-                </p>
-              </li>
+                @foreach ($news as $item_news)
+                    <li class="list-group-item col-sm-4 col-md-12 qt-sidebar-news-item">
+                        <a class="fade qt-sidebar-news-item-img" href="blog-single-post.html">
+                            <img src="{{ asset($item_news->image) }}">
+                        </a>
+                        <h4><a href="{!! action('IndexController@index',$item_news->id) !!}">{{ $item_news->title }}</a></h4>
+                        <p>
+                            {{ $item_news->content }}<a class="qt-sidebar-read-more" href="{!! action('IndexController@index',$item_news->id) !!}">ادامه <i class="fa fa-arrow-circle-right"></i></a>
+                        </p>
+                    </li>
+                @endforeach
 
             </ul>
 

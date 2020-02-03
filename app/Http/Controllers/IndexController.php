@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\NewsEmailRequest;
 use App\Menu;
+use App\News;
 use App\NewsEmail;
 use App\Notification;
 use App\Setting;
@@ -17,8 +18,9 @@ class IndexController extends Controller
         $setting = Setting::all();
         $slider = Slider::all();
         $Menu = Menu::all();
+        $news = News::all()->take(3);
         $notification = Notification::latest('id')->first();
-        return view('index', compact('setting', 'Menu', 'slider', 'notification'));
+        return view('index', compact('setting', 'Menu', 'slider', 'notification','news'));
     }
 
     public function joinNews(NewsEmailRequest $request)

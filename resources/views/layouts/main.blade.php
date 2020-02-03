@@ -116,7 +116,7 @@
 
         <h3>آدرس و شماره تماس</h3>
 
-        <address>{!! $setting[0]['address'] !!}</p></address>
+        <address>{!! $setting[0]['address'] !!}</address>
 
         <ul class="qt-footer-contact">
           <li><i class="fa fa-phone fa-fw"></i>{!! $setting[0]['telephone'] !!}</li>
