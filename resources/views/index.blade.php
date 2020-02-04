@@ -44,29 +44,9 @@
           @endif
         @endforeach
 
-        <!-- <li class=""><a href="services.html"> <i class="fa fa-gear"></i> خدمات</a></li>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-group"></i> درباره ما <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class=""><a href="page-who-we-are.html">ما که هستیم</a></li>
-            <li class=""><a href="testimonials.html">از زبان مشتریان</a></li>
-            <li class=""><a href="page-simple.html">صفحه ساده</a></li>
-            <li class=""><a href="page-full.html">صفحه کامل</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown active">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-home"></i> صفحه اصلی <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class="active"><a href="index.html">صفحه اصلی حالت 1</a></li>
-            <li class=" "><a href="index-2.html">صفحه اصلی حالت 2</a></li>
-          </ul>
-        </li> -->
-
       </ul>
 
-    </div><!--/.nav-collapse -->
+    </div>
 
   </div>
 </nav>
@@ -300,13 +280,13 @@
 
       <div class="col-sm-12 col-md-3 text-center">
         <h3>آخرین تصاویر</h3>
-        <a href="photo-albums-3-col.html" class="btn btn-primary btn-lg qt-recent-photo-galleries-view-all"><i class="fa fa-camera"></i> نمایش همه</a>
+        <a href="{!! action('GalleryController@index') !!}" class="btn btn-primary btn-lg qt-recent-photo-galleries-view-all"><i class="fa fa-camera"></i> نمایش همه</a>
       </div>
         @foreach($gallery as $galleryItem)
       <div class="col-sm-4 col-md-3">
         <a href="photo-gallery-6-col.html" class="qt-fade qt-photo-item">
           <h4>{!! $galleryItem->title !!}</h4>
-          <img class="" src="{{ $galleryItem->image  }}" alt="">
+          <img class="" src="{{ $galleryItem->image  }}" alt="{!! $galleryItem->title !!}">
         </a>
       </div>
         @endforeach

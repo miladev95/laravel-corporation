@@ -17,6 +17,6 @@ Route::get('/', 'IndexController@index');
 Route::post('/','IndexController@joinNews');
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/gallery','GalleryController@index');
 Route::get('/home/setting', 'SettingController@index');
 Route::post('/home/setting', 'SettingController@update');
