@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Gallery;
 use App\Http\Requests\NewsEmailRequest;
 use App\Menu;
 use App\News;
@@ -22,7 +23,9 @@ class IndexController extends Controller
         $news = News::all()->take(3);
         $post = Posts::all()->take(1)->first();
         $notification = Notification::latest('id')->first();
-        return view('index', compact('setting', 'Menu', 'slider', 'notification','news','post'));
+        $gallery = Gallery::all()->take(3);
+        return view('index', compact('setting', 'Menu', 'slider',
+            'notification','news','post','gallery'));
     }
 
     public function joinNews(NewsEmailRequest $request)

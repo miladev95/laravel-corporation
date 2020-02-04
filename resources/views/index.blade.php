@@ -302,25 +302,14 @@
         <h3>آخرین تصاویر</h3>
         <a href="photo-albums-3-col.html" class="btn btn-primary btn-lg qt-recent-photo-galleries-view-all"><i class="fa fa-camera"></i> نمایش همه</a>
       </div>
+        @foreach($gallery as $galleryItem)
       <div class="col-sm-4 col-md-3">
         <a href="photo-gallery-6-col.html" class="qt-fade qt-photo-item">
-          <h4>تصویر 1</h4>
-          <img class="" src="{{ asset('img/gallery/4.jpg') }}" alt="">
+          <h4>{!! $galleryItem->title !!}</h4>
+          <img class="" src="{{ $galleryItem->image  }}" alt="">
         </a>
       </div>
-      <div class="col-sm-4 col-md-3">
-        <a href="photo-gallery-6-col.html" class="qt-fade qt-photo-item">
-          <h4>تصویر 2</h4>
-          <img class="" src="{{ asset('img/gallery/2.jpg') }}" alt="">
-        </a>
-      </div>
-      <div class="col-sm-4 col-md-3">
-        <a href="photo-gallery-6-col.html" class="qt-fade qt-photo-item">
-          <h4>تصویر 3</h4>
-          <img class="" src="{{ asset('img/gallery/11.jpg') }}" alt="">
-        </a>
-      </div>
-
+        @endforeach
     </div>
 
   </div>
