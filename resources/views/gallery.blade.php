@@ -75,7 +75,7 @@
                         </ol>
                     </div>
 
-                    <div class="qt-page-body qt-photo-gallery qt-photo-galleries-2-col">
+                    <div class="qt-photo-gallery-single">
 
 
 
@@ -84,7 +84,7 @@
                             <div class="col-sm-4">
                                 <a href="{!! $galleryItem->image !!}" class="fade qt-photo-item">
                                     <h4>{!! $galleryItem->title !!}</h4>
-                                    <img class="" src="{!! $galleryItem->image !!}" alt="{!! $galleryItem->title !!}">
+                                    <img class="img-responsive" src="{!! $galleryItem->image !!}" alt="{!! $galleryItem->title !!}">
                                 </a>
                             </div>
                             @endforeach
@@ -94,26 +94,28 @@
                         <hr>
 
                         <!-- Pagination -->
-                        <div class="row text-center">
-                            <div class="col-lg-12">
-                                <ul class="pagination pagination-lg">
-                                    <li ><a href="{!!  action('GalleryController@index',['page'=>1]) !!}">&laquo;</a></li>
-                                    @for($i = 1 ; $i<=$totalPages;$i++)
-                                        @if($i == $currentPage)
-                                        <li class="active"><a href="{!!  action('GalleryController@index',['page'=>$i]) !!}">{{$i}}</a></li>
-                                        @else
-                                        <li><a href="{!!  action('GalleryController@index',['page'=>$i]) !!}">{{ $i }}</a></li>
-                                        @endif
-                                    @endfor
-                                    <li ><a href="{!!  action('GalleryController@index',['page'=>$totalPages]) !!}">&raquo;</a></li>
-                                </ul>
-                            </div>
-                        </div>
+
                         <!-- /.row -->
 
                         <hr>
 
                     </div><!-- qt-photo-gallery -->
+
+                    <div class="row text-center">
+                        <div class="col-lg-12">
+                            <ul class="pagination pagination-lg">
+                                <li ><a href="{!!  action('GalleryController@index',['page'=>1]) !!}">&laquo;</a></li>
+                                @for($i = 1 ; $i<=$totalPages;$i++)
+                                    @if($i == $currentPage)
+                                        <li class="active"><a href="{!!  action('GalleryController@index',['page'=>$i]) !!}">{{$i}}</a></li>
+                                    @else
+                                        <li><a href="{!!  action('GalleryController@index',['page'=>$i]) !!}">{{ $i }}</a></li>
+                                    @endif
+                                @endfor
+                                <li ><a href="{!!  action('GalleryController@index',['page'=>$totalPages]) !!}">&raquo;</a></li>
+                            </ul>
+                        </div>
+                    </div>
 
                 </div>
 
