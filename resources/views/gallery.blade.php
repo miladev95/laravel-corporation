@@ -82,7 +82,7 @@
                         <div class="row">
                             @foreach($gallery as $galleryItem)
                             <div class="col-sm-4">
-                                <a href="photo-gallery-4-col.html" class="fade qt-photo-item">
+                                <a href="{!! $galleryItem->image !!}" class="fade qt-photo-item">
                                     <h4>{!! $galleryItem->title !!}</h4>
                                     <img class="" src="{!! $galleryItem->image !!}" alt="{!! $galleryItem->title !!}">
                                 </a>
@@ -97,13 +97,15 @@
                         <div class="row text-center">
                             <div class="col-lg-12">
                                 <ul class="pagination pagination-lg">
-                                    <li ><a href="#">&laquo;</a></li>
-                                    <li ><a href="#">٥</a></li>
-                                    <li><a href="#">٤</a></li>
-                                    <li><a href="#">٣</a></li>
-                                    <li><a href="#">٢</a></li>
-                                    <li class="active"><a href="#">١</a></li>
-                                    <li><a href="#">&raquo;</a></li>
+                                    <li ><a href="{!!  action('GalleryController@index',['page'=>1]) !!}">&laquo;</a></li>
+                                    @for($i = 1 ; $i<=$totalPages;$i++)
+                                        @if($i == $currentPage)
+                                        <li class="active"><a href="{!!  action('GalleryController@index',['page'=>$i]) !!}">{{$i}}</a></li>
+                                        @else
+                                        <li><a href="{!!  action('GalleryController@index',['page'=>$i]) !!}">{{ $i }}</a></li>
+                                        @endif
+                                    @endfor
+                                    <li ><a href="{!!  action('GalleryController@index',['page'=>$totalPages]) !!}">&raquo;</a></li>
                                 </ul>
                             </div>
                         </div>

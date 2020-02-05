@@ -280,11 +280,11 @@
 
       <div class="col-sm-12 col-md-3 text-center">
         <h3>آخرین تصاویر</h3>
-        <a href="{!! action('GalleryController@index') !!}" class="btn btn-primary btn-lg qt-recent-photo-galleries-view-all"><i class="fa fa-camera"></i> نمایش همه</a>
+        <a href="{!! action('GalleryController@index',['page'=>1]) !!}" class="btn btn-primary btn-lg qt-recent-photo-galleries-view-all"><i class="fa fa-camera"></i> نمایش همه</a>
       </div>
         @foreach($gallery as $galleryItem)
       <div class="col-sm-4 col-md-3">
-        <a href="photo-gallery-6-col.html" class="qt-fade qt-photo-item">
+        <a href="{{ $galleryItem->image  }}" class="qt-fade qt-photo-item">
           <h4>{!! $galleryItem->title !!}</h4>
           <img class="" src="{{ $galleryItem->image  }}" alt="{!! $galleryItem->title !!}">
         </a>
