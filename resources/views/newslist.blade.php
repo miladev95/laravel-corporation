@@ -106,7 +106,7 @@
 
   <!-- For a center image, just wrap tag below in .container -->
   <div class="qt-featured-image qt-header-featured-image qt-header-featured-image-wide">
-    <img src="resources/img/featured-8.jpg" alt="Blog Listing">
+    <img src="{{ $gallery[0]->image }}" alt="Blog Listing">
   </div>
 
 </section>
@@ -126,137 +126,40 @@
           <h2>لیست نوشته ها<small></small></h2>
           <ol class="breadcrumb">
 	<li class="active">همه نوشته ها 1</li>
-            <li><a href="#">صفحه اصلی</a></li>
+            <li><a href="{{url("/")}}">صفحه اصلی</a></li>
           </ol>
         </div>
 
         <div class="qt-page-body">
 
-          <p>لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد</p>
-
-          <hr>
 
           <ul class="list-unstyled row qt-blog-listing">
-
+            @foreach($news as $newsItem)
             <li class="col-md-12 qt-blog-listing-item">
 
-              <h3><a href="blog-single-post.html">عنوان شماره یک</a></h3>
+              <h3><a href="{{action('SingleNewsController@index',$newsItem->id)}}">{{$newsItem->title}}</a></h3>
 
               <div class="qt-post-meta">
-                <span><i class="fa fa-calendar fa-fw"></i><sup>مهر</sup>15</span>
-                <span><i class="fa fa-bookmark fa-fw"></i> <a href="#">خبر</a>, <a href="#">طراحی</a></span>
+                <span><i class="fa fa-calendar fa-fw"></i>{{ $newsItem->date }}</span>
+                  <?php
+                    $newsTag = $newsItem->tag;
+                    $newsTag = explode("-",$newsTag);
+                    echo $newsTag[0];
+                  ?>
                 <span><i class="fa fa-tags fa-fw"></i> <a href="#">تجارت</a>, <a href="#">شرکت</a>, <a href="#">گرافیک</a>, <a href="#">تبلیغات</a></span>
               </div>
 
-              <a class="fade qt-blog-listing-item-img" href="blog-single-post.html">
-                <img src="resources/img/thumbnail-1-sm.jpg" alt="A good news item title for the blog">
+              <a class="fade qt-blog-listing-item-img" href="{{action("SingleNewsController@index",$newsItem->id)}}">
+                <img src="{{ $newsItem->image }}" alt="A good news item title for the blog">
               </a>
 
               <p>
-               لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود ... <a class="qt-sidebar-read-more" href="blog-single-post.html">ادامه <i class="fa  fa-arrow-circle-right"></i></a>
+               {{ $newsItem->content }}<a class="qt-sidebar-read-more" href="{{action("SingleNewsController@index",$newsItem->id)}}">ادامه <i class="fa  fa-arrow-circle-right"></i></a>
               </p>
 
             </li>
+            @endforeach
 
-            <li class="col-md-12 qt-blog-listing-item">
-
-              <h3><a href="blog-single-post.html">عنوان شماره دو</a></h3>
-
-              <div class="qt-post-meta">
-                <span><i class="fa fa-calendar fa-fw"></i><sup>مهر</sup>15</span>
-                <span><i class="fa fa-bookmark fa-fw"></i> <a href="#">خبر</a>, <a href="#">طراحی</a></span>
-                <span><i class="fa fa-tags fa-fw"></i> <a href="#">تجارت</a>, <a href="#">شرکت</a>, <a href="#">گرافیک</a>, <a href="#">تبلیغات</a></span>
-              </div>
-
-              <a class="fade qt-blog-listing-item-img" href="blog-single-post.html">
-                <img src="resources/img/thumbnail-2-sm.jpg" alt="A good news item title for the blog">
-              </a>
-
-              <p>
-               لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود ... <a class="qt-sidebar-read-more" href="blog-single-post.html">ادامه <i class="fa  fa-arrow-circle-right"></i></a>
-              </p>
-
-            </li>
-
-            <li class="col-md-12 qt-blog-listing-item">
-
-              <h3><a href="blog-single-post.html">عنوان شماره سه</a></h3>
-
-              <div class="qt-post-meta">
-                <span><i class="fa fa-calendar fa-fw"></i><sup>مهر</sup>15</span>
-                <span><i class="fa fa-bookmark fa-fw"></i> <a href="#">خبر</a>, <a href="#">طراحی</a></span>
-                <span><i class="fa fa-tags fa-fw"></i> <a href="#">تجارت</a>, <a href="#">شرکت</a>, <a href="#">گرافیک</a>, <a href="#">تبلیغات</a></span>
-              </div>
-
-              <a class="fade qt-blog-listing-item-img" href="blog-single-post.html">
-                <img src="resources/img/thumbnail-3-sm.jpg" alt="A good news item title for the blog">
-              </a>
-
-              <p>
-                لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود ... <a class="qt-sidebar-read-more" href="blog-single-post.html">ادامه <i class="fa  fa-arrow-circle-right"></i></a>
-              </p>
-
-            </li>
-
-            <li class="col-md-12 qt-blog-listing-item">
-
-              <h3><a href="blog-single-post.html">عنوان شماره چهار</a></h3>
-
-              <div class="qt-post-meta">
-                <span><i class="fa fa-calendar fa-fw"></i><sup>مهر</sup>15</span>
-                <span><i class="fa fa-bookmark fa-fw"></i> <a href="#">خبر</a>, <a href="#">طراحی</a></span>
-                <span><i class="fa fa-tags fa-fw"></i> <a href="#">تجارت</a>, <a href="#">شرکت</a>, <a href="#">گرافیک</a>, <a href="#">تبلیغات</a></span>
-              </div>
-
-              <a class="fade qt-blog-listing-item-img" href="blog-single-post.html">
-                <img src="resources/img/thumbnail-1-sm.jpg" alt="A good news item title for the blog">
-              </a>
-
-              <p>
-               لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود ... <a class="qt-sidebar-read-more" href="blog-single-post.html">ادامه <i class="fa  fa-arrow-circle-right"></i></a>
-              </p>
-
-            </li>
-
-            <li class="col-md-12 qt-blog-listing-item">
-
-              <h3><a href="blog-single-post.html">عنوان شماره پنج</a></h3>
-
-              <div class="qt-post-meta">
-                <span><i class="fa fa-calendar fa-fw"></i><sup>مهر</sup>15</span>
-                <span><i class="fa fa-bookmark fa-fw"></i> <a href="#">خبر</a>, <a href="#">طراحی</a></span>
-                <span><i class="fa fa-tags fa-fw"></i> <a href="#">تجارت</a>, <a href="#">شرکت</a>, <a href="#">گرافیک</a>, <a href="#">تبلیغات</a></span>
-              </div>
-
-              <a class="fade qt-blog-listing-item-img" href="blog-single-post.html">
-                <img src="resources/img/thumbnail-2-sm.jpg" alt="A good news item title for the blog">
-              </a>
-
-              <p>
-               لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود ... <a class="qt-sidebar-read-more" href="blog-single-post.html">ادامه <i class="fa  fa-arrow-circle-right"></i></a>
-              </p>
-
-            </li>
-
-            <li class="col-md-12 qt-blog-listing-item">
-
-              <h3><a href="blog-single-post.html">عنوان شماره شش</a></h3>
-
-              <div class="qt-post-meta">
-                <span><i class="fa fa-calendar fa-fw"></i><sup>مهر</sup>15</span>
-                <span><i class="fa fa-bookmark fa-fw"></i> <a href="#">خبر</a>, <a href="#">طراحی</a></span>
-                <span><i class="fa fa-tags fa-fw"></i> <a href="#">تجارت</a>, <a href="#">شرکت</a>, <a href="#">گرافیک</a>, <a href="#">تبلیغات</a></span>
-              </div>
-
-              <a class="fade qt-blog-listing-item-img" href="blog-single-post.html">
-                <img src="resources/img/thumbnail-3-sm.jpg" alt="A good news item title for the blog">
-              </a>
-
-              <p>
-                لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود ... <a class="qt-sidebar-read-more" href="blog-single-post.html">ادامه <i class="fa  fa-arrow-circle-right"></i></a>
-              </p>
-
-            </li>
 
           </ul>
 
