@@ -1,101 +1,55 @@
 ﻿@extends('layouts.main')
 
 @section('content')
-<nav class="navbar navbar-default main-navigation qt-box-shadow">
-  <div class="container">
+    <nav class="navbar navbar-default main-navigation qt-box-shadow">
+        <div class="container">
 
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="mobile-menu-text">MENU</span>
-        <span class="mobile-menu-bars">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="mobile-menu-text">MENU</span>
+                    <span class="mobile-menu-bars">
           <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
         </span>
-      </button>
-    </div>
-
-    <div class="collapse navbar-collapse">
-
-      <ul class="nav navbar-nav">
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-envelope"></i> تماس با ما <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class=""><a href="contact-us.html">تماس با ما 1</a></li>
-            <li class=""><a href="contact-us-2.html">تماس با ما 2</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-navicon"></i> دیگر <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class=""><a href="faq.html">پرسش و پاسخ</a></li>
-            <li class=""><a href="pricing-tables.html">جدول قیمت</a></li>
-            <li class=""><a href="404.html">پیغام خطا 404</a></li>
-          </ul>
-        </li>
-
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-camera"></i> تصاویر<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class=""><a href="photo-albums-2-col.html"> آلبوم تصاویر 2 ستونه</a></li>
-            <li class=""><a href="photo-albums-3-col.html"> آلبوم تصاویر 3 ستونه</a></li>
-            <li class=""><a href="photo-gallery-4-col.html">آلبوم تصاویر 4 ستونه</a></li>
-            <li class=""><a href="photo-gallery-6-col.html">آلبوم تصاویر 6 ستونه</a></li>
-          </ul>
-        </li>
+                </button>
+            </div>
 
 
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-folder-open"></i> نمونه کار <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class=""><a href="portfolio-1-col.html">نمونه کار 1 ستونه</a></li>
-            <li class=""><a href="portfolio-2-col.html">نمونه کار 2 ستونه</a></li>
-            <li class=""><a href="portfolio-3-col.html">نمونه کار 3 ستونه</a></li>
-            <li class=""><a href="portfolio-single-item-1.html">نمونه کار تکی 1</a></li>
-            <li class=""><a href="portfolio-single-item-2.html">نمونه کار تکی 2</a></li>
-          </ul>
-        </li>
+            <div class="collapse navbar-collapse">
 
+                <ul class="nav navbar-nav">
+                    @foreach ($Menu as $menu)
+                        <?php  $hasChild = false ;?>
+                        @foreach ($Menu as $child)
+                            @if($menu->id == $child->parent)
+                                <?php $hasChild = true; ?>
+                            @endif
+                        @endforeach
+                        @if($menu-> parent == 0)
+                            <li class="dropdown">
+                                @if($hasChild)
+                                    <a href="{!! $menu->link !!}" class="dropdown-toggle" data-toggle="dropdown">{!! $menu->title !!}<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        @foreach ($Menu as $child)
+                                            @if($menu->id == $child->parent)
+                                                <li class=""><a href="{!! $child->link !!}">{!! $child->title !!}</a></li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
+                                @else
+                                    <a href="{!! $menu->link !!}" class="dropdown-toggle" data-toggle="dropdown">{!! $menu->title !!}</a>
+                                @endif
+                            </li>
+                        @endif
+                    @endforeach
 
+                </ul>
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-calendar"></i> وبلاگ <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class=""><a href="blog-listing-1.html">همه نوشته ها 1</a></li>
-            <li class=""><a href="blog-listing-2.html">همه نوشته ها 2</a></li>
-            <li class=""><a href="blog-single-post.html">نوشته تکی</a></li>
-          </ul>
-        </li>
+            </div>
 
-        <li class=""><a href="services.html"> <i class="fa fa-gear"></i> خدمات</a></li>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-group"></i> درباره ما <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class=""><a href="page-who-we-are.html">ما که هستیم</a></li>
-            <li class=""><a href="testimonials.html">از زبان مشتریان</a></li>
-            <li class=""><a href="page-simple.html">صفحه ساده</a></li>
-            <li class=""><a href="page-full.html">صفحه کامل</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown active">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-home"></i> صفحه اصلی <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li class="active"><a href="index.html">صفحه اصلی حالت 1</a></li>
-            <li class=" "><a href="index-2.html">صفحه اصلی حالت 2</a></li>
-          </ul>
-        </li>
-
-      </ul>
-
-    </div><!--/.nav-collapse -->
-
-  </div>
-</nav>
+        </div>
+    </nav>
 
 
 <!-- =========================================================================================== -->
@@ -142,11 +96,14 @@
               <div class="qt-post-meta">
                 <span><i class="fa fa-calendar fa-fw"></i>{{ $newsItem->date }}</span>
                   <?php
-                    $newsTag = $newsItem->tag;
+                    $newsTag = $newsItem->tags;
                     $newsTag = explode("-",$newsTag);
-                    echo $newsTag[0];
                   ?>
-                <span><i class="fa fa-tags fa-fw"></i> <a href="#">تجارت</a>, <a href="#">شرکت</a>, <a href="#">گرافیک</a>, <a href="#">تبلیغات</a></span>
+                <span><i class="fa fa-tags fa-fw"></i>
+                    @foreach($newsTag as $tagItem)
+                        <a href="{{action("TagsController@index",$tagItem)}}">{{$tagItem}}</a>
+                    @endforeach
+                </span>
               </div>
 
               <a class="fade qt-blog-listing-item-img" href="{{action("SingleNewsController@index",$newsItem->id)}}">
@@ -202,9 +159,9 @@
 
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-search"></i></span>
-              <input type="text" name="EMAIL" class="form-control" placeholder="Type here to search..." required>
+              <input type="text" name="EMAIL" class="form-control" placeholder="متن مورد نظر را وارد کنید" required>
               <span class="input-group-btn">
-                <button type="submit" class="btn btn-primary">Search</button>
+                <button type="submit" class="btn btn-primary">جستجو</button>
               </span>
             </div><!-- /input-group -->
 
@@ -212,31 +169,6 @@
 
           </div>
         </div>
-
-<!-- =========================================================================================== -->
-<!-- =========================== Widget Categories ============================================= -->
-<!-- =========================================================================================== -->
-
-        <div class="qt-widget-box">
-
-          <div class="qt-widget-header">
-            <h3>موضوعات</h3>
-          </div>
-
-          <div class="qt-widget-body">
-
-            <ul class="list-group">
-              <li class="list-group-item"><a href="#" >بوت استراپ&nbsp</a> <span class="badge">6</span></li>
-              <li class="list-group-item"><a href="#" >بازاریابی&nbsp</a> <span class="badge">4</span></li>
-              <li class="list-group-item"><a href="#" >توسعه&nbsp</a> <span class="badge">6</span></li>
-              <li class="list-group-item"><a href="#" >طراحی سایت&nbsp</a> <span class="badge">6</span></li>
-              <li class="list-group-item"><a href="#" >وردپرس&nbsp</a> <span class="badge">5</span></li>
-            </ul>
-
-          </div>
-
-        </div>
-
 <!-- =========================================================================================== -->
 <!-- =========================== Widget Newsletter ============================================= -->
 <!-- =========================================================================================== -->
@@ -265,25 +197,6 @@
           </div>
 
         </div>
-
-<!-- =========================================================================================== -->
-<!-- =========================== Widget Well ============================================= -->
-<!-- =========================================================================================== -->
-
-        <div class="qt-widget-box">
-
-          <div class="qt-widget-body">
-
-            <!-- Side Widget Well -->
-            <div class="well">
-              <h4>عنوان سایدبار</h4>
-              <p>لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود</p>
-            </div>
-
-          </div>
-
-        </div>
-
 <!-- =========================================================================================== -->
 <!-- =========================================================================================== -->
 <!-- =========================================================================================== -->
