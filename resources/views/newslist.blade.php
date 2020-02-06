@@ -79,7 +79,7 @@
         <div class="qt-page-header">
           <h2>لیست نوشته ها<small></small></h2>
           <ol class="breadcrumb">
-	<li class="active">همه نوشته ها 1</li>
+	<li class="active">لیست اخبار</li>
             <li><a href="{{url("/")}}">صفحه اصلی</a></li>
           </ol>
         </div>
@@ -127,10 +127,14 @@
           <div class="well well-lg qt-blog-navbar">
             <div class="row">
               <div class="col-sm-4 col-sm-push-2">
-                <a href="#" class="btn btn-primary btn-lg btn-block"> <i class="fa fa-arrow-circle-left"></i> قبلی</a>
+                @if($totalPages != $currentPage)
+                    <a href="{{action("NewsListController@index",['page'=>$currentPage+1])}}" class="btn btn-primary btn-lg btn-block"> <i class="fa fa-arrow-circle-left"></i> بعدی</a>
+                @endif
               </div>
               <div class="col-sm-4 col-sm-push-2">
-                <a href="#" class="btn btn-primary btn-lg btn-block"> بعدی <i class="fa fa-arrow-circle-right"></i></a>
+                  @if($currentPage != 1)
+                    <a href="{{action("NewsListController@index",['page'=>$currentPage-1])}}" class="btn btn-primary btn-lg btn-block"> قبلی <i class="fa fa-arrow-circle-right"></i></a>
+                  @endif
               </div>
             </div>
           </div>
