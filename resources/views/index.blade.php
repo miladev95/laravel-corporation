@@ -251,7 +251,7 @@
 
             </ul>
 
-            <a href="blog-listing-1.html" class="btn btn-primary btn-lg"><i class="fa fa-newspaper-o"></i> نمایش همه</a>
+            <a href="{!! action('NewsListController@index') !!}" class="btn btn-primary btn-lg"><i class="fa fa-newspaper-o"></i> نمایش همه</a>
 
           </div>
         </div>

@@ -15,6 +15,7 @@
 Auth::routes();
 Route::get('/', 'IndexController@index');
 Route::post('/','IndexController@joinNews');
+Route::get('/newslist','NewsListController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/gallery','GalleryController@index');
