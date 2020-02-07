@@ -239,12 +239,12 @@
             <ul class="list-group row qt-sidebar-news-listing">
                 @foreach ($news as $item_news)
                     <li class="list-group-item col-sm-4 col-md-12 qt-sidebar-news-item">
-                        <a class="fade qt-sidebar-news-item-img" href="blog-single-post.html">
+                        <a class="fade qt-sidebar-news-item-img" href="{!! action('SingleNewsController@index',['id'=>$item_news->id]) !!}">
                             <img src="{{ asset($item_news->image) }}">
                         </a>
-                        <h4><a href="{!! action('IndexController@index',$item_news->id) !!}">{{ $item_news->title }}</a></h4>
+                        <h4><a href="{!! action('SingleNewsController@index',['id'=>$item_news->id]) !!}">{{ $item_news->title }}</a></h4>
                         <p>
-                            {{ $item_news->content }}<a class="qt-sidebar-read-more" href="{!! action('IndexController@index',$item_news->id) !!}">ادامه <i class="fa fa-arrow-circle-right"></i></a>
+                            {{ $item_news->content }}<a class="qt-sidebar-read-more" href="{!! action('SingleNewsController@index',['id'=>$item_news->id]) !!}">ادامه <i class="fa fa-arrow-circle-right"></i></a>
                         </p>
                     </li>
                 @endforeach
