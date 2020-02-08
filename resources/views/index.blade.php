@@ -244,7 +244,7 @@
                         </a>
                         <h4><a href="{!! action('SingleNewsController@index',['id'=>$item_news->id]) !!}">{{ $item_news->title }}</a></h4>
                         <p>
-                            {{ $item_news->content }}<a class="qt-sidebar-read-more" href="{!! action('SingleNewsController@index',['id'=>$item_news->id]) !!}">ادامه <i class="fa fa-arrow-circle-right"></i></a>
+                            {!!  \Illuminate\Support\Str::limit($item_news->content,50,$end="...")  !!}<a class="qt-sidebar-read-more" href="{!! action('SingleNewsController@index',['id'=>$item_news->id]) !!}">ادامه <i class="fa fa-arrow-circle-right"></i></a>
                         </p>
                     </li>
                 @endforeach

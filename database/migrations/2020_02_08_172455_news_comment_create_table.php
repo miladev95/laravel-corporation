@@ -13,7 +13,16 @@ class NewsCommentCreateTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create("news_comment",function (Blueprint $table){
+           $table->bigIncrements("id");
+           $table->integer("news_id");
+           $table->string("name");
+           $table->string("email");
+           $table->text("comment");
+            $table->string("date");
+            $table->integer("comment_status");
+           $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +32,6 @@ class NewsCommentCreateTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists("news_comment");
     }
 }

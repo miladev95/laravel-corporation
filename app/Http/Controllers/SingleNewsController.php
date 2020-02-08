@@ -7,7 +7,7 @@ use App\Menu;
 use App\News;
 use App\Setting;
 use Illuminate\Http\Request;
-use Symfony\Component\Console\Helper\Table;
+use Illuminate\Support\Facades\DB;
 
 class SingleNewsController extends Controller
 {
@@ -17,8 +17,10 @@ class SingleNewsController extends Controller
         $gallery = Gallery::all()->take(3);
         if($request->has("id")){
             $id = $request->get("id");
+            $newsComment = DB::table("news_comment")
+                ->where('news_id','=',$id)->get();
             $news = News::whereId($id)->firstOrFail();
-            return view('singlenews',compact('news','Menu','setting','gallery'));
+            return view('singlenews',compact('news','Menu','setting','gallery','newsComment'));
         }else {
             return view('404',compact('Menu','setting','gallery'));
         }

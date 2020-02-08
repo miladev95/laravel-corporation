@@ -122,57 +122,21 @@
 
               <!-- Posted Comments -->
 
-              <!-- Comment -->
-              <div class="media">
-
-                <a class="pull-left" href="#">
-                  <img class="media-object" src="resources/img/team/150x150/1.jpg" width="64" alt="">
-                </a>
-
-                <div class="media-body">
-                  <h4 class="media-heading">کاربر<small></small></h4>
-                   متن آزمایشی
-                </div>
-              </div>
+                @foreach($newsComment as $commentItem)
 
               <!-- Comment -->
               <div class="media">
 
                 <a class="pull-left" href="#">
-                  <img class="media-object" src="resources/img/team/150x150/2.jpg" width="64" alt="">
+                  <img class="media-object" width="64" alt="">
                 </a>
 
                 <div class="media-body">
-                  <h4 class="media-heading">کاربر<small></small></h4>
-                 متن آزمایشی
-                  <!-- Nested Comment -->
-                  <div class="media">
-                    <a class="pull-left" href="#">
-                      <img class="media-object" src="resources/img/team/150x150/3.jpg" width="64" alt="">
-                    </a>
-                    <div class="media-body">
-                      <h4 class="media-heading">مدیر سایت<small></small></h4>
-                      با تشکر
-                    </div>
-                  </div>
-                  <!-- End Nested Comment -->
-
-                </div>
-
-              </div>
-
-              <!-- Comment -->
-              <div class="media">
-
-                <a class="pull-left" href="#">
-                  <img class="media-object" src="resources/img/team/150x150/4.jpg" width="64" alt="">
-                </a>
-
-                <div class="media-body">
-                  <h4 class="media-heading">کاربر<small></small></h4>
-                   متن آزمایشی
+                  <h4 class="media-heading">{{ $commentItem->date }} -- {{ $commentItem->name }}  </h4>
+                   {{$commentItem->comment}}
                 </div>
               </div>
+               @endforeach
 
             </div>
 
