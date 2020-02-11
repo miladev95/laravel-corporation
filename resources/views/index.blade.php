@@ -1,6 +1,11 @@
 @extends('layouts.main')
 
 @section('content')
+    @if (session('message'))
+        <div class="alert {{ session('alert-style') }} text-center">
+            {{ session('message') }}
+        </div>
+    @endif
 <nav class="navbar navbar-default main-navigation qt-box-shadow">
   <div class="container">
 
@@ -209,19 +214,18 @@
 
           <div class="qt-widget-body">
             <p>برای دریافت آخرین اخبار سایت ابتدا ایمیل خود را وارد و روی گزینه عضویت کلیک کنید</p>
-
-            <form role="form" method="post">
-                <input type="hidden" name="_token" value="{!! csrf_token() !!}">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
-              <input type="text" id="email" name="EMAIl" class="form-control" placeholder="ایمیل خود را وارد کنید" required>
-              <span class="input-group-btn">
-                <button type="submit" class="btn btn-primary">عضویت</button>
-              </span>
-            </div><!-- /input-group -->
-
-            </form>
-
+            <table>
+                <form role="form" method="post">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="ایمیل خود را وارد کنید" required>
+                  <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primary">عضویت</button>
+                  </span>
+                </div>
+                </form>
+            </table>
           </div>
 
         </div>

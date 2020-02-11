@@ -1,9 +1,9 @@
 ﻿@extends('layouts.main')
 
 @section('content')
-    @if (!empty($status))
+    @if (session('status'))
         <div class="alert alert-success text-center">
-            {{ $status }}
+            {{ session('status') }}
         </div>
     @endif
     <nav class="navbar navbar-default main-navigation qt-box-shadow">

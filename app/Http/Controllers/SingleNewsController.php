@@ -42,19 +42,6 @@ class SingleNewsController extends Controller
             'date' => $date,
         ));
         $newsComment->save();
-        $Menu = Menu::all();
-        $setting = Setting::all();
-        $gallery = Gallery::all()->take(3);
-        $status = 'نظر شما با موفقیت ثبت شد با تشکر';
-        if($request->has("id")){
-            $id = $request->get("id");
-            $newsComment = DB::table("news_comment")
-                ->where('news_id','=',$id)
-                ->where('comment_status','>',0)->get();
-            $news = News::whereId($id)->firstOrFail();
-            return view('singlenews',compact('news','Menu','setting','gallery','newsComment','status'));
-        }else {
-            return view('404',compact('Menu','setting','gallery'));
-        }
+        return redirect(action('SingleNewsController@index',['id'=>$request->id]))->with('status','نظر شما با موفقیت ثبت شد با تشکر');
     }
 }
