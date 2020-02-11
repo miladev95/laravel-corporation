@@ -15,12 +15,15 @@ class NewsCommentCreateTable extends Migration
     {
         Schema::create("news_comment",function (Blueprint $table){
            $table->bigIncrements("id");
-           $table->integer("news_id");
            $table->string("name");
            $table->string("email");
            $table->text("comment");
-            $table->string("date");
-            $table->integer("comment_status");
+           $table->string("date");
+           $table->integer("comment_status");
+           $table->foreign('news_id')
+                ->references('id')->on('news')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
            $table->timestamps();
         });
     }
