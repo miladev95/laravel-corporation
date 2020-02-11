@@ -1,6 +1,11 @@
 ﻿@extends('layouts.main')
 
 @section('content')
+    @if (!empty($status))
+        <div class="alert alert-success text-center">
+            {{ $status }}
+        </div>
+    @endif
     <nav class="navbar navbar-default main-navigation qt-box-shadow">
         <div class="container">
 
@@ -111,13 +116,18 @@
 
               <h4>گذاشتن نظر</h4>
 
-              <form role="form">
-                <div class="form-group">
-                  <textarea class="form-control" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">ارسال</button>
-              </form>
-
+              <table>
+                  <form method="post">
+                    <input type="text" name="name" class="form-control" placeholder="نام خود را وارد کنید" required>
+                    <input type="email" name="email" class="form-control" placeholder="ایمیل خود را وارد کنید" required>
+                    <div class="form-group">
+                      <textarea class="form-control" name="comment" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">ارسال</button>
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+                    <input type="hidden" name="id" value="{{ $news->id }}"/>
+                  </form>
+              </table>
               <hr>
 
               <!-- Posted Comments -->

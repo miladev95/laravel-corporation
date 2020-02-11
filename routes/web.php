@@ -17,6 +17,7 @@ Route::get('/', 'IndexController@index');
 Route::post('/','IndexController@joinNews');
 Route::get('/newslist','NewsListController@index');
 Route::get('/singlenews','SingleNewsController@index');
+Route::post('/singlenews','SingleNewsController@addComment');
 Route::get('/tags','TagsController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
