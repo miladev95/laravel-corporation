@@ -5,18 +5,18 @@
     </div>
 
     <div class="qt-widget-body">
-
-        <form>
-
+        <table>
+        <form role="form" action="{{ url('/search')  }}"  method="post">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" name="EMAIL" class="form-control" placeholder="متن مورد نظر را وارد کنید" required>
+                <input type="text" name="search" class="form-control" placeholder="متن مورد نظر را وارد کنید" required>
                 <span class="input-group-btn">
                 <button type="submit" class="btn btn-primary">جستجو</button>
               </span>
-            </div><!-- /input-group -->
-
+            </div>
         </form>
+        </table>
 
     </div>
 </div>

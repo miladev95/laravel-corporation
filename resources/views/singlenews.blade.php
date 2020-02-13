@@ -80,7 +80,13 @@
     <div class="row">
 
       <div class="col-md-8">
-
+          <div class="qt-page-header">
+              <h2>اخبار<small></small></h2>
+              <ol class="breadcrumb">
+                  <li class="active">اخبار</li>
+                  <li><a href="{{url("/")}}">صفحه اصلی</a></li>
+              </ol>
+          </div>
         <div class="qt-page-header">
           <h2>{{$news->title}}<small> </small></h2>
 

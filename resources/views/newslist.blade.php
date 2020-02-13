@@ -111,7 +111,7 @@
               </a>
 
               <p>
-               {{ $newsItem->content }}<a class="qt-sidebar-read-more" href="{{action("SingleNewsController@index",$newsItem->id)}}">ادامه <i class="fa  fa-arrow-circle-right"></i></a>
+                  {!!  \Illuminate\Support\Str::limit($newsItem->content,100,$end="...")  !!}<a class="qt-sidebar-read-more" href="{{action("SingleNewsController@index",$newsItem->id)}}">ادامه <i class="fa  fa-arrow-circle-right"></i></a>
               </p>
 
             </li>
