@@ -4,13 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Posts extends Model
+class PostsComment extends Model
 {
-    protected $table = "posts";
+    protected $table = "posts_comment";
     protected $guarded = ['id'];
 
     public function PostsComment(){
-        return $this->belongsToMany("App\PostsComment")->withTimestamps();
+        return $this->belongsTo("App\Posts")->withTimestamps();
     }
-
 }
