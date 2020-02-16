@@ -124,27 +124,27 @@
                             @foreach($posts as $postItem)
                                 <li class="col-md-12 qt-blog-listing-item">
 
-                                    <h3><a href="{{action('SinglePostController@index',$postItem->id)}}">{{$postItem->title}}</a></h3>
+                                    <h3><a href="{{action('SinglePostController@index',['id'=>$postItem->id])}}">{{$postItem->title}}</a></h3>
 
                                     <div class="qt-post-meta">
                                         <span><i class="fa fa-calendar fa-fw"></i>{{ $postItem->date }}</span>
                                         <?php
-                                        $newsTag = $postItem->tags;
-                                        $newsTag = explode("-",$newsTag);
+                                        $postTag = $postItem->tags;
+                                        $postTag = explode("-",$postTag);
                                         ?>
                                         <span><i class="fa fa-tags fa-fw"></i>
-                                             @foreach($newsTag as $tagItem)
+                                             @foreach($postTag as $tagItem)
                                                 <a href="{{action("TagsController@index",$tagItem)}}">{{$tagItem}}</a>
                                             @endforeach
                                         </span>
                                     </div>
 
-                                    <a class="fade qt-blog-listing-item-img" href="{{action("SinglePostController@index",$postItem->id)}}">
+                                    <a class="fade qt-blog-listing-item-img" href="{{action("SinglePostController@index",['id'=>$postItem->id])}}">
                                         <img src="{{ $postItem->image }}" alt="A good news item title for the blog">
                                     </a>
 
                                     <p>
-                                        {!!  \Illuminate\Support\Str::limit($postItem->content,100,$end="...")  !!}<a class="qt-sidebar-read-more" href="{{action("SinglePostController@index",$postItem->id)}}">ادامه <i class="fa  fa-arrow-circle-right"></i></a>
+                                        {!!  \Illuminate\Support\Str::limit($postItem->content,100,$end="...")  !!}<a class="qt-sidebar-read-more" href="{{action("SinglePostController@index",['id'=>$postItem->id])}}">ادامه <i class="fa  fa-arrow-circle-right"></i></a>
                                     </p>
 
                                 </li>

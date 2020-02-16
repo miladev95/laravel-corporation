@@ -17,11 +17,11 @@ class SinglePostController extends Controller
         $gallery = Gallery::all()->take(3);
         if($request->has("id")){
             $id = $request->get("id");
-            $newsComment = DB::table("news_comment")
-                ->where('news_id','=',$id)
+            $postComment = DB::table("posts_comment")
+                ->where('post_id','=',$id)
                 ->where('comment_status','>',0)->get();
             $post = News::whereId($id)->firstOrFail();
-            return view('singlenews',compact('news','Menu','setting','gallery','newsComment'));
+            return view('singlenews',compact('post','Menu','setting','gallery','postComment'));
         }else {
             return view('404',compact('Menu','setting','gallery'));
         }

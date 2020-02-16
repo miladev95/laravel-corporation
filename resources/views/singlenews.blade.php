@@ -88,17 +88,17 @@
               </ol>
           </div>
         <div class="qt-page-header">
-          <h2>{{$news->title}}<small> </small></h2>
+          <h2>{{$post->title}}<small> </small></h2>
 
         </div>
 
         <div class="qt-post-meta">
             <?php
-            $newsTag = $news->tags;
-            $newsTag = explode("-",$newsTag);
+            $postTag = $post->tags;
+            $postTag = explode("-",$postTag);
             ?>
             <span><i class="fa fa-tags fa-fw"></i>
-            @foreach($newsTag as $tagItem)
+            @foreach($postTag as $tagItem)
                     <a href="{{action("TagsController@index",$tagItem)}}">{{$tagItem}}</a>
             @endforeach
             </span>
@@ -106,7 +106,7 @@
 
         <div class="qt-page-body">
 
-            {!!  $news->content !!}
+            {!!  $post->content !!}
 
 
           <section class="qt-comments-wrapper">
@@ -135,14 +135,14 @@
                     </div>
                     <button type="submit" class="btn btn-primary">ارسال</button>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
-                    <input type="hidden" name="id" value="{{ $news->id }}"/>
+                    <input type="hidden" name="id" value="{{ $post->id }}"/>
                   </form>
               </table>
               <hr>
 
               <!-- Posted Comments -->
 
-                @foreach($newsComment as $commentItem)
+                @foreach($postComment as $commentItem)
 
               <!-- Comment -->
               <div class="media">
