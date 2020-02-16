@@ -24,7 +24,7 @@ class SinglePostController extends Controller
                 ->where('post_id','=',$id)
                 ->where('comment_status','>',0)->get();
             $post = News::whereId($id)->firstOrFail();
-            return view('singlenews',compact('post','Menu','setting','gallery','postComment'));
+            return view('singlepost',compact('post','Menu','setting','gallery','postComment'));
         }else {
             return view('404',compact('Menu','setting','gallery'));
         }
