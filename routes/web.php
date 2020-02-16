@@ -20,6 +20,7 @@ Route::post('/singlenews','SingleNewsController@addComment');
 Route::get('/tags','TagsController@index');
 Route::post('/joinnews','JoinNewsController@create');
 Route::post('/search','SearchController@search');
+Route::get('singlepost','SinglePostController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/gallery','GalleryController@index');
