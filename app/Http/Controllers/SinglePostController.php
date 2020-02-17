@@ -7,6 +7,7 @@ use App\Http\Requests\AddCommentRequest;
 use App\Menu;
 use App\News;
 use App\NewsComment;
+use App\Posts;
 use App\PostsComment;
 use App\Setting;
 use Illuminate\Http\Request;
@@ -23,7 +24,7 @@ class SinglePostController extends Controller
             $postComment = DB::table("posts_comment")
                 ->where('post_id','=',$id)
                 ->where('comment_status','>',0)->get();
-            $post = News::whereId($id)->firstOrFail();
+            $post = Posts::whereId($id)->firstOrFail();
             return view('singlepost',compact('post','Menu','setting','gallery','postComment'));
         }else {
             return view('404',compact('Menu','setting','gallery'));

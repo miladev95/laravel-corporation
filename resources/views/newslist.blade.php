@@ -57,7 +57,7 @@
                   ?>
                 <span><i class="fa fa-tags fa-fw"></i>
                     @foreach($newsTag as $tagItem)
-                        <a href="{{action("TagsController@index",$tagItem)}}">{{$tagItem}}</a>
+                        <a href="{{action("TagsController@index",['tag'=>$tagItem])}}">{{$tagItem}}</a>
                     @endforeach
                 </span>
               </div>

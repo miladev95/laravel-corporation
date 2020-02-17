@@ -45,7 +45,7 @@
 
 
                         <ul class="list-unstyled row qt-blog-listing">
-                            @foreach($news as $newsItem)
+                            @foreach($newsTag as $newsItem)
                                 <li class="col-md-12 qt-blog-listing-item">
 
                                     <h3><a href="{{action('SingleNewsController@index',$newsItem->id)}}">{{$newsItem->title}}</a></h3>
@@ -53,13 +53,13 @@
                                     <div class="qt-post-meta">
                                         <span><i class="fa fa-calendar fa-fw"></i>{{ $newsItem->date }}</span>
                                         <?php
-                                        $newsTag = $newsItem->tags;
-                                        $newsTag = explode("-",$newsTag);
+                                        $newsTags = $newsItem->tags;
+                                        $newsTags = explode("-",$newsTags);
                                         ?>
                                         <span><i class="fa fa-tags fa-fw"></i>
-                                             @foreach($newsTag as $tagItem)
+                                             @foreach($newsTags as $tagItem)
                                                 <a href="{{action("TagsController@index",['tag'=>$tagItem])}}">{{$tagItem}}</a>
-                                            @endforeach
+                                             @endforeach
                                         </span>
                                     </div>
 
@@ -78,7 +78,7 @@
                         </ul>
 
                         <ul class="list-unstyled row qt-blog-listing">
-                            @foreach($posts as $postItem)
+                            @foreach($postTag as $postItem)
                                 <li class="col-md-12 qt-blog-listing-item">
 
                                     <h3><a href="{{action('SinglePostController@index',['id'=>$postItem->id])}}">{{$postItem->title}}</a></h3>
@@ -86,11 +86,11 @@
                                     <div class="qt-post-meta">
                                         <span><i class="fa fa-calendar fa-fw"></i>{{ $postItem->date }}</span>
                                         <?php
-                                        $postTag = $postItem->tags;
-                                        $postTag = explode("-",$postTag);
+                                        $postTags = $postItem->tags;
+                                        $postTags = explode("-",$postTags);
                                         ?>
                                         <span><i class="fa fa-tags fa-fw"></i>
-                                             @foreach($postTag as $tagItem)
+                                             @foreach($postTags as $tagItem)
                                                 <a href="{{action("TagsController@index",['tag'=>$tagItem])}}">{{$tagItem}}</a>
                                             @endforeach
                                         </span>
@@ -112,22 +112,22 @@
 
                         <!-- Pager for the blog archive -->
 
-                        <hr>
+{{--                        <hr>--}}
 
-                        <div class="well well-lg qt-blog-navbar">
-                            <div class="row">
-                                <div class="col-sm-4 col-sm-push-2">
-                                    @if($totalPages != $currentPage)
-                                        <a href="{{action("SearchController@search",['page'=>$currentPage+1])}}" class="btn btn-primary btn-lg btn-block"> <i class="fa fa-arrow-circle-left"></i> بعدی</a>
-                                    @endif
-                                </div>
-                                <div class="col-sm-4 col-sm-push-2">
-                                    @if($currentPage != 1)
-                                        <a href="{{action("SearchController@search",['page'=>$currentPage-1])}}" class="btn btn-primary btn-lg btn-block"> قبلی <i class="fa fa-arrow-circle-right"></i></a>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
+{{--                        <div class="well well-lg qt-blog-navbar">--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="col-sm-4 col-sm-push-2">--}}
+{{--                                    @if($totalPages != $currentPage)--}}
+{{--                                        <a href="{{action("SearchController@search",['page'=>$currentPage+1])}}" class="btn btn-primary btn-lg btn-block"> <i class="fa fa-arrow-circle-left"></i> بعدی</a>--}}
+{{--                                    @endif--}}
+{{--                                </div>--}}
+{{--                                <div class="col-sm-4 col-sm-push-2">--}}
+{{--                                    @if($currentPage != 1)--}}
+{{--                                        <a href="{{acti5on("SearchController@search",['page'=>$currentPage-1])}}" class="btn btn-primary btn-lg btn-block"> قبلی <i class="fa fa-arrow-circle-right"></i></a>--}}
+{{--                                    @endif--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
                         <!-- End: Pager -->
 
