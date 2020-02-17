@@ -26,16 +26,16 @@
                     @if($menu-> parent == 0)
                         <li class="dropdown">
                             @if($hasChild)
-                                <a href="{!! $menu->link !!}" class="dropdown-toggle" data-toggle="dropdown">{!! $menu->title !!}<b class="caret"></b></a>
+                                <a href="{{action("TagsController@index",['tag'=>$menu->title])}}" class="dropdown-toggle" data-toggle="dropdown">{!! $menu->title !!}<b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     @foreach ($Menu as $child)
                                         @if($menu->id == $child->parent)
-                                            <li class=""><a href="{!! $child->link !!}">{!! $child->title !!}</a></li>
+                                            <li class=""><a href="{{action("TagsController@index",['tag'=>$child->title])}}">{!! $child->title !!}</a></li>
                                         @endif
                                     @endforeach
                                 </ul>
                             @else
-                                <a href="{!! $menu->link !!}" class="dropdown-toggle" data-toggle="dropdown">{!! $menu->title !!}</a>
+                                <a href="{{action("TagsController@index",['tag'=>$menu->title])}}" class="dropdown-toggle" data-toggle="dropdown">{!! $menu->title !!}</a>
                             @endif
                         </li>
                     @endif
