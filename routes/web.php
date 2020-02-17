@@ -21,6 +21,7 @@ Route::get('/tags','TagsController@index');
 Route::post('/joinnews','JoinNewsController@create');
 Route::post('/search','SearchController@search');
 Route::get('singlepost','SinglePostController@index');
+Route::get('notification','NotificationController@index');
 Route::post('singlepost','SinglePostController@addComment');
 
 Route::get('/home', 'HomeController@index')->name('home');

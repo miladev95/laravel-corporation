@@ -132,7 +132,7 @@
           <p class="qt-clean-bottom">{!! $notification->brief !!}</p>
         </div>
         <div class="col-md-4">
-          <a class="btn btn-lg btn-primary btn-block" href="#">اطلاعیه <i class="fa fa-arrow-circle-right"></i> </a>
+          <a class="btn btn-lg btn-primary btn-block" href="{!! action('NotificationController@index')!!}">اطلاعیه <i class="fa fa-arrow-circle-right"></i> </a>
         </div>
       </div>
     </div>
