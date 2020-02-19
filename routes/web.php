@@ -23,8 +23,9 @@ Route::post('/search','SearchController@search');
 Route::get('singlepost','SinglePostController@index');
 Route::get('notification','NotificationController@index');
 Route::post('singlepost','SinglePostController@addComment');
+Route::get('/gallery','GalleryController@index');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/gallery','GalleryController@index');
 Route::get('/home/setting', 'SettingController@index');
 Route::post('/home/setting', 'SettingController@update');
