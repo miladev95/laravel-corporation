@@ -25,8 +25,4 @@
             <!-- End Right content here -->
             <!-- ============================================================== -->
 
-
-            @include('admin.menu-side')
-
-
 @endsection

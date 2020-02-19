@@ -195,11 +195,11 @@
                                   <li class="text-muted menu-title">دسته بندی ها</li>
 
                                     <li>
-                                        <a href="{!! action('HomeController@index') !!}" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> داشبورد </span> </a>
+                                        <a href="{!! action('Admin\HomeController@index') !!}" class="waves-effect"><i class="zmdi zmdi-view-dashboard"></i> <span> داشبورد </span> </a>
                                     </li>
 
                                     <li>
-                                        <a href="typography.html" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> نوشته ها </span> </a>
+                                        <a href="{!! action('Admin\AdminGalleryController@index') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> گالری </span> </a>
                                     </li>
 
                                     <li class="has_sub">
@@ -300,7 +300,7 @@
                                     </li>
 
                                     <li>
-                                        <a href="{!! action('SettingController@index') !!}" class="waves-effect active"><i class="zmdi zmdi-settings"></i><span>تنظیمات عمومی</span></a>
+                                        <a href="{!! action('Admin\SettingController@index') !!}" class="waves-effect active"><i class="zmdi zmdi-settings"></i><span>تنظیمات عمومی</span></a>
                                     </li>
 
                                 </ul>

@@ -25,7 +25,11 @@ Route::get('notification','NotificationController@index');
 Route::post('singlepost','SinglePostController@addComment');
 Route::get('/gallery','GalleryController@index');
 
+Route::group(array('prefix'=>'admin','namespace'=>'Admin'),function (){
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/setting', 'SettingController@index');
+    Route::post('/setting', 'SettingController@update');
+    Route::get('/gallery','AdminGalleryController@index');
+});
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home/setting', 'SettingController@index');
-Route::post('/home/setting', 'SettingController@update');
+
