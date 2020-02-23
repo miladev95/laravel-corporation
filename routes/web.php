@@ -29,7 +29,8 @@ Route::group(array('prefix'=>'admin','namespace'=>'Admin'),function (){
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/setting', 'SettingController@index');
     Route::post('/setting', 'SettingController@update');
-    Route::get('/gallery','AdminGalleryController@index');
+    Route::get('/gallery','GalleryController@index');
+    Route::get('/menu','MenuController@index');
 });
 
 

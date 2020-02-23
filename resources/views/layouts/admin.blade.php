@@ -199,9 +199,11 @@
                                     </li>
 
                                     <li>
-                                        <a href="{!! action('Admin\AdminGalleryController@index') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> گالری </span> </a>
+                                        <a href="{!! action('Admin\GalleryController@index') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> گالری </span> </a>
                                     </li>
-
+                                    <li>
+                                        <a href="{!! action('Admin\MenuController@index') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> منو </span> </a>
+                                    </li>
                                     <li class="has_sub">
                                         <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> رابط کاربی </span> <span class="menu-arrow"></span></a>
                                         <ul class="list-unstyled">

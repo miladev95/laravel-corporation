@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
-class AdminGalleryController extends Controller
+class GalleryController extends Controller
 {
     public function index(Request $request)
     {
