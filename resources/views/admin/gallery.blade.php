@@ -2,6 +2,11 @@
 
 @section('content')
 
+    @isset ($message)
+        <div class="alert alert-success text-center">
+            {{ $message }}
+        </div>
+    @endisset
 
 
     <!-- ============================================================== -->
@@ -19,12 +24,12 @@
                             <i class="zmdi zmdi-more-vert"></i>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">حذف</a></li>
+                            <li><a href="{{ action("Admin\AdminGalleryController@index",['id'=>$galleryItem->id]) }}">حذف</a></li>
                         </ul>
                     </div>
 
                     <h4 class="header-title m-t-0 m-b-30">{{$galleryItem->title}}</h4>
-                    <img src="{!! $galleryItem->image!!}">
+                    <img src="{{ asset($galleryItem->image)}}" width="200px" height="200px">
 
                 </div>
             </div>
