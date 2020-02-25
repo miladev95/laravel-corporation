@@ -24,7 +24,7 @@
                             <i class="zmdi zmdi-more-vert"></i>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ action("Admin\GalleryController@index",['id'=>$galleryItem->id]) }}">حذف</a></li>
+                            <li><a href="{{ action("Admin\GalleryController@index",['id'=>$galleryItem->id,'image'=>$galleryItem->image]) }}">حذف</a></li>
                         </ul>
                     </div>
 

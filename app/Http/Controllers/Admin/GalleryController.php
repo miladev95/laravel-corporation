@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Gallery;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -12,9 +13,16 @@ class GalleryController extends Controller
     public function index(Request $request)
     {
         if ($request->has("id")) {
-            DB::table('gallery')->delete($request->get("id"));
+            $image = $request->get('image');
+            $message = "";
+            if(File::exists($image)) {
+                File::delete($image);
+                DB::table('gallery')->delete($request->get("id"));
+                $message = 'عکس مورد نظر با موفقیت حذف شد';
+            }else {
+                $message = 'خطایی رخ داده است لطفا دوباره تلاش نمایید';
+            }
             $gallery = Gallery::all();
-            $message = 'عکس مورد نظر با موفقیت حذف شد';
             return view('admin.gallery', compact('gallery', 'message'));
         } else {
             $gallery = Gallery::all();
