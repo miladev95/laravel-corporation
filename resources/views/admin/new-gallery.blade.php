@@ -7,9 +7,9 @@
 
 @section('content')
 
-    @isset ($message)
+    @if(session('status'))
         <div class="alert alert-success text-center">
-            {{ $message }}
+            {{ session('status') }}
         </div>
     @endisset
 
@@ -18,14 +18,14 @@
     <!-- ============================================================== -->
     <div class="content-page">
         <div class="content">
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card-box">
                             <h4 class="header-title m-t-0 m-b-30">آپلود عکس</h4>
 
-                            <input type="file" name="file" class="dropify" data-height="300"/>
+                            <input type="file" id="image" name="image" class="dropify" data-height="300"/>
                         </div>
                     </div><!-- end col -->
                 </div>

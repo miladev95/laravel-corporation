@@ -22,11 +22,28 @@ class GalleryController extends Controller
         }
     }
 
-    public function create(){
+    public function create()
+    {
         return view('admin.new-gallery');
     }
 
-    public function upload(Request $request){
-        dd($request->get("title"));
+    public function upload(Request $request)
+    {
+        $this->validate($request, [
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $name = 'img/gallery/'.time() . '.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('img/gallery');
+            $image->move($destinationPath,$name);
+            $galleryObject = new Gallery(array(
+                'image'=>$name,
+                'title'=>$request->get('title'),
+            ));
+            $galleryObject->save();
+            return redirect('/admin/newgallery')->with('status','با موفقیت انجام شد');
+        }
+        return view('admin.new-gallery');
     }
 }
