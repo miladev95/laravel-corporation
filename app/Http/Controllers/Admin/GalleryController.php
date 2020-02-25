@@ -21,4 +21,12 @@ class GalleryController extends Controller
             return view('admin.gallery', compact('gallery'));
         }
     }
+
+    public function create(){
+        return view('admin.new-gallery');
+    }
+
+    public function upload(Request $request){
+        dd($request->get("title"));
+    }
 }

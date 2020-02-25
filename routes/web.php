@@ -24,12 +24,15 @@ Route::get('singlepost','SinglePostController@index');
 Route::get('notification','NotificationController@index');
 Route::post('singlepost','SinglePostController@addComment');
 Route::get('/gallery','GalleryController@index');
-
+Route::get('/admin','Admin\HomeController@index');
 Route::group(array('prefix'=>'admin','namespace'=>'Admin'),function (){
     Route::get('/home', 'HomeController@index')->name('home');
+
     Route::get('/setting', 'SettingController@index');
     Route::post('/setting', 'SettingController@update');
     Route::get('/gallery','GalleryController@index');
+    Route::get('/newgallery','GalleryController@create');
+    Route::post('/newgallery','GalleryController@upload');
     Route::get('/menu','MenuController@index');
 });
 

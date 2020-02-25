@@ -26,7 +26,7 @@
 
     <!--Morris Chart CSS -->
     <link rel="stylesheet" href="{{ asset('plugins/morris/morris.css') }}">
-
+    <link href="assets/plugins/fileuploads/css/dropify.min.css" rel="stylesheet" type="text/css" />
     <!-- App css -->
     <link href="{{ asset('css/bootstrap-rtl.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('css/core.css') }}" rel="stylesheet" type="text/css" />
@@ -44,6 +44,8 @@
     <![endif]-->
 
     <script src="{{ asset('js/modernizr.min.js') }}"></script>
+
+    @yield('custom_head')
 
 </head>
 <body class="fixed-left">
@@ -202,7 +204,7 @@
                                         <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> گالری </span> <span class="menu-arrow"></span></a>
                                         <ul class="list-unstyled">
                                             <li><a href="{!! action('Admin\GalleryController@index') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> نمایش عکس ها </span> </a></li>
-                                            <li><a href="{!! action('Admin\GalleryController@index') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> افزودن عکس </span> </a></li>
+                                            <li><a href="{!! action('Admin\GalleryController@create') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> افزودن عکس </span> </a></li>
                                         </ul>
                                     </li>
                                     <li>
@@ -366,5 +368,9 @@
     <!-- App js -->
     <script src="{{ asset('js/jquery.core.js') }}"></script>
     <script src="{{ asset('js/jquery.app.js') }}"></script>
+
+    @yield('custom_scripts')
+
+
 </body>
 </html>

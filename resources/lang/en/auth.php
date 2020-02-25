@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'failed' => 'آدرس ایمیل یا رمز عبور اشتباه می باشد.',
+    'throttle' => 'تعداد ورود بیش از حد مجاز. لطفا دقایقی دیگر امتحان کنید :seconds seconds.',
 
 ];
