@@ -12,4 +12,16 @@ class MenuController extends Controller
         $menu = Menu::all();
         return view('admin.menu',compact('menu'));
     }
+
+    public function create(Request $request){
+
+    }
+
+    public function destroy(Request $request){
+
+    }
+
+    public function update(Request $request){
+
+    }
 }

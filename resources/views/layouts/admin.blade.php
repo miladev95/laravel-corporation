@@ -203,12 +203,15 @@
                                     <li>
                                         <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> گالری </span> <span class="menu-arrow"></span></a>
                                         <ul class="list-unstyled">
-                                            <li><a href="{!! action('Admin\GalleryController@index') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> نمایش عکس ها </span> </a></li>
+                                            <li><a href="{!! action('Admin\GalleryController@index') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> مشاهده عکس ها </span> </a></li>
                                             <li><a href="{!! action('Admin\GalleryController@create') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> افزودن عکس </span> </a></li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="{!! action('Admin\MenuController@index') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> منو </span> </a>
+                                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> منو </span><span class="menu-arrow"></span> </a>
+                                        <ul class="list-unstyled">
+                                            <li><a href="{!! action('Admin\MenuController@index') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> مشاهده منو </span> </a></li>
+                                        </ul>
                                     </li>
                                     <li class="has_sub">
                                         <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> رابط کاربی </span> <span class="menu-arrow"></span></a>
