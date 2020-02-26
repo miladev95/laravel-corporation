@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Menu;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class MenuController extends Controller
 {

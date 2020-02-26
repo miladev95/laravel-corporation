@@ -208,10 +208,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> منو </span><span class="menu-arrow"></span> </a>
-                                        <ul class="list-unstyled">
-                                            <li><a href="{!! action('Admin\MenuController@index') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> مشاهده منو </span> </a></li>
-                                        </ul>
+                                        <a href="{!! action('Admin\MenuController@index') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> منو </span> </a>
                                     </li>
                                     <li class="has_sub">
                                         <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> رابط کاربی </span> <span class="menu-arrow"></span></a>
