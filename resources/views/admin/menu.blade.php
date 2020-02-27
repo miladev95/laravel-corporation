@@ -38,8 +38,18 @@
                                 <td>{{$menuItem->icon}}</td>
                                 <td>{{$menuItem->link}}</td>
                                 <td class="actions">
-                                    <a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
-                                    <a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                                    <form action="/admin/menu/?id={{$menuItem->id}}" method="post">
+                                        @method('PATCH')
+                                        @csrf
+                                        <button class='btn btn-primary button-next' type="submit">ویرایش <i
+                                                class="fa fa-pencil"></i></button>
+                                    </form>
+                                    <form action="/admin/menu/?id={{$menuItem->id}}" method="post">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button class='btn btn-primary button-next' id="delete" type="submit">حذف <i
+                                                class="fa fa-trash-o"></i></button>
+                                    </form>
                                 </td>
                             </tr>
                         @else
@@ -68,11 +78,20 @@
         © xAdmin 2019
     </footer>
 
-    </div>
-
 
     <!-- ============================================================== -->
     <!-- End Right content here -->
     <!-- ============================================================== -->
 
+@endsection
+@section('custom_scripts')
+    <script>
+        document
+            .getElementById("delete")
+            .addEventListener("click", function( e ){ //e => event
+                if( ! confirm("آیا مطمئن هستید؟") ){
+                    e.preventDefault();
+                }
+            });
+    </script>
 @endsection

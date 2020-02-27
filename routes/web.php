@@ -34,6 +34,8 @@ Route::group(array('prefix'=>'admin','namespace'=>'Admin'),function (){
     Route::get('/newgallery','GalleryController@create');
     Route::post('/newgallery','GalleryController@upload');
     Route::get('/menu','MenuController@index');
+    Route::delete('/menu','MenuController@destroy');
+    Route::patch('/menu','MenuController@update');
 });
 
 
