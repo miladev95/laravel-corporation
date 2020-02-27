@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Menu;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
 
 class MenuController extends Controller
 {
@@ -24,9 +23,11 @@ class MenuController extends Controller
 
     public function destroy(Request $request){
         if($request->has("id")){
-            dd($request->get("id") . " this is destroy");
+            $menu = Menu::find($request->get("id"));
+            $menu->delete();
+            return redirect('/admin/menu')->with('status','با موفقیت حذف شد');
         }else {
-            dd("no id");
+            return redirect('/admin/menu')->with('status','منوی مورد یافت نشد');
         }
     }
 
