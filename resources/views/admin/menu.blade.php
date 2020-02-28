@@ -40,9 +40,7 @@
                                 @endif
                                 <td>{{$menuItem->link}}</td>
                                 <td class="actions">
-                                    <form action="/admin/menu/?id={{$menuItem->id}}" method="post">
-                                        @method('PATCH')
-                                        @csrf
+                                    <form action="/admin/editmenu/?id={{$menuItem->id}}">
                                         <button class='btn btn-primary button-next' type="submit">ویرایش <i
                                                 class="fa fa-pencil"></i></button>
                                     </form>
@@ -62,8 +60,7 @@
                                 <td>{{$menuItem->image}}</td>
                                 <td>{{$menuItem->link}}</td>
                                 <td class="actions">
-                                    <form action="/admin/menu/?id={{$menuItem->id}}" method="post">
-                                        @method('PATCH')
+                                    <form action="/admin/editmenu/?id={{$menuItem->id}}">
                                         @csrf
                                         <button class='btn btn-primary button-next' type="submit">ویرایش <i
                                                 class="fa fa-pencil"></i></button>

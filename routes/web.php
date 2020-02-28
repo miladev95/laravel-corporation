@@ -39,6 +39,8 @@ Route::group(array('prefix'=>'admin','namespace'=>'Admin'),function (){
     Route::post('/menu','MenuController@store');
     Route::get('/addmenu','AddMenuController@index');
     Route::post('/addmenu','AddMenuController@store');
+    Route::get('/editmenu','EditMenuController@index');
+    Route::post('/editmenu','AddMenuController@edit');
 });
 
 
