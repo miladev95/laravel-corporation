@@ -36,6 +36,9 @@ Route::group(array('prefix'=>'admin','namespace'=>'Admin'),function (){
     Route::get('/menu','MenuController@index');
     Route::delete('/menu','MenuController@destroy');
     Route::patch('/menu','MenuController@update');
+    Route::post('/menu','MenuController@store');
+    Route::get('/addmenu','AddMenuController@index');
+    Route::post('/addmenu','AddMenuController@store');
 });
 
 

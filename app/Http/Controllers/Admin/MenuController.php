@@ -17,10 +17,6 @@ class MenuController extends Controller
         return view('admin.menu',compact('menu'));
     }
 
-    public function create(Request $request){
-
-    }
-
     public function destroy(Request $request){
         if($request->has("id")){
             $menu = Menu::find($request->get("id"));
@@ -32,6 +28,8 @@ class MenuController extends Controller
     }
 
     public function update(Request $request){
+        $parents = Menu::all()->where('parent','=','0');
+        dd($parents);
         if($request->has("id")){
             dd($request->get("id") . " this is patch");
         }else {
