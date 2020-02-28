@@ -22,7 +22,6 @@
                         <th>عنوان</th>
                         <th>منوی پدر</th>
                         <th>تصویر</th>
-                        <th>ایکن</th>
                         <th>لینک</th>
                         <th>عملیات</th>
                     </tr>
@@ -34,8 +33,11 @@
                             <tr class="gradeX">
                                 <td>{{$menuItem->title}}</td>
                                 <td>{{$menuItem->parent}}</td>
-                                <td>{{$menuItem->image}}</td>
-                                <td>{{$menuItem->icon}}</td>
+                                @if(empty($menuItem->image))
+                                    <td></td>
+                                @else
+                                    <td><img src="{{asset($menuItem->image)}}" width="100px" height="100px"/></td>
+                                @endif
                                 <td>{{$menuItem->link}}</td>
                                 <td class="actions">
                                     <form action="/admin/menu/?id={{$menuItem->id}}" method="post">
@@ -47,7 +49,8 @@
                                     <form action="/admin/menu/?id={{$menuItem->id}}" method="post">
                                         @method('DELETE')
                                         @csrf
-                                        <button class='btn btn-primary button-next' id="delete" type="submit">حذف <i
+                                        <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">حذف
+                                            <i
                                                 class="fa fa-trash-o"></i></button>
                                     </form>
                                 </td>
@@ -57,7 +60,6 @@
                                 <td>{{$menuItem->title}}</td>
                                 <td>{{$menuItem->parent}}</td>
                                 <td>{{$menuItem->image}}</td>
-                                <td>{{$menuItem->icon}}</td>
                                 <td>{{$menuItem->link}}</td>
                                 <td class="actions">
                                     <form action="/admin/menu/?id={{$menuItem->id}}" method="post">
@@ -69,7 +71,8 @@
                                     <form action="/admin/menu/?id={{$menuItem->id}}" method="post">
                                         @method('DELETE')
                                         @csrf
-                                        <button class='btn btn-primary button-next' id="delete" type="submit">حذف <i
+                                        <button class='btn btn-primary button-next' id="deleteGradeC" type="submit">حذف
+                                            <i
                                                 class="fa fa-trash-o"></i></button>
                                     </form>
                                 </td>
@@ -78,7 +81,8 @@
                     @endforeach
                     </tbody>
                 </table>
-                <a href="{{url('/admin/addmenu')}}" class="btn btn-primary waves-effect waves-light">افزودن منوی جدید</a>
+                <a href="{{url('/admin/addmenu')}}" class="btn btn-primary waves-effect waves-light">افزودن منوی
+                    جدید</a>
             </div>
         </div>
         <!-- end: panel body -->
@@ -98,9 +102,16 @@
 @section('custom_scripts')
     <script>
         document
-            .getElementById("delete")
-            .addEventListener("click", function( e ){ //e => event
-                if( ! confirm("آیا مطمئن هستید؟") ){
+            .getElementById("deleteGradeC")
+            .addEventListener("click", function (e) { //e => event
+                if (!confirm("آیا مطمئن هستید؟")) {
+                    e.preventDefault();
+                }
+            });
+        document
+            .getElementById("deleteGradeX")
+            .addEventListener("click", function (e) { //e => event
+                if (!confirm("آیا مطمئن هستید؟")) {
                     e.preventDefault();
                 }
             });
