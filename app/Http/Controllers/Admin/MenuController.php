@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Menu;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 
 class MenuController extends Controller
 {
@@ -20,7 +21,11 @@ class MenuController extends Controller
     public function destroy(Request $request){
         if($request->has("id")){
             $menu = Menu::find($request->get("id"));
+            $image_path = $menu->image;
             $menu->delete();
+            if(File::exists($image_path)){
+                File::delete($image_path);
+            }
             return redirect('/admin/menu')->with('status','با موفقیت حذف شد');
         }else {
             return redirect('/admin/menu')->with('status','منوی مورد یافت نشد');
