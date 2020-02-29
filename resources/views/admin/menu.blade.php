@@ -4,10 +4,9 @@
 
     @if (session('status'))
         <div class="alert alert-success text-center">
-            {{ session('status') }}
+            {!! session('status') !!}
         </div>
     @endif
-
 
     <!-- ============================================================== -->
     <!-- Start right Content here -->
@@ -32,7 +31,12 @@
                         @if($counter % 2 == 0)
                             <tr class="gradeX">
                                 <td>{{$menuItem->title}}</td>
-                                <td>{{$menuItem->parent}}</td>
+
+                                @if(empty($menuItem->parent))
+                                    <td>-</td>
+                                @else
+                                    <td>{{$menuItem->parent}}</td>
+                                @endif
                                 @if(empty($menuItem->image))
                                     <td></td>
                                 @else

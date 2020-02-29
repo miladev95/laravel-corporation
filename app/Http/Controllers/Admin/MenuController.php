@@ -5,16 +5,25 @@ namespace App\Http\Controllers\Admin;
 use App\Menu;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 
 class MenuController extends Controller
 {
     public function index(){
-//        $data = DB::table('menu')
-//            ->join('menu','menu.id','=','menu.parent')
-//            ->get();
-//        dd($data);
-        $menu = Menu::all();
+        $menu = DB::select("
+                SELECT
+                    e.id id,
+                    e.title title,
+                    m.title parent,
+                    e.image image,
+                    e.link link,
+                    e.created_at created_at,
+                    e.updated_at updated_at
+                FROM
+                    menu e
+                LEFT JOIN menu m ON m.id = e.parent
+        ");
         return view('admin.menu',compact('menu'));
     }
 
