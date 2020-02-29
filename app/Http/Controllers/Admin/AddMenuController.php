@@ -39,7 +39,7 @@ class AddMenuController extends Controller
                 'link'=>$request->get('link'),
             ));
             $menuObject->save();
-            return redirect('/admin/menu')->with('status','با موفقیت ثبت شد');
+            return redirect('/admin/menu/add')->with('status','با موفقیت ثبت شد');
         }
     }
 }

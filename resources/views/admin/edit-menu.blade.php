@@ -31,7 +31,7 @@
                                     <div class="col-md-10">
                                         <input type="text" name="title" class="form-control" required
                                                placeholder="برنامه نویسی..."
-                                               value="">
+                                               value="{{$menu[0]->title}}">
                                     </div>
                                 </div>
 

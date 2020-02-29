@@ -40,7 +40,8 @@
                                 @endif
                                 <td>{{$menuItem->link}}</td>
                                 <td class="actions">
-                                    <form action="/admin/editmenu/?id={{$menuItem->id}}">
+
+                                    <form action="/admin/menu/{{$menuItem->id}}/edit">
                                         <button class='btn btn-primary button-next' type="submit">ویرایش <i
                                                 class="fa fa-pencil"></i></button>
                                     </form>
@@ -60,7 +61,7 @@
                                 <td>{{$menuItem->image}}</td>
                                 <td>{{$menuItem->link}}</td>
                                 <td class="actions">
-                                    <form action="/admin/editmenu/?id={{$menuItem->id}}">
+                                    <form action="/admin/menu/{{$menuItem->id}}/edit">
                                         @csrf
                                         <button class='btn btn-primary button-next' type="submit">ویرایش <i
                                                 class="fa fa-pencil"></i></button>
@@ -78,7 +79,7 @@
                     @endforeach
                     </tbody>
                 </table>
-                <a href="{{url('/admin/addmenu')}}" class="btn btn-primary waves-effect waves-light">افزودن منوی
+                <a href="{{url('/admin/menu/add')}}" class="btn btn-primary waves-effect waves-light">افزودن منوی
                     جدید</a>
             </div>
         </div>

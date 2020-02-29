@@ -37,10 +37,10 @@ Route::group(array('prefix'=>'admin','namespace'=>'Admin'),function (){
     Route::delete('/menu','MenuController@destroy');
     Route::patch('/menu','MenuController@update');
     Route::post('/menu','MenuController@store');
-    Route::get('/addmenu','AddMenuController@index');
-    Route::post('/addmenu','AddMenuController@store');
-    Route::get('/editmenu','EditMenuController@index');
-    Route::post('/editmenu','AddMenuController@edit');
+    Route::get('/menu/add','AddMenuController@index');
+    Route::post('/menu/add','AddMenuController@store');
+    Route::get('/menu/{id?}/edit','EditMenuController@edit');
+    Route::post('/menu/{id?}/edit','EditMenuController@update');
 });
 
 
