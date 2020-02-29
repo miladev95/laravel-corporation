@@ -11,7 +11,6 @@ class EditMenuController extends Controller
 
     public function edit($id){
         $menu = Menu::whereId($id)->firstOrFail();
-        dd($menu);
         $parents = Menu::all()->where('parent','=','0');
         return view('admin.edit-menu',compact('parents','menu'));
     }

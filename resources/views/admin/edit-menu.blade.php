@@ -31,7 +31,7 @@
                                     <div class="col-md-10">
                                         <input type="text" name="title" class="form-control" required
                                                placeholder="برنامه نویسی..."
-                                               value="{{$menu[0]->title}}">
+                                               value="{!! $menu->title !!}">
                                     </div>
                                 </div>
 
@@ -39,9 +39,13 @@
                                     <label class="col-sm-2 control-label">انتخاب پدر</label>
                                     <div class="col-sm-10">
                                         <select class="form-control" id="parent" name="parent">
-                                            <option  value="0">بدون پدر</option>
+                                            <option value="0">بدون پدر</option>
                                             @foreach($parents as $parentsItem)
-                                                <option value="{{$parentsItem->id}}">{{$parentsItem->title}}</option>
+                                                @if($parentsItem->id == $menu->parent)
+                                                    <option value="{{$parentsItem->id}}" selected>{{$parentsItem->title}}</option>
+                                                @else
+                                                    <option value="{{$parentsItem->id}}">{{$parentsItem->title}}</option>
+                                                @endif
                                             @endforeach
                                         </select>
                                     </div>
@@ -51,7 +55,7 @@
                                     <div class="card-box">
                                         <h4 class="header-title m-t-0 m-b-30">تصویر منو</h4>
 
-                                        <input type="file" name="image" class="dropify"
+                                        <input type="file" name="image" class="dropify" data-default-file="{{asset($menu->image)}}"
                                                data-height="200"/>
                                     </div>
                                 </div>
@@ -60,7 +64,7 @@
                                     <div class="col-md-10">
                                         <input type="text" name="link" class="form-control"
                                                placeholder="http://www....."
-                                               value="">
+                                               value="{!! $menu->link !!}">
                                     </div>
                                 </div>
                                 <button type="submit"
