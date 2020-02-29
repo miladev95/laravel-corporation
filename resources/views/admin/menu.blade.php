@@ -49,13 +49,12 @@
                                         <button class='btn btn-primary button-next' type="submit">ویرایش <i
                                                 class="fa fa-pencil"></i></button>
                                     </form>
-                                    <form action="/admin/menu/?id={{$menuItem->id}}" method="post">
-                                        @method('DELETE')
+                                    {!! Form::open(['url'=>'/admin/menu/?id='.$menuItem->id,'method'=>'DELETE','class'=>'form-horizontal',
+                                        'role'=>'form','onsubmit' => 'return confirm("آیا مطمئن هستید؟")'])!!}
                                         @csrf
                                         <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">حذف
-                                            <i
-                                                class="fa fa-trash-o"></i></button>
-                                    </form>
+                                            <i class="fa fa-trash-o"></i></button>
+                                    {!! Form::close() !!}
                                 </td>
                             </tr>
                         @else
@@ -70,13 +69,12 @@
                                         <button class='btn btn-primary button-next' type="submit">ویرایش <i
                                                 class="fa fa-pencil"></i></button>
                                     </form>
-                                    <form action="/admin/menu/?id={{$menuItem->id}}" method="post">
-                                        @method('DELETE')
-                                        @csrf
-                                        <button class='btn btn-primary button-next' id="deleteGradeC" type="submit">حذف
-                                            <i
-                                                class="fa fa-trash-o"></i></button>
-                                    </form>
+                                    <{!! Form::open(['url'=>'/admin/menu/?id='.$menuItem->id,'method'=>'DELETE','class'=>'form-horizontal',
+                                        'role'=>'form','onsubmit' => 'return confirm("آیا مطمئن هستید؟")'])!!}
+                                    @csrf
+                                    <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">حذف
+                                        <i class="fa fa-trash-o"></i></button>
+                                    {!! Form::close() !!}
                                 </td>
                             </tr>
                         @endif
@@ -92,7 +90,7 @@
     </div> <!-- content -->
 
     <footer class="footer">
-        © xAdmin 2019
+        © xAdmin 2020
     </footer>
 
 

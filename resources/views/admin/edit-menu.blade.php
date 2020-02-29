@@ -83,7 +83,7 @@
     </div> <!-- content -->
 
     <footer class="footer">
-        © xAdmin 2019
+        © xAdmin 2020
     </footer>
 
 
