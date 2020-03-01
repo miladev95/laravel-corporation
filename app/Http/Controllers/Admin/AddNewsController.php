@@ -8,6 +8,6 @@ use App\Http\Controllers\Controller;
 class AddNewsController extends Controller
 {
     public function index(){
-
+        return view('admin.add-news');
     }
 }
