@@ -47,6 +47,7 @@ Route::group(array('prefix'=>'admin','namespace'=>'Admin'),function (){
     Route::get('/news/add','AddNewsController@index');
     Route::post('/news/add','AddNewsController@store');
     Route::get('/news/{id?}/edit','EditNewsController@edit');
+    Route::post('/news/{id?}/edit','EditNewsController@update');
 });
 
 
