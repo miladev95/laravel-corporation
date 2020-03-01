@@ -211,6 +211,9 @@
                                         <a href="{!! action('Admin\MenuController@index') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> منو </span> </a>
                                     </li>
                                     <li>
+                                        <a href="{!! action('Admin\NewsController@index') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> اخبار </span> </a>
+                                    </li>
+                                    <li>
                                         <a href="{!! action('Admin\SettingController@index') !!}" class="waves-effect"><i class="zmdi zmdi-settings"></i><span>تنظیمات عمومی</span></a>
                                     </li>
 

@@ -19,57 +19,53 @@
                     <thead>
                     <tr>
                         <th>عنوان</th>
-                        <th>منوی پدر</th>
                         <th>تصویر</th>
-                        <th>لینک</th>
+                        <th>تگ</th>
+                        <th>تاریخ</th>
                         <th>عملیات</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php $counter = 0;?>
-                    @foreach($menu as $menuItem)
+                    @foreach($news as $newsItem)
                         @if($counter % 2 == 0)
                             <tr class="gradeX">
-                                <td>{{$menuItem->title}}</td>
-
-                                @if(empty($menuItem->parent))
-                                    <td>-</td>
-                                @else
-                                    <td>{{$menuItem->parent}}</td>
-                                @endif
-                                @if(empty($menuItem->image))
+                                <td>{{$newsItem->title}}</td>
+                                @if(empty($newsItem->image))
                                     <td></td>
                                 @else
-                                    <td><img src="{{asset($menuItem->image)}}" width="100px" height="100px"/></td>
+                                    <td><img src="{{asset($newsItem->image)}}" width="100px" height="100px"/></td>
                                 @endif
-                                <td>{{$menuItem->link}}</td>
+                                <td>{{$newsItem->tags}}</td>
+                                <td>{{$newsItem->date}}</td>
                                 <td class="actions">
+                                    {!! Form::open(['url'=>'/admin/news/?id='.$newsItem->id.'/edit','class'=>'form-horizontal',
+                                            'role'=>'form','method'=>'GET']) !!}
+                                    <button class='btn btn-primary button-next' type="submit">ویرایش <i
+                                            class="fa fa-pencil"></i></button>
+                                    {!! Form::close() !!}
 
-                                    <form action="/admin/menu/{{$menuItem->id}}/edit">
-                                        <button class='btn btn-primary button-next' type="submit">ویرایش <i
-                                                class="fa fa-pencil"></i></button>
-                                    </form>
-                                    {!! Form::open(['url'=>'/admin/menu/?id='.$menuItem->id,'method'=>'DELETE','class'=>'form-horizontal',
+                                    {!! Form::open(['url'=>'/admin/news/?id='.$newsItem->id,'method'=>'DELETE','class'=>'form-horizontal',
                                         'role'=>'form','onsubmit' => 'return confirm("آیا مطمئن هستید؟")'])!!}
-                                        @csrf
-                                        <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">حذف
-                                            <i class="fa fa-trash-o"></i></button>
+                                    @csrf
+                                    <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">حذف
+                                        <i class="fa fa-trash-o"></i></button>
                                     {!! Form::close() !!}
                                 </td>
                             </tr>
                         @else
                             <tr class="gradeC">
-                                <td>{{$menuItem->title}}</td>
-                                <td>{{$menuItem->parent}}</td>
-                                <td>{{$menuItem->image}}</td>
-                                <td>{{$menuItem->link}}</td>
+                                <td>{{$newsItem->title}}</td>
+                                <td>{{$newsItem->tags}}</td>
+                                <td>{{$newsItem->date}}</td>
                                 <td class="actions">
-                                    <form action="/admin/menu/{{$menuItem->id}}/edit">
-                                        @csrf
+                                    {!! Form::open(['url'=>'/admin/news/?id='.$newsItem->id.'/edit','class'=>'form-horizontal',
+                                            'role'=>'form','method'=>'GET']) !!}
                                         <button class='btn btn-primary button-next' type="submit">ویرایش <i
                                                 class="fa fa-pencil"></i></button>
-                                    </form>
-                                    <{!! Form::open(['url'=>'/admin/menu/?id='.$menuItem->id,'method'=>'DELETE','class'=>'form-horizontal',
+                                    {!! Form::close() !!}
+
+                                    {!! Form::open(['url'=>'/admin/news/?id='.$newsItem->id,'method'=>'DELETE','class'=>'form-horizontal',
                                         'role'=>'form','onsubmit' => 'return confirm("آیا مطمئن هستید؟")'])!!}
                                     @csrf
                                     <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">حذف
@@ -81,8 +77,7 @@
                     @endforeach
                     </tbody>
                 </table>
-                <a href="{{url('/admin/menu/add')}}" class="btn btn-primary waves-effect waves-light">افزودن منوی
-                    جدید</a>
+                <a href="{{url('/admin/news/add')}}" class="btn btn-primary waves-effect waves-light">افزودن خبر جدید</a>
             </div>
         </div>
         <!-- end: panel body -->

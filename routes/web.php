@@ -41,6 +41,11 @@ Route::group(array('prefix'=>'admin','namespace'=>'Admin'),function (){
     Route::post('/menu/add','AddMenuController@store');
     Route::get('/menu/{id?}/edit','EditMenuController@edit');
     Route::post('/menu/{id?}/edit','EditMenuController@update');
+
+    Route::get('/news','NewsController@index');
+    Route::delete('/news','NewsController@destroy');
+    Route::get('/news/add','AddNewsController@index');
+    Route::get('/news/{id?}/edit','EditNewsController@edit');
 });
 
 
