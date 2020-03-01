@@ -52,7 +52,7 @@
                     <div class="qt-post-meta">
                         <?php
                         $newsTag = $news->tags;
-                        $newsTag = explode("-",$newsTag);
+                        $newsTag = explode(",",$newsTag);
                         ?>
                         <span><i class="fa fa-tags fa-fw"></i>
                             @foreach($newsTag as $tagItem)

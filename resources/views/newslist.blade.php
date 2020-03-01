@@ -53,7 +53,7 @@
                 <span><i class="fa fa-calendar fa-fw"></i>{{ $newsItem->date }}</span>
                   <?php
                     $newsTag = $newsItem->tags;
-                    $newsTag = explode("-",$newsTag);
+                    $newsTag = explode(",",$newsTag);
                   ?>
                 <span><i class="fa fa-tags fa-fw"></i>
                     @foreach($newsTag as $tagItem)

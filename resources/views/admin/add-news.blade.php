@@ -3,6 +3,7 @@
     <!-- form Uploads -->
     <link href="{{asset('plugins/fileuploads/css/dropify.min.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css')}}" rel="stylesheet"/>
+    @trixassets
 @endsection
 @section('content')
 
@@ -46,9 +47,15 @@
                                 <div class="form-group">
                                     <label class="col-md-2 control-label" for="title">تگ</label>
                                     <div class="col-md-10">
-                                        <div class="tags-default">
-                                            <input type="text" value="کلمه یک,کلمه دو,کلمه سه" data-role="tagsinput" placeholder="افزودن تگ"/>
-                                        </div>
+                                        <input type="text" name="tags"  data-role="tagsinput"
+                                               placeholder="تگ را وارد کنید و دکمه enter را بزنید"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="title">متن خبر</label>
+                                    <div class="col-md-10">
+                                        <input id="editor" type="hidden" name="content">
+                                        <trix-editor input="editor"></trix-editor>
                                     </div>
                                 </div>
                                 <button type="submit"
@@ -79,6 +86,7 @@
 @section('custom_scripts')
     <!-- file uploads js -->
     <script src="{{asset('plugins/fileuploads/js/dropify.min.js')}}"></script>
+    <script src="{{asset('plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js')}}"></script>
 
     <script>
         var resizefunc = [];
@@ -96,7 +104,4 @@
             }
         });
     </script>
-@endsection
-@section('custom_scripts')
-    <script src="{{asset('plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js')}}"></script>
 @endsection
