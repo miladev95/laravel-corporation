@@ -39,11 +39,10 @@
                                 <td>{{$newsItem->tags}}</td>
                                 <td>{{$newsItem->date}}</td>
                                 <td class="actions">
-                                    {!! Form::open(['url'=>'/admin/news/?id='.$newsItem->id.'/edit','class'=>'form-horizontal',
-                                            'role'=>'form','method'=>'GET']) !!}
-                                    <button class='btn btn-primary button-next' type="submit">ویرایش <i
-                                            class="fa fa-pencil"></i></button>
-                                    {!! Form::close() !!}
+                                    <form action="/admin/news/{{$newsItem->id}}/edit">
+                                        <button class='btn btn-primary button-next' type="submit">ویرایش <i
+                                                class="fa fa-pencil"></i></button>
+                                    </form>
 
                                     {!! Form::open(['url'=>'/admin/news/?id='.$newsItem->id,'method'=>'DELETE','class'=>'form-horizontal',
                                         'role'=>'form','onsubmit' => 'return confirm("آیا مطمئن هستید؟")'])!!}
@@ -59,11 +58,10 @@
                                 <td>{{$newsItem->tags}}</td>
                                 <td>{{$newsItem->date}}</td>
                                 <td class="actions">
-                                    {!! Form::open(['url'=>'/admin/news/?id='.$newsItem->id.'/edit','class'=>'form-horizontal',
-                                            'role'=>'form','method'=>'GET']) !!}
+                                    <form action="/admin/news/{{$newsItem->id}}/edit">
                                         <button class='btn btn-primary button-next' type="submit">ویرایش <i
                                                 class="fa fa-pencil"></i></button>
-                                    {!! Form::close() !!}
+                                    </form>
 
                                     {!! Form::open(['url'=>'/admin/news/?id='.$newsItem->id,'method'=>'DELETE','class'=>'form-horizontal',
                                         'role'=>'form','onsubmit' => 'return confirm("آیا مطمئن هستید؟")'])!!}
