@@ -2,6 +2,7 @@
 @section('custom_head')
     <!-- form Uploads -->
     <link href="{{asset('plugins/fileuploads/css/dropify.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css')}}" rel="stylesheet"/>
 @endsection
 @section('content')
 
@@ -27,7 +28,7 @@
                             <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                    <label class="col-md-2 control-label" for="example-email">عنوان</label>
+                                    <label class="col-md-2 control-label" for="title">عنوان</label>
                                     <div class="col-md-10">
                                         <input type="text" name="title" class="form-control" required
                                                placeholder="برنامه نویسی..."
@@ -36,19 +37,18 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <div class="card-box">
-                                        <h4 class="header-title m-t-0 m-b-30">تصویر منو</h4>
-
+                                    <label class="col-md-2 control-label" for="title">تصویر</label>
+                                    <div class="col-md-10">
                                         <input type="file" name="image" class="dropify"
                                                data-height="200"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-2 control-label" for="example-email">لینک</label>
+                                    <label class="col-md-2 control-label" for="title">تگ</label>
                                     <div class="col-md-10">
-                                        <input type="text" name="link" class="form-control"
-                                               placeholder="http://www....."
-                                               value="">
+                                        <div class="tags-default">
+                                            <input type="text" value="کلمه یک,کلمه دو,کلمه سه" data-role="tagsinput" placeholder="افزودن تگ"/>
+                                        </div>
                                     </div>
                                 </div>
                                 <button type="submit"
@@ -96,4 +96,7 @@
             }
         });
     </script>
+@endsection
+@section('custom_scripts')
+    <script src="{{asset('plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js')}}"></script>
 @endsection

@@ -52,10 +52,9 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <div class="card-box">
-                                        <h4 class="header-title m-t-0 m-b-30">تصویر منو</h4>
-
-                                        <input type="file" name="image" class="dropify" data-default-file="{{asset($menu->image)}}"
+                                    <label class="col-md-2 control-label" for="example-email">تصویر منو</label>
+                                    <div class="col-md-10">
+                                        <input type="file" name="image" class="dropify"
                                                data-height="200"/>
                                     </div>
                                 </div>

@@ -7,7 +7,13 @@ use App\Http\Controllers\Controller;
 
 class AddNewsController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('admin.add-news');
+    }
+
+    public function store(Request $request)
+    {
+
     }
 }

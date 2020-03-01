@@ -39,7 +39,7 @@
                                     <label class="col-sm-2 control-label">انتخاب پدر</label>
                                     <div class="col-sm-10">
                                         <select class="form-control" id="parent" name="parent">
-                                            <option  value="0">بدون پدر</option>
+                                            <option value="0">بدون پدر</option>
                                             @foreach($parents as $parentsItem)
                                                 <option value="{{$parentsItem->id}}">{{$parentsItem->title}}</option>
                                             @endforeach
@@ -48,9 +48,8 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <div class="card-box">
-                                        <h4 class="header-title m-t-0 m-b-30">تصویر منو</h4>
-
+                                    <label class="col-md-2 control-label" for="example-email">تصویر منو</label>
+                                    <div class="col-md-10">
                                         <input type="file" name="image" class="dropify"
                                                data-height="200"/>
                                     </div>

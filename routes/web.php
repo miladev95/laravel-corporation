@@ -45,6 +45,7 @@ Route::group(array('prefix'=>'admin','namespace'=>'Admin'),function (){
     Route::get('/news','NewsController@index');
     Route::delete('/news','NewsController@destroy');
     Route::get('/news/add','AddNewsController@index');
+    Route::post('/news/add','AddNewsController@store');
     Route::get('/news/{id?}/edit','EditNewsController@edit');
 });
 
