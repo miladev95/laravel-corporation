@@ -214,6 +214,9 @@
                                         <a href="{!! action('Admin\NewsController@index') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> اخبار </span> </a>
                                     </li>
                                     <li>
+                                        <a href="{!! action('Admin\NewsCommentController@index') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> کامنت های اخبار </span> </a>
+                                    </li>
+                                    <li>
                                         <a href="{!! action('Admin\SettingController@index') !!}" class="waves-effect"><i class="zmdi zmdi-settings"></i><span>تنظیمات عمومی</span></a>
                                     </li>
 

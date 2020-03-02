@@ -18,7 +18,7 @@ class AddNewsController extends Controller
 //        $tmp = $request->get('content');
 //        $tmp = str_replace('<div>','',$tmp);
 //        $tmp = str_replace('</div>','',$tmp);
-        $date = jdate()->getYear() . "-".jdate()->getMonth() . "-" . jdate()->getDay();
+        $date = jdate()->getYear() . "/".jdate()->getMonth() . "/" . jdate()->getDay();
         if($request->hasFile('image')){
             $this->validate($request, [
                 'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',

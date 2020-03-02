@@ -32,7 +32,7 @@ class SinglePostController extends Controller
     }
 
     public function addComment(AddCommentRequest $request){
-        $date = jdate()->getYear() . "-".jdate()->getMonth() . "-" . jdate()->getDay();
+        $date = jdate()->getYear() . "/".jdate()->getMonth() . "/" . jdate()->getDay();
         $postComment = new PostsComment(array(
             'name' => $request->get("name"),
             'email' => $request->get("email"),

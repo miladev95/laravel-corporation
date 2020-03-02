@@ -48,6 +48,10 @@ Route::group(array('prefix'=>'admin','namespace'=>'Admin'),function (){
     Route::post('/news/add','AddNewsController@store');
     Route::get('/news/{id?}/edit','EditNewsController@edit');
     Route::post('/news/{id?}/edit','EditNewsController@update');
+
+    Route::get('/news/comment','NewsCommentController@index');
+    Route::delete('/news/{id?}/comment','NewsCommentController@destroy');
+    Route::post('/news/{id?}/comment','NewsCommentController@publishComment');
 });
 
 

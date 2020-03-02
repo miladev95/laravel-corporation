@@ -32,7 +32,7 @@ class SingleNewsController extends Controller
         }
     }
     public function addComment(AddCommentRequest $request){
-        $date = jdate()->getYear() . "-".jdate()->getMonth() . "-" . jdate()->getDay();
+        $date = jdate()->getYear() . "/".jdate()->getMonth() . "/" . jdate()->getDay();
         $newsComment = new NewsComment(array(
             'name' => $request->get("name"),
             'email' => $request->get("email"),
