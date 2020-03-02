@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\NewsComment;
 use App\NewsLetter;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,6 +15,8 @@ class NewsLetterController extends Controller
     }
 
     public function destroy($id,Request $request){
-        dd($id);
+        $newsLetter = NewsLetter::find($id);
+        $newsLetter->delete();
+        return redirect('/admin/newsletter')->with('status', 'با موفقیت حذف شد');
     }
 }
