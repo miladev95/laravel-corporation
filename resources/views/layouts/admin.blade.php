@@ -217,7 +217,7 @@
                                         <a href="{!! action('Admin\NewsCommentController@index') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> کامنت های اخبار </span> </a>
                                     </li>
                                     <li>
-                                        <a href="{!! action('Admin\NewsCommentController@index') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> اعضای خبرنامه </span> </a>
+                                        <a href="{!! action('Admin\NewsLetterController@index') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> اعضای خبرنامه </span> </a>
                                     </li>
                                     <li>
                                         <a href="{!! action('Admin\SettingController@index') !!}" class="waves-effect"><i class="zmdi zmdi-settings"></i><span>تنظیمات عمومی</span></a>

@@ -10,6 +10,10 @@ class NewsLetterController extends Controller
 {
     public function index(){
         $newsLetter = NewsLetter::all();
-        
+        return view('admin.news-letter',compact('newsLetter'));
+    }
+
+    public function destroy($id,Request $request){
+        dd($id);
     }
 }
