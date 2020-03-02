@@ -20,42 +20,26 @@
 
                     <div class="row">
                         <div class="col-lg-6">
-                            <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
+                            <form class="form-horizontal" role="form" method="post">
                                 @csrf
                                 <div class="form-group">
                                     <label class="col-md-2 control-label" for="example-email">عنوان</label>
                                     <div class="col-md-10">
                                         <input type="text" name="title" class="form-control" required
-                                               placeholder="برنامه نویسی..."
                                                value="">
                                     </div>
                                 </div>
-
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">انتخاب پدر</label>
-                                    <div class="col-sm-10">
-                                        <select class="form-control" id="parent" name="parent">
-                                            <option value="0">بدون پدر</option>
-                                            @foreach($parents as $parentsItem)
-                                                <option value="{{$parentsItem->id}}">{{$parentsItem->title}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-md-2 control-label" for="example-email">تصویر منو</label>
+                                    <label class="col-md-2 control-label" for="example-email">توضیحات مختصر</label>
                                     <div class="col-md-10">
-                                        <input type="file" name="image" class="dropify"
-                                               data-height="200"/>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-2 control-label" for="example-email">لینک</label>
-                                    <div class="col-md-10">
-                                        <input type="text" name="link" class="form-control"
-                                               placeholder="http://www....."
+                                        <input type="text" name="brief" class="form-control" required
                                                value="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="example-email">توضیحات</label>
+                                    <div class="col-md-10">
+                                        <textarea type="text" required name="description" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <button type="submit"
@@ -76,10 +60,5 @@
     <footer class="footer">
         © xAdmin 2020
     </footer>
-
-
-    <!-- ============================================================== -->
-    <!-- End Right content here -->
-    <!-- ============================================================== -->
 
 @endsection
