@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class NewsEmail extends Model
+class NewsLetter extends Model
 {
-    protected $table = "news_email";
+    protected $table = "news_letter";
     protected $guarded = ['id'];
 }

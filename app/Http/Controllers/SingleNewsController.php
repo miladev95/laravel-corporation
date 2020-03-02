@@ -4,15 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Gallery;
 use App\Http\Requests\AddCommentRequest;
-use App\Http\Requests\NewsEmailRequest;
 use App\Menu;
 use App\News;
 use App\NewsComment;
-use App\NewsEmail;
 use App\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Morilog\Jalali\Jalalian;
 
 class SingleNewsController extends Controller
 {
