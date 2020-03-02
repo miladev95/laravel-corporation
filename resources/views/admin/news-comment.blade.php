@@ -49,7 +49,7 @@
                                                 class="fa fa-pencil"></i></button>
                                     </form>
 
-                                    {!! Form::open(['url'=>'/admin/news/?id='.$commentItem->id.'/comment','method'=>'DELETE','class'=>'form-horizontal',
+                                    {!! Form::open(['url'=>'/admin/news/'.$commentItem->id.'/comment','method'=>'DELETE','class'=>'form-horizontal',
                                         'role'=>'form','onsubmit' => 'return confirm("آیا مطمئن هستید؟")'])!!}
                                     @csrf
                                     <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">حذف
@@ -76,7 +76,7 @@
                                                 class="fa fa-pencil"></i></button>
                                     </form>
 
-                                    {!! Form::open(['url'=>'/admin/news/?id='.$commentItem->id.'/comment','method'=>'DELETE','class'=>'form-horizontal',
+                                    {!! Form::open(['url'=>'/admin/news/'.$commentItem->id.'/comment','method'=>'DELETE','class'=>'form-horizontal',
                                         'role'=>'form','onsubmit' => 'return confirm("آیا مطمئن هستید؟")'])!!}
                                     @csrf
                                     <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">حذف

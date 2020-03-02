@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Menu;
 use App\NewsComment;
 use App\PostsComment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class NewsCommentController extends Controller
 {
     public function index()
     {
         $postComment = DB::table('news_comment')
-            ->select('news_comment.*','news.title as news_title')
-            ->join('news','news.id','=','news_comment.news_id')
+            ->select('news_comment.*', 'news.title as news_title')
+            ->join('news', 'news.id', '=', 'news_comment.news_id')
             ->get();
         //SELECT news_comment.*, news.title as news_title FROM news_comment JOIN news ON news_comment.news_id = news.id
         return view('admin.news-comment', compact('postComment'));
@@ -22,7 +24,9 @@ class NewsCommentController extends Controller
 
     public function destroy($id, Request $request)
     {
-        dd($id);
+        $newsComment = NewsComment::find($id);
+        $newsComment->delete();
+        return redirect('/admin/news/comment')->with('status', 'با موفقیت حذف شد');
     }
 
     public function publishComment($id, Request $request)
