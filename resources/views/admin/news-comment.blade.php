@@ -35,11 +35,16 @@
                                 <td>{{$commentItem->name}}</td>
                                 <td>{{$commentItem->email}}</td>
                                 <td>{{$commentItem->comment}}</td>
-                                <td>{{$commentItem->news_id}}</td>
+                                <td><a href="{{action('Admin\EditNewsController@edit',['id'=>$commentItem->news_id])}}">{{$commentItem->news_title}}</a></td>
                                 <td>{{$commentItem->date}}</td>
-                                <td>{{$commentItem->comment_status}}</td>
+                                @if($commentItem->comment_status == 0)
+                                    <td>تایید نشده</td>
+                                @else
+                                    <td>تایید شده</td>
+                                @endif
                                 <td class="actions">
                                     <form action="/admin/news/{{$commentItem->id}}/comment" method="POST">
+                                        @csrf
                                         <button class='btn btn-primary button-next' type="submit">تایید کامنت <i
                                                 class="fa fa-pencil"></i></button>
                                     </form>
@@ -57,11 +62,16 @@
                                 <td>{{$commentItem->name}}</td>
                                 <td>{{$commentItem->email}}</td>
                                 <td>{{$commentItem->comment}}</td>
-                                <td>{{$commentItem->news_id}}</td>
+                                <td><a href="{{action('Admin\EditNewsController@edit',['id'=>$commentItem->news_id])}}">{{$commentItem->news_title}}</a></td>
                                 <td>{{$commentItem->date}}</td>
-                                <td>{{$commentItem->comment_status}}</td>
+                                @if($commentItem->comment_status == 0)
+                                    <td>تایید نشده</td>
+                                @else
+                                    <td>تایید شده</td>
+                                @endif
                                 <td class="actions">
                                     <form action="/admin/news/{{$commentItem->id}}/comment" method="POST">
+                                        @csrf
                                         <button class='btn btn-primary button-next' type="submit">تایید کامنت <i
                                                 class="fa fa-pencil"></i></button>
                                     </form>
