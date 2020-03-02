@@ -55,6 +55,11 @@ Route::group(array('prefix'=>'admin','namespace'=>'Admin'),function (){
 
     Route::get('/newsletter','NewsLetterController@index');
     Route::delete('/newsletter/{id?}','NewsLetterController@destroy');
+
+    Route::get('/notification','NotificationController@index');
+    Route::delete('/notification/{id?}','NotificationController@destroy');
+    Route::get('/notification/add','AddNotificationController@index');
+    Route::post('/notification/add','AddNotificationController@store');
 });
 
 
