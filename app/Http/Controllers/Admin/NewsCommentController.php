@@ -29,8 +29,11 @@ class NewsCommentController extends Controller
         return redirect('/admin/news/comment')->with('status', 'با موفقیت حذف شد');
     }
 
-    public function publishComment($id, Request $request)
+    public function confirmComment($id, Request $request)
     {
-        dd($id);
+        $newsComment = NewsComment::whereId($id)->firstOrFail();
+        $newsComment->comment_status = 1;
+        $newsComment->save();
+        return redirect('/admin/news/comment')->with('status', 'با موفقیت تایید شد');
     }
 }

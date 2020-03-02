@@ -51,7 +51,7 @@ Route::group(array('prefix'=>'admin','namespace'=>'Admin'),function (){
 
     Route::get('/news/comment','NewsCommentController@index');
     Route::delete('/news/{id?}/comment','NewsCommentController@destroy');
-    Route::post('/news/{id?}/comment','NewsCommentController@publishComment');
+    Route::post('/news/{id?}/comment','NewsCommentController@confirmComment');
 });
 
 

@@ -35,7 +35,9 @@
                                 <td>{{$commentItem->name}}</td>
                                 <td>{{$commentItem->email}}</td>
                                 <td>{{$commentItem->comment}}</td>
-                                <td><a href="{{action('Admin\EditNewsController@edit',['id'=>$commentItem->news_id])}}">{{$commentItem->news_title}}</a></td>
+                                <td>
+                                    <a href="{{action('Admin\EditNewsController@edit',['id'=>$commentItem->news_id])}}">{{$commentItem->news_title}}</a>
+                                </td>
                                 <td>{{$commentItem->date}}</td>
                                 @if($commentItem->comment_status == 0)
                                     <td>تایید نشده</td>
@@ -43,11 +45,13 @@
                                     <td>تایید شده</td>
                                 @endif
                                 <td class="actions">
-                                    <form action="/admin/news/{{$commentItem->id}}/comment" method="POST">
-                                        @csrf
-                                        <button class='btn btn-primary button-next' type="submit">تایید کامنت <i
-                                                class="fa fa-pencil"></i></button>
-                                    </form>
+                                    @if($commentItem->comment_status == 0)
+                                        <form action="/admin/news/{{$commentItem->id}}/comment" method="POST">
+                                            @csrf
+                                            <button class='btn btn-primary button-next' type="submit">تایید کامنت <i
+                                                    class="fa fa-pencil"></i></button>
+                                        </form>
+                                    @endif
 
                                     {!! Form::open(['url'=>'/admin/news/'.$commentItem->id.'/comment','method'=>'DELETE','class'=>'form-horizontal',
                                         'role'=>'form','onsubmit' => 'return confirm("آیا مطمئن هستید؟")'])!!}
@@ -62,7 +66,9 @@
                                 <td>{{$commentItem->name}}</td>
                                 <td>{{$commentItem->email}}</td>
                                 <td>{{$commentItem->comment}}</td>
-                                <td><a href="{{action('Admin\EditNewsController@edit',['id'=>$commentItem->news_id])}}">{{$commentItem->news_title}}</a></td>
+                                <td>
+                                    <a href="{{action('Admin\EditNewsController@edit',['id'=>$commentItem->news_id])}}">{{$commentItem->news_title}}</a>
+                                </td>
                                 <td>{{$commentItem->date}}</td>
                                 @if($commentItem->comment_status == 0)
                                     <td>تایید نشده</td>
@@ -70,12 +76,13 @@
                                     <td>تایید شده</td>
                                 @endif
                                 <td class="actions">
-                                    <form action="/admin/news/{{$commentItem->id}}/comment" method="POST">
-                                        @csrf
-                                        <button class='btn btn-primary button-next' type="submit">تایید کامنت <i
-                                                class="fa fa-pencil"></i></button>
-                                    </form>
-
+                                    @if($commentItem->comment_status == 0)
+                                        <form action="/admin/news/{{$commentItem->id}}/comment" method="POST">
+                                            @csrf
+                                            <button class='btn btn-primary button-next' type="submit">تایید کامنت <i
+                                                    class="fa fa-pencil"></i></button>
+                                        </form>
+                                    @endif
                                     {!! Form::open(['url'=>'/admin/news/'.$commentItem->id.'/comment','method'=>'DELETE','class'=>'form-horizontal',
                                         'role'=>'form','onsubmit' => 'return confirm("آیا مطمئن هستید؟")'])!!}
                                     @csrf
