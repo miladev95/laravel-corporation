@@ -62,7 +62,11 @@ Route::group(array('prefix'=>'admin','namespace'=>'Admin'),function (){
     Route::post('/notification/add','AddNotificationController@store');
 
     Route::get('/post','PostController@index');
-
+    Route::delete('/post','PostController@destroy');
+    Route::get('/post/add','AddNewsController@index');
+    Route::post('/post/add','AddNewsController@store');
+    Route::get('/post/{id?}/edit','EditNewsController@edit');
+    Route::post('/post/{id?}/edit','EditNewsController@update');
 });
 
 
