@@ -60,6 +60,9 @@ Route::group(array('prefix'=>'admin','namespace'=>'Admin'),function (){
     Route::delete('/notification/{id?}','NotificationController@destroy');
     Route::get('/notification/add','AddNotificationController@index');
     Route::post('/notification/add','AddNotificationController@store');
+
+    Route::get('/post','PostController@index');
+
 });
 
 
