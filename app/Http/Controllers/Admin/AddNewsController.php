@@ -39,7 +39,7 @@ class AddNewsController extends Controller
         } else {
             $newsObject = new News(array(
                 'title'=>$request->get('title'),
-                'image'=>'$name',
+                'image'=>'',
                 'date'=>$date,
                 'tags'=>$request->get('tags'),
                 'content'=>$request->get('content'),

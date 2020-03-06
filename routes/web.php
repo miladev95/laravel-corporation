@@ -63,10 +63,10 @@ Route::group(array('prefix'=>'admin','namespace'=>'Admin'),function (){
 
     Route::get('/post','PostController@index');
     Route::delete('/post','PostController@destroy');
-    Route::get('/post/add','AddNewsController@index');
-    Route::post('/post/add','AddNewsController@store');
-    Route::get('/post/{id?}/edit','EditNewsController@edit');
-    Route::post('/post/{id?}/edit','EditNewsController@update');
+    Route::get('/post/add','AddPostController@index');
+    Route::post('/post/add','AddPostController@store');
+    Route::get('/post/{id?}/edit','EditPostController@edit');
+    Route::post('/post/{id?}/edit','EditPostController@update');
 });
 
 
