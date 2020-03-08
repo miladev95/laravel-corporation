@@ -29,7 +29,11 @@
                         </div>
 
                         <h4 class="header-title m-t-0 m-b-30">{{$sliderItem->title}}</h4>
-                        <img src="{{ asset($sliderItem->image)}}" width="400px" height="200px">
+                        @if(empty($sliderItem->image))
+
+                        @else
+                            <img src="{{ asset($sliderItem->image)}}" width="400px" height="200px">
+                        @endif
                         <h5>{{$sliderItem->brief}}</h5>
                         <h5>{{$sliderItem->description}}</h5>
                     </div>

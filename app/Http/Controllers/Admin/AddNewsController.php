@@ -45,7 +45,7 @@ class AddNewsController extends Controller
                 'content'=>$request->get('content'),
             ));
             $newsObject->save();
-            return redirect('/admin/news/add')->with('status','با موفقیت ثبت شد');
+            return redirect('/admin/news')->with('status','با موفقیت ثبت شد');
         }
     }
 }

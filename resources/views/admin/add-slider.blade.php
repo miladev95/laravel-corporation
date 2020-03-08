@@ -46,7 +46,7 @@
                                 <div class="form-group">
                                     <label class="col-md-2 control-label" for="title">توضیح مختصر</label>
                                     <div class="col-md-10">
-                                        <input type="text" name="title" class="form-control" required
+                                        <input type="text" name="brief" class="form-control" required
                                                value="">
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                                     <label class="col-md-2 control-label" for="title">توضیحات</label>
                                     <div class="col-md-10">
                                         <input id="editor" type="hidden" name="content">
-                                        <textarea class="form-control"   input="editor"></textarea>
+                                        <textarea class="form-control" name="description"  input="editor"></textarea>
                                     </div>
                                 </div>
                                 <button type="submit"

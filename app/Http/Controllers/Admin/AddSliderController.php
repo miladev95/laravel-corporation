@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\News;
 use App\Slider;
 use Illuminate\Http\Request;
 
@@ -15,13 +16,31 @@ class AddSliderController extends Controller
 
     public function store(Request $request)
     {
-        dd($request);
-        $slider = new Slider(array(
-            'title'=>$request->get('title'),
-            'brief'=>$request->get('brief'),
-            'description'=>$request->get('description'),
-        ));
-        $slider->save();
-        return redirect('/admin/slider')->with('status','با موفقیت ذخیره شد');
+        if($request->hasFile('image')){
+            $this->validate($request, [
+                'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            ]);
+            $image = $request->file('image');
+            $name = 'img/slider/'.time() . '.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('img/slider');
+            $image->move($destinationPath,$name);
+            $sliderObject = new Slider(array(
+                'title'=>$request->get('title'),
+                'image'=>$name,
+                'brief'=>$request->get('brief'),
+                'description'=>$request->get('description'),
+            ));
+            $sliderObject->save();
+            return redirect('/admin/slider')->with('status','با موفقیت ثبت شد');
+        } else {
+            $sliderObject = new Slider(array(
+                'title'=>$request->get('title'),
+                'image'=>'',
+                'brief'=>$request->get('brief'),
+                'description'=>$request->get('description'),
+            ));
+            $sliderObject->save();
+            return redirect('/admin/slider')->with('status','با موفقیت ثبت شد');
+        }
     }
 }
