@@ -229,6 +229,9 @@
                                         <a href="{!! action('Admin\PostCommentController@index') !!}" class="waves-effect"><i class="zmdi zmdi-settings"></i><span>کامنت های پست ها</span></a>
                                     </li>
                                     <li>
+                                        <a href="{!! action('Admin\SliderController@index') !!}" class="waves-effect"><i class="zmdi zmdi-settings"></i><span>اسلایدر</span></a>
+                                    </li>
+                                    <li>
                                         <a href="{!! action('Admin\SettingController@index') !!}" class="waves-effect"><i class="zmdi zmdi-settings"></i><span>تنظیمات عمومی</span></a>
                                     </li>
 

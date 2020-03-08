@@ -17,7 +17,6 @@ class CreateSliderTable extends Migration
              $table->bigIncrements('id');
              $table->string('title');
              $table->string('image');
-             $table->string('icon');
              $table->string('brief');
              $table->string('description');
              $table->timestamps();
