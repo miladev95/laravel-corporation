@@ -229,7 +229,11 @@
                                         <a href="{!! action('Admin\PostCommentController@index') !!}" class="waves-effect"><i class="zmdi zmdi-settings"></i><span>کامنت های پست ها</span></a>
                                     </li>
                                     <li>
-                                        <a href="{!! action('Admin\SliderController@index') !!}" class="waves-effect"><i class="zmdi zmdi-settings"></i><span>اسلایدر</span></a>
+                                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span> اسلایدر </span> <span class="menu-arrow"></span></a>
+                                        <ul class="list-unstyled">
+                                            <li><a href="{!! action('Admin\SliderController@index') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> مشاهده اسلایدر </span> </a></li>
+                                            <li><a href="{!! action('Admin\AddSliderController@index') !!}" class="waves-effect"><i class="zmdi zmdi-format-underlined"></i> <span> افزودن به اسلایدر </span> </a></li>
+                                        </ul>
                                     </li>
                                     <li>
                                         <a href="{!! action('Admin\SettingController@index') !!}" class="waves-effect"><i class="zmdi zmdi-settings"></i><span>تنظیمات عمومی</span></a>

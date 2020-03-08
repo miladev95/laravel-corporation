@@ -2,11 +2,11 @@
 
 @section('content')
 
-    @isset ($message)
+    @if(session('message'))
         <div class="alert alert-success text-center">
-            {{ $message }}
+            {!!  session('message') !!}
         </div>
-    @endisset
+    @endif
 
     <!-- ============================================================== -->
     <!-- Start right Content here -->

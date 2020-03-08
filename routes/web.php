@@ -73,7 +73,7 @@ Route::group(array('prefix'=>'admin','namespace'=>'Admin'),function (){
     Route::post('/post/{id?}/comment','PostCommentController@confirmComment');
 
     Route::get('/slider','SliderController@index');
-    Route::get('/slider/{id?}','SliderController@destroy');
+    Route::get('/slider/{id?}/delete','SliderController@destroy');
     Route::get('/slider/add','AddSliderController@index');
     Route::post('/slider/add','AddSliderController@store');
 });

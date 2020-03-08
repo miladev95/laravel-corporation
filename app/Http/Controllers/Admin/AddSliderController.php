@@ -15,6 +15,7 @@ class AddSliderController extends Controller
 
     public function store(Request $request)
     {
+        dd($request);
         $slider = new Slider(array(
             'title'=>$request->get('title'),
             'brief'=>$request->get('brief'),
