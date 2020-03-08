@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\NewsComment;
+use App\PostsComment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -19,7 +21,9 @@ class PostCommentController extends Controller
 
     public function destroy($id, Request $request)
     {
-
+        $postComment = PostsComment::find($id);
+        $postComment->delete();
+        return redirect('/admin/post/comment')->with('status', 'با موفقیت حذف شد');
     }
 
     public function confirmComment($id, Request $request)
