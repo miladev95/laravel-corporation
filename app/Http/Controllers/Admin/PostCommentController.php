@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\NewsComment;
+use App\Http\Controllers\Controller;
 use App\PostsComment;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
 class PostCommentController extends Controller
@@ -28,6 +27,9 @@ class PostCommentController extends Controller
 
     public function confirmComment($id, Request $request)
     {
-
+        $postComment = PostsComment::whereId($id)->firstOrFail();
+        $postComment->comment_status = 1;
+        $postComment->save();
+        return redirect('/admin/post/comment')->with('status', 'با موفقیت تایید شد');
     }
 }
