@@ -67,6 +67,10 @@ Route::group(array('prefix'=>'admin','namespace'=>'Admin'),function (){
     Route::post('/post/add','AddPostController@store');
     Route::get('/post/{id?}/edit','EditPostController@edit');
     Route::post('/post/{id?}/edit','EditPostController@update');
+
+    Route::get('/post/comment','PostCommentController@index');
+    Route::delete('/post/{id?}/comment','PostCommentController@destroy');
+    Route::post('/post/{id?}/comment','PostCommentController@confirmComment');
 });
 
 

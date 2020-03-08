@@ -21,7 +21,7 @@
                         <th>نام</th>
                         <th>ایمیل</th>
                         <th>متن کامنت</th>
-                        <th>عنوان خبر</th>
+                        <th>عنوان پست</th>
                         <th>تاریخ</th>
                         <th>وضعیت کامنت</th>
                         <th>عملیات</th>
@@ -29,14 +29,14 @@
                     </thead>
                     <tbody>
                     <?php $counter = 0;?>
-                    @foreach($newsComment as $commentItem)
+                    @foreach($postComment as $commentItem)
                         @if($counter % 2 == 0)
                             <tr class="gradeX">
                                 <td>{{$commentItem->name}}</td>
                                 <td>{{$commentItem->email}}</td>
                                 <td>{{$commentItem->comment}}</td>
                                 <td>
-                                    <a href="{{action('Admin\EditNewsController@edit',['id'=>$commentItem->news_id])}}">{{$commentItem->news_title}}</a>
+                                    <a href="{{action('Admin\EditPostController@edit',['id'=>$commentItem->post_id])}}">{{$commentItem->post_title}}</a>
                                 </td>
                                 <td>{{$commentItem->date}}</td>
                                 @if($commentItem->comment_status == 0)
@@ -46,14 +46,14 @@
                                 @endif
                                 <td class="actions">
                                     @if($commentItem->comment_status == 0)
-                                        <form action="/admin/news/{{$commentItem->id}}/comment" method="POST">
+                                        <form action="/admin/post/{{$commentItem->id}}/comment" method="POST">
                                             @csrf
                                             <button class='btn btn-primary button-next' type="submit">تایید کامنت <i
                                                     class="fa fa-pencil"></i></button>
                                         </form>
                                     @endif
 
-                                    {!! Form::open(['url'=>'/admin/news/'.$commentItem->id.'/comment','method'=>'DELETE','class'=>'form-horizontal',
+                                    {!! Form::open(['url'=>'/admin/post/'.$commentItem->id.'/comment','method'=>'DELETE','class'=>'form-horizontal',
                                         'role'=>'form','onsubmit' => 'return confirm("آیا مطمئن هستید؟")'])!!}
                                     @csrf
                                     <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">حذف
@@ -67,7 +67,7 @@
                                 <td>{{$commentItem->email}}</td>
                                 <td>{{$commentItem->comment}}</td>
                                 <td>
-                                    <a href="{{action('Admin\EditNewsController@edit',['id'=>$commentItem->news_id])}}">{{$commentItem->news_title}}</a>
+                                    <a href="{{action('Admin\EditPostController@edit',['id'=>$commentItem->post_id])}}">{{$commentItem->post_title}}</a>
                                 </td>
                                 <td>{{$commentItem->date}}</td>
                                 @if($commentItem->comment_status == 0)
@@ -77,13 +77,13 @@
                                 @endif
                                 <td class="actions">
                                     @if($commentItem->comment_status == 0)
-                                        <form action="/admin/news/{{$commentItem->id}}/comment" method="POST">
+                                        <form action="/admin/post/{{$commentItem->id}}/comment" method="POST">
                                             @csrf
                                             <button class='btn btn-primary button-next' type="submit">تایید کامنت <i
                                                     class="fa fa-pencil"></i></button>
                                         </form>
                                     @endif
-                                    {!! Form::open(['url'=>'/admin/news/'.$commentItem->id.'/comment','method'=>'DELETE','class'=>'form-horizontal',
+                                    {!! Form::open(['url'=>'/admin/post/'.$commentItem->id.'/comment','method'=>'DELETE','class'=>'form-horizontal',
                                         'role'=>'form','onsubmit' => 'return confirm("آیا مطمئن هستید؟")'])!!}
                                     @csrf
                                     <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">حذف
