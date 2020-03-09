@@ -15,7 +15,8 @@
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "5.8",
         "morilog/jalali": "3.*",
-        "te7a-houdini/laravel-trix": "^1.1"
+        "te7a-houdini/laravel-trix": "^1.1",
+        "tymon/jwt-auth": "1.0.*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

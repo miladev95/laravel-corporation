@@ -10,8 +10,13 @@
       <excludeFolder url="file://$MODULE_DIR$/../vendor/doctrine/dbal" />
       <excludeFolder url="file://$MODULE_DIR$/../vendor/doctrine/event-manager" />
       <excludeFolder url="file://$MODULE_DIR$/../vendor/laravelcollective/html" />
+      <excludeFolder url="file://$MODULE_DIR$/../vendor/lcobucci/jwt" />
       <excludeFolder url="file://$MODULE_DIR$/../vendor/morilog/jalali" />
+      <excludeFolder url="file://$MODULE_DIR$/../vendor/namshi/jose" />
+      <excludeFolder url="file://$MODULE_DIR$/../vendor/symfony/polyfill-php56" />
+      <excludeFolder url="file://$MODULE_DIR$/../vendor/symfony/polyfill-util" />
       <excludeFolder url="file://$MODULE_DIR$/../vendor/te7a-houdini/laravel-trix" />
+      <excludeFolder url="file://$MODULE_DIR$/../vendor/tymon/jwt-auth" />
       <excludeFolder url="file://$MODULE_DIR$/../../vendor/beyondcode/laravel-dump-server" />
       <excludeFolder url="file://$MODULE_DIR$/../../vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/../../vendor/dnoegel/php-xdg-base-dir" />

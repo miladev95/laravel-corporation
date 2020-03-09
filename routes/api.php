@@ -21,4 +21,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(array('namespace'=>'Api'),function (){
     Route::get('/news','NewsController@index')->name('news.all');
     Route::get('/gallery','GalleryController@index')->name('gallery.all');
+
+    Route::post('/register','AuthController@register');
+    Route::post('/login','AuthController@login');
+    Route::post('/logout','AuthController@logout');
 });

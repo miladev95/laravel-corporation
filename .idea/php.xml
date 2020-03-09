@@ -90,6 +90,11 @@
       <path value="$PROJECT_DIR$/../vendor/morilog/jalali" />
       <path value="$PROJECT_DIR$/../vendor/laravelcollective/html" />
       <path value="$PROJECT_DIR$/../vendor/te7a-houdini/laravel-trix" />
+      <path value="$PROJECT_DIR$/../vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/../vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/../vendor/tymon/jwt-auth" />
+      <path value="$PROJECT_DIR$/../vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/../vendor/symfony/polyfill-php56" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
