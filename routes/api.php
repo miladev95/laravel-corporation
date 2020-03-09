@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::group(array('namespace'=>'Api'),function (){
+    Route::get('/news','NewsController@index')->name('news.all');
+    Route::get('/gallery','GalleryController@index')->name('gallery.all');
+});
