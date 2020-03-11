@@ -18,10 +18,10 @@
                 <table class="table table-striped" id="datatable-editable">
                     <thead>
                     <tr>
-                        <th>عنوان</th>
-                        <th>توضیحات مختصر</th>
-                        <th>توضیحات</th>
-                        <th>عملیات</th>
+                        <th>Title</th>
+                        <th>Brief Description</th>
+                        <th>Description</th>
+                        <th>Operations</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -34,9 +34,9 @@
                                 <td>{{$notifItem->description}}</td>
                                 <td class="actions">
                                     {!! Form::open(['url'=>'/admin/notification/'.$notifItem->id,'method'=>'DELETE','class'=>'form-horizontal',
-                                        'role'=>'form','onsubmit' => 'return confirm("آیا مطمئن هستید؟")'])!!}
+                                        'role'=>'form','onsubmit' => 'return confirm("Are you sure?")'])!!}
                                     @csrf
-                                    <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">حذف
+                                    <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">Delete
                                         <i class="fa fa-trash-o"></i></button>
                                     {!! Form::close() !!}
                                 </td>
@@ -48,9 +48,9 @@
                                 <td>{{$notifItem->description}}</td>
                                 <td class="actions">
                                     {!! Form::open(['url'=>'/admin/notification/'.$notifItem->id,'method'=>'DELETE','class'=>'form-horizontal',
-                                        'role'=>'form','onsubmit' => 'return confirm("آیا مطمئن هستید؟")'])!!}
+                                        'role'=>'form','onsubmit' => 'return confirm("Are you sure?")'])!!}
                                     @csrf
-                                    <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">حذف
+                                    <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">Delete
                                         <i class="fa fa-trash-o"></i></button>
                                     {!! Form::close() !!}
                                 </td>
@@ -59,7 +59,7 @@
                     @endforeach
                     </tbody>
                 </table>
-                <a href="{{url('/admin/notification/add')}}" class="btn btn-primary waves-effect waves-light">افزودن اعلان جدید</a>
+                <a href="{{url('/admin/notification/add')}}" class="btn btn-primary waves-effect waves-light">Add Notification</a>
             </div>
         </div>
         <!-- end: panel body -->

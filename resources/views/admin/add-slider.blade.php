@@ -22,36 +22,34 @@
         <div class="content">
             <div class="col-sm-12">
                 <div class="card-box">
-                    <h4 class="header-title m-t-0 m-b-30">افزودن به اسلایدر</h4>
+                    <h4 class="header-title m-t-0 m-b-30">Add To Slider</h4>
 
                     <div class="row">
                         <div class="col-lg-6">
                             <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                    <label class="col-md-2 control-label" for="title">عنوان</label>
+                                    <label class="col-md-2 control-label" for="title">Title</label>
                                     <div class="col-md-10">
-                                        <input type="text" name="title" class="form-control" required
-                                               value="">
+                                        <input type="text" name="title" class="form-control" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-2 control-label" for="title">تصویر</label>
+                                    <label class="col-md-2 control-label" for="title">Image</label>
                                     <div class="col-md-10">
                                         <input type="file" name="image" class="dropify"
                                                data-height="200"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-2 control-label" for="title">توضیح مختصر</label>
+                                    <label class="col-md-2 control-label" for="title">Brief Description</label>
                                     <div class="col-md-10">
-                                        <input type="text" name="brief" class="form-control" required
-                                               value="">
+                                        <input type="text" name="brief" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-2 control-label" for="title">توضیحات</label>
+                                    <label class="col-md-2 control-label" for="title">Description</label>
                                     <div class="col-md-10">
                                         <input id="editor" type="hidden" name="content">
                                         <textarea class="form-control" name="description"  input="editor"></textarea>
@@ -59,7 +57,7 @@
                                 </div>
                                 <button type="submit"
                                         class="btn btn-success btn-rounded w-md waves-effect waves-light m-b-5">
-                                    ثبت
+                                    Submit
                                 </button>
                             </form>
                         </div><!-- end col -->
@@ -93,13 +91,13 @@
     <script type="text/javascript">
         $('.dropify').dropify({
             messages: {
-                'default': 'فایل را به اینجا بکشید یا کلیک کنید',
-                'replace': 'برای جایگزینی فایل را به اینجا بکشید یا کلیک کنید',
-                'remove': 'پاک کردن',
-                'error': 'با پوزش فراوان، خطایی رخ داده'
+                'default': 'Drag or click the image here',
+                'replace': 'Drag or click here to replace the image',
+                'remove': 'Clear',
+                'error': 'Sorry, an error has occurred'
             },
             error: {
-                'fileSize': 'حجم فایل بیشتر از حد مجاز است (1M).'
+                'fileSize': 'Image size is larger than allowed (3M)'
             }
         });
     </script>

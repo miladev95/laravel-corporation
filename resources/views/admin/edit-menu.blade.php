@@ -20,26 +20,26 @@
         <div class="content">
             <div class="col-sm-12">
                 <div class="card-box">
-                    <h4 class="header-title m-t-0 m-b-30">ویرایش منو</h4>
+                    <h4 class="header-title m-t-0 m-b-30">Edit Menu</h4>
 
                     <div class="row">
                         <div class="col-lg-6">
                             <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                    <label class="col-md-2 control-label" for="example-email">عنوان</label>
+                                    <label class="col-md-2 control-label" for="example-email">Title</label>
                                     <div class="col-md-10">
                                         <input type="text" name="title" class="form-control" required
-                                               placeholder="برنامه نویسی..."
+                                               placeholder="Programming..."
                                                value="{!! $menu->title !!}">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">انتخاب پدر</label>
+                                    <label class="col-sm-2 control-label">Parent</label>
                                     <div class="col-sm-10">
                                         <select class="form-control" id="parent" name="parent">
-                                            <option value="0">بدون پدر</option>
+                                            <option value="0">No Parent</option>
                                             @foreach($parents as $parentsItem)
                                                 @if($parentsItem->id == $menu->parent)
                                                     <option value="{{$parentsItem->id}}" selected>{{$parentsItem->title}}</option>
@@ -52,14 +52,14 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-2 control-label" for="example-email">تصویر منو</label>
+                                    <label class="col-md-2 control-label" for="example-email">Image</label>
                                     <div class="col-md-10">
                                         <input type="file" name="image" class="dropify" data-default-file="{!! asset($menu->image) !!}"
                                                data-height="200"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-2 control-label" for="example-email">لینک</label>
+                                    <label class="col-md-2 control-label" for="example-email">Link</label>
                                     <div class="col-md-10">
                                         <input type="text" name="link" class="form-control"
                                                placeholder="http://www....."
@@ -68,7 +68,7 @@
                                 </div>
                                 <button type="submit"
                                         class="btn btn-success btn-rounded w-md waves-effect waves-light m-b-5">
-                                    ثبت تغییرات
+                                    Submit
                                 </button>
                             </form>
                         </div><!-- end col -->
@@ -101,13 +101,13 @@
     <script type="text/javascript">
         $('.dropify').dropify({
             messages: {
-                'default': 'فایل را به اینجا بکشید یا کلیک کنید',
-                'replace': 'برای جایگزینی فایل را به اینجا بکشید یا کلیک کنید',
-                'remove': 'پاک کردن',
-                'error': 'با پوزش فراوان، خطایی رخ داده'
+                'default': 'Drag or click the image here',
+                'replace': 'Drag or click here to replace the image',
+                'remove': 'Clear',
+                'error': 'Sorry, an error has occurred'
             },
             error: {
-                'fileSize': 'حجم فایل بیشتر از حد مجاز است (1M).'
+                'fileSize': 'Image size is larger than allowed (3M)'
             }
         });
     </script>

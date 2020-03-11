@@ -23,19 +23,19 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card-box">
-                            <h4 class="header-title m-t-0 m-b-30">آپلود عکس</h4>
+                            <h4 class="header-title m-t-0 m-b-30">Upload Image</h4>
 
                             <input type="file" id="image" name="image" class="dropify" data-height="300"/>
                         </div>
                     </div><!-- end col -->
                 </div>
                 <div class="form-group">
-                    <label class="col-md-3 control-label">عنوان</label>
+                    <label class="col-md-3 control-label">Title</label>
                     <div class="col-md-10">
                         <input type="text" name="title" class="form-control">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">ثبت</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
 
         </div> <!-- container -->
@@ -57,13 +57,13 @@
     <script type="text/javascript">
         $('.dropify').dropify({
             messages: {
-                'default': 'فایل را به اینجا بکشید یا کلیک کنید',
-                'replace': 'برای جایگزینی فایل را به اینجا بکشید یا کلیک کنید',
-                'remove': 'پاک کردن',
-                'error': 'با پوزش فراوان، خطایی رخ داده'
+                'default': 'Drag or click the image here',
+                'replace': 'Drag or click here to replace the image',
+                'remove': 'Clear',
+                'error': 'Sorry, an error has occurred'
             },
             error: {
-                'fileSize': 'حجم فایل بیشتر از حد مجاز است (1M).'
+                'fileSize': 'Image size is larger than allowed (3M)'
             }
         });
     </script>

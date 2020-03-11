@@ -18,9 +18,9 @@
                 <table class="table table-striped" id="datatable-editable">
                     <thead>
                     <tr>
-                        <th>ایمیل</th>
-                        <th>تاریخ ثبت</th>
-                        <th>عملیات</th>
+                        <th>Email</th>
+                        <th>Register Date</th>
+                        <th>Operations</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -32,9 +32,9 @@
                                 <td>{{$letterItem->date}}</td>
                                 <td class="actions">
                                     {!! Form::open(['url'=>'/admin/newsletter/'.$letterItem->id,'method'=>'DELETE','class'=>'form-horizontal',
-                                        'role'=>'form','onsubmit' => 'return confirm("آیا مطمئن هستید؟")'])!!}
+                                        'role'=>'form','onsubmit' => 'return confirm("Are you sure?")'])!!}
                                     @csrf
-                                    <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">حذف
+                                    <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">Delete
                                         <i class="fa fa-trash-o"></i></button>
                                     {!! Form::close() !!}
                                 </td>
@@ -45,9 +45,9 @@
                                 <td>{{$letterItem->date}}</td>
                                 <td class="actions">
                                     {!! Form::open(['url'=>'/admin/newsletter/'.$letterItem->id,'method'=>'DELETE','class'=>'form-horizontal',
-                                        'role'=>'form','onsubmit' => 'return confirm("آیا مطمئن هستید؟")'])!!}
+                                        'role'=>'form','onsubmit' => 'return confirm("Are you sure?")'])!!}
                                     @csrf
-                                    <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">حذف
+                                    <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">Delete
                                         <i class="fa fa-trash-o"></i></button>
                                     {!! Form::close() !!}
                                 </td>

@@ -18,13 +18,13 @@
                 <table class="table table-striped" id="datatable-editable">
                     <thead>
                     <tr>
-                        <th>نام</th>
-                        <th>ایمیل</th>
-                        <th>متن کامنت</th>
-                        <th>عنوان پست</th>
-                        <th>تاریخ</th>
-                        <th>وضعیت کامنت</th>
-                        <th>عملیات</th>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Comment</th>
+                        <th>Post Title</th>
+                        <th>Date</th>
+                        <th>Comment Status</th>
+                        <th>Operations</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -40,23 +40,23 @@
                                 </td>
                                 <td>{{$commentItem->date}}</td>
                                 @if($commentItem->comment_status == 0)
-                                    <td>تایید نشده</td>
+                                    <td>Not Confirmed</td>
                                 @else
-                                    <td>تایید شده</td>
+                                    <td>Confirmed</td>
                                 @endif
                                 <td class="actions">
                                     @if($commentItem->comment_status == 0)
                                         <form action="/admin/post/{{$commentItem->id}}/comment" method="POST">
                                             @csrf
-                                            <button class='btn btn-primary button-next' type="submit">تایید کامنت <i
+                                            <button class='btn btn-primary button-next' type="submit">Confirm <i
                                                     class="fa fa-pencil"></i></button>
                                         </form>
                                     @endif
 
                                     {!! Form::open(['url'=>'/admin/post/'.$commentItem->id.'/comment','method'=>'DELETE','class'=>'form-horizontal',
-                                        'role'=>'form','onsubmit' => 'return confirm("آیا مطمئن هستید؟")'])!!}
+                                        'role'=>'form','onsubmit' => 'return confirm("Are you sure?")'])!!}
                                     @csrf
-                                    <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">حذف
+                                    <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">Delete
                                         <i class="fa fa-trash-o"></i></button>
                                     {!! Form::close() !!}
                                 </td>
@@ -71,22 +71,22 @@
                                 </td>
                                 <td>{{$commentItem->date}}</td>
                                 @if($commentItem->comment_status == 0)
-                                    <td>تایید نشده</td>
+                                    <td>Not Confirmed</td>
                                 @else
-                                    <td>تایید شده</td>
+                                    <td>Confirmed</td>
                                 @endif
                                 <td class="actions">
                                     @if($commentItem->comment_status == 0)
                                         <form action="/admin/post/{{$commentItem->id}}/comment" method="POST">
                                             @csrf
-                                            <button class='btn btn-primary button-next' type="submit">تایید کامنت <i
+                                            <button class='btn btn-primary button-next' type="submit">Confirm <i
                                                     class="fa fa-pencil"></i></button>
                                         </form>
                                     @endif
                                     {!! Form::open(['url'=>'/admin/post/'.$commentItem->id.'/comment','method'=>'DELETE','class'=>'form-horizontal',
-                                        'role'=>'form','onsubmit' => 'return confirm("آیا مطمئن هستید؟")'])!!}
+                                        'role'=>'form','onsubmit' => 'return confirm("Are you sure?")'])!!}
                                     @csrf
-                                    <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">حذف
+                                    <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">Delete
                                         <i class="fa fa-trash-o"></i></button>
                                     {!! Form::close() !!}
                                 </td>

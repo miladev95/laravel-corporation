@@ -16,35 +16,34 @@
         <div class="content">
             <div class="col-sm-12">
                 <div class="card-box">
-                    <h4 class="header-title m-t-0 m-b-30">افزودن اعلان جدید</h4>
+                    <h4 class="header-title m-t-0 m-b-30">Add Notification</h4>
 
                     <div class="row">
                         <div class="col-lg-6">
                             <form class="form-horizontal" role="form" method="post">
                                 @csrf
                                 <div class="form-group">
-                                    <label class="col-md-2 control-label" for="example-email">عنوان</label>
+                                    <label class="col-md-2 control-label" for="example-email">Title</label>
                                     <div class="col-md-10">
-                                        <input type="text" name="title" class="form-control" required
-                                               value="">
+                                        <input type="text" name="title" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-2 control-label" for="example-email">توضیحات مختصر</label>
+                                    <label class="col-md-2 control-label" for="example-email">Brief Description</label>
                                     <div class="col-md-10">
                                         <input type="text" name="brief" class="form-control" required
                                                value="">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-2 control-label" for="example-email">توضیحات</label>
+                                    <label class="col-md-2 control-label" for="example-email">Description</label>
                                     <div class="col-md-10">
                                         <textarea type="text" required name="description" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <button type="submit"
                                         class="btn btn-success btn-rounded w-md waves-effect waves-light m-b-5">
-                                    ثبت
+                                    Submit
                                 </button>
                             </form>
                         </div><!-- end col -->

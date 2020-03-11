@@ -18,11 +18,11 @@
                 <table class="table table-striped" id="datatable-editable">
                     <thead>
                     <tr>
-                        <th>عنوان</th>
-                        <th>تصویر</th>
-                        <th>تگ</th>
-                        <th>تاریخ</th>
-                        <th>عملیات</th>
+                        <th>Title</th>
+                        <th>Image</th>
+                        <th>Tags</th>
+                        <th>Date</th>
+                        <th>Operations</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -40,14 +40,14 @@
                                 <td>{{$postItem->date}}</td>
                                 <td class="actions">
                                     <form action="/admin/post/{{$postItem->id}}/edit">
-                                        <button class='btn btn-primary button-next' type="submit">ویرایش <i
+                                        <button class='btn btn-primary button-next' type="submit">Edit <i
                                                 class="fa fa-pencil"></i></button>
                                     </form>
 
                                     {!! Form::open(['url'=>'/admin/post/?id='.$postItem->id,'method'=>'DELETE','class'=>'form-horizontal',
-                                        'role'=>'form','onsubmit' => 'return confirm("آیا مطمئن هستید؟")'])!!}
+                                        'role'=>'form','onsubmit' => 'return confirm("Are you sure?")'])!!}
                                     @csrf
-                                    <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">حذف
+                                    <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">Delete
                                         <i class="fa fa-trash-o"></i></button>
                                     {!! Form::close() !!}
                                 </td>
@@ -64,9 +64,9 @@
                                     </form>
 
                                     {!! Form::open(['url'=>'/admin/post/?id='.$postItem->id,'method'=>'DELETE','class'=>'form-horizontal',
-                                        'role'=>'form','onsubmit' => 'return confirm("آیا مطمئن هستید؟")'])!!}
+                                        'role'=>'form','onsubmit' => 'return confirm("Are you sure?")'])!!}
                                     @csrf
-                                    <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">حذف
+                                    <button class='btn btn-primary button-next' id="deleteGradeX" type="submit">Delete
                                         <i class="fa fa-trash-o"></i></button>
                                     {!! Form::close() !!}
                                 </td>
@@ -75,7 +75,7 @@
                     @endforeach
                     </tbody>
                 </table>
-                <a href="{{url('/admin/post/add')}}" class="btn btn-primary waves-effect waves-light">افزودن پست جدید</a>
+                <a href="{{url('/admin/post/add')}}" class="btn btn-primary waves-effect waves-light">Add Post</a>
             </div>
         </div>
         <!-- end: panel body -->

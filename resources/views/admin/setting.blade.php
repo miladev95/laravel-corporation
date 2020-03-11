@@ -9,20 +9,7 @@
                                           	<div class="col-sm-12">
                                           		<div class="card-box">
 
-                                                      <div class="dropdown pull-right">
-                                                          <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false">
-                                                              <i class="zmdi zmdi-more-vert"></i>
-                                                          </a>
-                                                          <ul class="dropdown-menu" role="menu">
-                                                              <li><a href="#">متن اول</a></li>
-                                                              <li><a href="#">متن دوم</a></li>
-                                                              <li><a href="#">متن سوم</a></li>
-                                                              <li class="divider"></li>
-                                                              <li><a href="#">متن پاورقی</a></li>
-                                                          </ul>
-                                                      </div>
-
-                                          			<h4 class="header-title m-t-0 m-b-30">تنظیمات عمومی</h4>
+                                          			<h4 class="header-title m-t-0 m-b-30">Setting</h4>
 
                                           			<div class="row">
                                           				<div class="col-lg-6">
@@ -34,81 +21,81 @@
                                                       @endif
                                                                <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                   	                                            <div class="form-group">
-                  	                                                <label class="col-md-2 control-label" for="example-email">عنوان سایت</label>
+                  	                                                <label class="col-md-2 control-label" for="example-email">Website Title</label>
                   	                                                <div class="col-md-10">
-                  	                                                    <input type="text" name="title"class="form-control" placeholder="شرکت xCo" value="{!! $setting[0]['title'] !!}">
+                  	                                                    <input type="text" name="title"class="form-control" placeholder="xCorporation" value="{!! $setting[0]['title'] !!}">
                   	                                                </div>
                   	                                            </div>
 
                   	                                            <div class="form-group">
-                  	                                                <label class="col-md-2 control-label">تلفن</label>
+                  	                                                <label class="col-md-2 control-label">Telephone</label>
                   	                                                <div class="col-md-10">
-                  	                                                    <input type="number" name="telephone" class="form-control" placeholder="...۰۲۱" value="{!! $setting[0]['telephone'] !!}">
+                  	                                                    <input type="number" name="telephone" class="form-control" placeholder="0098..." value="{!! $setting[0]['telephone'] !!}">
                   	                                                </div>
                   	                                            </div>
 
                   	                                            <div class="form-group">
-                  	                                                <label class="col-md-2 control-label">ایمیل</label>
+                  	                                                <label class="col-md-2 control-label">Email</label>
                   	                                                <div class="col-md-10">
                   	                                                    <input type="email" name="email"  class="form-control" placeholder="milad@gmail.com" value="{!! $setting[0]['email'] !!}">
                   	                                                </div>
                   	                                            </div>
                                                                   <div class="form-group">
-                  	                                                <label class="col-md-2 control-label">فیسبوک</label>
+                  	                                                <label class="col-md-2 control-label">Facebook</label>
                   	                                                <div class="col-md-10">
                   	                                                    <input type="text" name="facebook" class="form-control" placeholder="facebook.com/milad" value="{!! $setting[0]['facebook'] !!}">
                   	                                                </div>
                   	                                            </div>
                                                                   <div class="form-group">
-                  	                                                <label class="col-md-2 control-label">اینستاگرام</label>
+                  	                                                <label class="col-md-2 control-label">Instagram</label>
                   	                                                <div class="col-md-10">
-                  	                                                    <input type="text" name="instagram" class="form-control" placeholder="instagram.com/milad" value="{!! $setting[0]['instagram'] !!}">
+                  	                                                    <input type="text" name="instagram" class="form-control" placeholder="instagram.com/milad0x6d" value="{!! $setting[0]['instagram'] !!}">
                   	                                                </div>
                   	                                            </div>
                                                                   <div class="form-group">
-                  	                                                <label class="col-md-2 control-label">توییتر</label>
+                  	                                                <label class="col-md-2 control-label">Twitter</label>
                   	                                                <div class="col-md-10">
                   	                                                    <input type="text" name="twitter" class="form-control" placeholder="twitter.com/milad" value="{!! $setting[0]['twitter'] !!}">
                   	                                                </div>
                   	                                            </div>
                                                                   <div class="form-group">
-                  	                                                <label class="col-md-2 control-label">تلگرام</label>
+                  	                                                <label class="col-md-2 control-label">Telegram</label>
                   	                                                <div class="col-md-10">
-                  	                                                    <input type="text" name="telegram" class="form-control" placeholder="t.me/milad" value="{!! $setting[0]['telegram'] !!}">
+                  	                                                    <input type="text" name="telegram" class="form-control" placeholder="t.me/milad0x6d" value="{!! $setting[0]['telegram'] !!}">
                   	                                                </div>
                   	                                            </div>
                                                                   <div class="form-group">
-                  	                                                <label class="col-md-2 control-label">لینکدین</label>
+                  	                                                <label class="col-md-2 control-label">Linkedin</label>
                   	                                                <div class="col-md-10">
-                  	                                                    <input type="text" name="linkedin" class="form-control" placeholder="linkedin.com/milad" value="{!! $setting[0]['linkedin'] !!}">
+                  	                                                    <input type="text" name="linkedin" class="form-control" placeholder="linkedin.com/milad0x6d" value="{!! $setting[0]['linkedin'] !!}">
                   	                                                </div>
                   	                                            </div>
                                                                   <div class="form-group">
-                  	                                                <label class="col-md-2 control-label">آدرس</label>
+                  	                                                <label class="col-md-2 control-label">Address</label>
                   	                                                <div class="col-md-10">
-                  	                                                    <input type="text" name="address" class="form-control" placeholder="تهران ، خیابان امام..." value="{!! $setting[0]['address'] !!}">
+                  	                                                    <input type="text" name="address" class="form-control" placeholder="Tehran...." value="{!! $setting[0]['address'] !!}">
                   	                                                </div>
                   	                                            </div>
                                                                   <div class="form-group">
-                  	                                                <label class="col-md-2 control-label">شماره همراه</label>
+                  	                                                <label class="col-md-2 control-label">Phone Number</label>
                   	                                                <div class="col-md-10">
                   	                                                    <input type="number" name="phone_number" class="form-control" placeholder="0912...." value="{!! $setting[0]['phone_number'] !!}">
                   	                                                </div>
                   	                                            </div>
                                                                   <div class="form-group">
-                  	                                                <label class="col-md-2 control-label">فکس</label>
+                  	                                                <label class="col-md-2 control-label">Fax</label>
                   	                                                <div class="col-md-10">
                   	                                                    <input type="text" name="fax" class="form-control" placeholder="" value="{!! $setting[0]['fax'] !!}">
                   	                                                </div>
                   	                                            </div>
                                                                   <div class="form-group">
-                  	                                                <label class="col-md-2 control-label">توضیحات مختصر</label>
+                  	                                                <label class="col-md-2 control-label">Brief Description</label>
                   	                                                <div class="col-md-10">
                   	                                                    <input type="text" name="brief_about" class="form-control" placeholder="" value="{!! $setting[0]['brief_about'] !!}">
                   	                                                </div>
                   	                                            </div>
 
-                                                        <button type="submit" class="btn btn-success btn-rounded w-md waves-effect waves-light m-b-5">ثبت تغییرات</button>
+                                                        <button type="submit" class="btn btn-success btn-rounded w-md waves-effect waves-light m-b-5">Submit</button>
                   	                               </form>
                                           				</div><!-- end col -->
                                           			</div><!-- end row -->

@@ -23,7 +23,7 @@
                             </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li>
-                                    <a href="{{ action("Admin\SliderController@destroy",['id'=>$sliderItem->id]) }}">حذف</a>
+                                    <a href="{{ action("Admin\SliderController@destroy",['id'=>$sliderItem->id]) }}">Delete</a>
                                 </li>
                             </ul>
                         </div>
