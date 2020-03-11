@@ -31,7 +31,7 @@ class AddSliderController extends Controller
                 'description'=>$request->get('description'),
             ));
             $sliderObject->save();
-            return redirect('/admin/slider')->with('status','با موفقیت ثبت شد');
+            return redirect('/admin/slider')->with('status','Done successfully');
         } else {
             $sliderObject = new Slider(array(
                 'title'=>$request->get('title'),
@@ -40,7 +40,7 @@ class AddSliderController extends Controller
                 'description'=>$request->get('description'),
             ));
             $sliderObject->save();
-            return redirect('/admin/slider')->with('status','با موفقیت ثبت شد');
+            return redirect('/admin/slider')->with('status','Done successfully');
         }
     }
 }

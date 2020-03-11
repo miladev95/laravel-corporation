@@ -18,9 +18,9 @@ class GalleryController extends Controller
             if(File::exists($image)) {
                 File::delete($image);
                 DB::table('gallery')->delete($request->get("id"));
-                $message = 'عکس مورد نظر با موفقیت حذف شد';
+                $message = 'The photo was successfully deleted';
             }else {
-                $message = 'خطایی رخ داده است لطفا دوباره تلاش نمایید';
+                $message = 'An error has occurred, please try again';
             }
             $gallery = Gallery::all();
             return view('admin.gallery', compact('gallery', 'message'));
@@ -50,7 +50,7 @@ class GalleryController extends Controller
                 'title'=>$request->get('title'),
             ));
             $galleryObject->save();
-            return redirect('/admin/newgallery')->with('status','با موفقیت انجام شد');
+            return redirect('/admin/newgallery')->with('status','Done successfully');
         }
         return view('admin.new-gallery');
     }

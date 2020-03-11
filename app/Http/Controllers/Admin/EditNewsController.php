@@ -45,6 +45,6 @@ class EditNewsController extends Controller
             $news->content = $request->get('content');
             $news->save();
         }
-        return redirect('admin/news')->with('status', 'با موفقیت ویرایش شد');
+        return redirect('admin/news')->with('status', 'Done successfully');
     }
 }

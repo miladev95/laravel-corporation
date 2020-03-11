@@ -35,7 +35,7 @@ class AddNewsController extends Controller
                 'content'=>$request->get('content'),
             ));
             $newsObject->save();
-            return redirect('/admin/news')->with('status','با موفقیت ثبت شد');
+            return redirect('/admin/news')->with('status','Done successfully');
         } else {
             $newsObject = new News(array(
                 'title'=>$request->get('title'),
@@ -45,7 +45,7 @@ class AddNewsController extends Controller
                 'content'=>$request->get('content'),
             ));
             $newsObject->save();
-            return redirect('/admin/news')->with('status','با موفقیت ثبت شد');
+            return redirect('/admin/news')->with('status','Done successfully');
         }
     }
 }

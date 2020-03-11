@@ -21,6 +21,6 @@ class AddNotificationController extends Controller
             'description'=>$request->get('description'),
         ));
         $notification->save();
-        return redirect('/admin/notification')->with('status','با موفقیت ذخیره شد');
+        return redirect('/admin/notification')->with('status','Done successfully');
     }
 }

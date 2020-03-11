@@ -89,7 +89,7 @@ class SettingController extends Controller
       $setting->fax = $request->get('fax');
       $setting->brief_about = $request->get('brief_about');
       $setting->save();
-      return redirect('/home/setting')->with('status','ویرایش با موفقیت انجام شد');
+      return redirect('/home/setting')->with('status','Done Successfully');
     }
 
     /**

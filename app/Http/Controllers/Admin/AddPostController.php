@@ -35,7 +35,7 @@ class AddPostController extends Controller
                 'content'=>$request->get('content'),
             ));
             $postObject->save();
-            return redirect('/admin/post')->with('status','با موفقیت ثبت شد');
+            return redirect('/admin/post')->with('status','Done successfully');
         } else {
             $postObject = new Posts(array(
                 'title'=>$request->get('title'),
@@ -45,7 +45,7 @@ class AddPostController extends Controller
                 'content'=>$request->get('content'),
             ));
             $postObject->save();
-            return redirect('/admin/post')->with('status','با موفقیت ثبت شد');
+            return redirect('/admin/post')->with('status','Done successfully');
         }
     }
 }

@@ -45,6 +45,6 @@ class EditPostController extends Controller
             $post->content = $request->get('content');
             $post->save();
         }
-        return redirect('admin/post')->with('status', 'با موفقیت ویرایش شد');
+        return redirect('admin/post')->with('status', 'Done successfully');
     }
 }

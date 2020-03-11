@@ -23,9 +23,9 @@ class NewsController extends Controller
             if(File::exists($image_path)){
                 File::delete($image_path);
             }
-            return redirect('/admin/news')->with('status','با موفقیت حذف شد');
+            return redirect('/admin/news')->with('status','Successfully deleted');
         }else {
-            return redirect('/admin/news')->with('status','منوی مورد یافت نشد');
+            return redirect('/admin/news')->with('status','Not Found');
         }
     }
 }

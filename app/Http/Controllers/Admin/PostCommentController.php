@@ -22,7 +22,7 @@ class PostCommentController extends Controller
     {
         $postComment = PostsComment::find($id);
         $postComment->delete();
-        return redirect('/admin/post/comment')->with('status', 'با موفقیت حذف شد');
+        return redirect('/admin/post/comment')->with('status', 'Successfully deleted');
     }
 
     public function confirmComment($id, Request $request)
@@ -30,6 +30,6 @@ class PostCommentController extends Controller
         $postComment = PostsComment::whereId($id)->firstOrFail();
         $postComment->comment_status = 1;
         $postComment->save();
-        return redirect('/admin/post/comment')->with('status', 'با موفقیت تایید شد');
+        return redirect('/admin/post/comment')->with('status', 'Successfully approved');
     }
 }

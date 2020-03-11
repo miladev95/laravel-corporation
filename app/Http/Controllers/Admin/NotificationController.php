@@ -19,6 +19,6 @@ class NotificationController extends Controller
     {
         $notification = Notification::find($id);
         $notification->delete();
-        return redirect('/admin/notification')->with('status', 'با موفقیت حذف شد');
+        return redirect('/admin/notification')->with('status', 'Successfully deleted');
     }
 }

@@ -49,6 +49,6 @@ class EditMenuController extends Controller
             $menu->link = $request->get('link');
             $menu->save();
         }
-        return redirect('admin/menu')->with('status', 'با موفقیت ویرایش شد');
+        return redirect('admin/menu')->with('status', 'Done successfully');
     }
 }

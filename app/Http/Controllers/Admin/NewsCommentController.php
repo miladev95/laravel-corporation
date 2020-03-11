@@ -23,7 +23,7 @@ class NewsCommentController extends Controller
     {
         $newsComment = NewsComment::find($id);
         $newsComment->delete();
-        return redirect('/admin/news/comment')->with('status', 'با موفقیت حذف شد');
+        return redirect('/admin/news/comment')->with('status', 'Successfully deleted');
     }
 
     public function confirmComment($id, Request $request)
@@ -31,6 +31,6 @@ class NewsCommentController extends Controller
         $newsComment = NewsComment::whereId($id)->firstOrFail();
         $newsComment->comment_status = 1;
         $newsComment->save();
-        return redirect('/admin/news/comment')->with('status', 'با موفقیت تایید شد');
+        return redirect('/admin/news/comment')->with('status', 'Successfully approved');
     }
 }

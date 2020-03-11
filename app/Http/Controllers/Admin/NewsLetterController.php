@@ -17,6 +17,6 @@ class NewsLetterController extends Controller
     public function destroy($id,Request $request){
         $newsLetter = NewsLetter::find($id);
         $newsLetter->delete();
-        return redirect('/admin/newsletter')->with('status', 'با موفقیت حذف شد');
+        return redirect('/admin/newsletter')->with('status', 'Successfully deleted');
     }
 }

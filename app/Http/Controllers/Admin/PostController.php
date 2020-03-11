@@ -23,9 +23,9 @@ class PostController extends Controller
             if(File::exists($image_path)){
                 File::delete($image_path);
             }
-            return redirect('/admin/post')->with('status','با موفقیت حذف شد');
+            return redirect('/admin/post')->with('status','Successfully deleted');
         }else {
-            return redirect('/admin/post')->with('status','منوی مورد یافت نشد');
+            return redirect('/admin/post')->with('status','Not Found');
         }
     }
 }

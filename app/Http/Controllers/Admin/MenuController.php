@@ -35,9 +35,9 @@ class MenuController extends Controller
             if(File::exists($image_path)){
                 File::delete($image_path);
             }
-            return redirect('/admin/menu')->with('status','با موفقیت حذف شد');
+            return redirect('/admin/menu')->with('status','Successfully deleted');
         }else {
-            return redirect('/admin/menu')->with('status','منوی مورد یافت نشد');
+            return redirect('/admin/menu')->with('status','Not Found');
         }
     }
 

@@ -23,6 +23,6 @@ class SliderController extends Controller
         if (File::exists($image_path)) {
             File::delete($image_path);
         }
-        return redirect('/admin/slider')->with('status', 'با موفقیت حذف شد');
+        return redirect('/admin/slider')->with('status', 'Successfully deleted');
     }
 }
