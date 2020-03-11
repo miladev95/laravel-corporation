@@ -30,63 +30,65 @@
                         <?php $isFirst = true ?>
                         @foreach($slider as $sliderItem)
                             @if($isFirst)
-                                    <div class="item active">
-                                        <?php $isFirst = false?>
-                            @else
-                                    <div class="item">
-                            @endif
-                                <img src="{{asset($sliderItem->image)}}">
-                                <div class="carousel-caption">
-                                    <div class="qt-carousel-caption-box">
-                                        <h3>{!! $sliderItem->title !!}</h3>
-                                        <p>{!! $sliderItem->brief !!}</p>
+                                <div class="item active">
+                                    <?php $isFirst = false?>
+                                    @else
+                                        <div class="item">
+                                            @endif
+                                            <img src="{{asset($sliderItem->image)}}">
+                                            <div class="carousel-caption">
+                                                <div class="qt-carousel-caption-box">
+                                                    <h3>{!! $sliderItem->title !!}</h3>
+                                                    <p>{!! $sliderItem->brief !!}</p>
 
 
-                                        <a href="#" class="btn btn-primary btn-lg qt-carosel-caption-btn">ادامه <i
-                                                class="fa fa-arrow-circle-right"></i></a>
+                                                    <a href="#" class="btn btn-primary btn-lg qt-carosel-caption-btn">ادامه
+                                                        <i
+                                                            class="fa fa-arrow-circle-right"></i></a>
 
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div><!-- carousel-inner -->
-
-
-                    <!-- Slides Navigation -->
-                    <ul class="nav nav-pills nav-justified qt-carosel-nav">
-                        <?php
-                            $isFirst = true;
-                            $counter = 0; ?>
-                        @foreach($slider as $sliderItem)
-                            @if($isFirst)
-                                <li data-target="#qt_home_carosel" data-slide-to="{!! $counter!!}" class="active">
-                                <?php $isFirst = false;
-                                    $counter++;
-                                ?>
-                            @else
-                                    <li data-target="#qt_home_carosel" data-slide-to="{!! $counter!!}">
-                                        <?php $counter++; ?>
-                            @endif
-                                <a href="#">
-                                    <div class="row qt-carosel-nav-item">
-                                        <div class="col-xs-2 qt-carosel-nav-icon">
-                                            <i class="fa fa-list"></i>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="col-xs-10  qt-carosel-nav-text">
-                                            <h3>{!! $sliderItem->title !!}</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul> <!-- qt-carosel-nav -->
+                                        @endforeach
+                                </div><!-- carousel-inner -->
 
 
-                </div><!-- qt_home_carosel -->
+                                <!-- Slides Navigation -->
+                                <ul class="nav nav-pills nav-justified qt-carosel-nav">
+                                    <?php
+                                    $isFirst = true;
+                                    $counter = 0; ?>
+                                    @foreach($slider as $sliderItem)
+                                        @if($isFirst)
+                                            <li data-target="#qt_home_carosel" data-slide-to="{!! $counter!!}"
+                                                class="active">
+                                            <?php $isFirst = false;
+                                            $counter++;
+                                            ?>
+                                        @else
+                                            <li data-target="#qt_home_carosel" data-slide-to="{!! $counter!!}">
+                                                <?php $counter++; ?>
+                                                @endif
+                                                <a href="#">
+                                                    <div class="row qt-carosel-nav-item">
+                                                        <div class="col-xs-2 qt-carosel-nav-icon">
+                                                            <i class="fa fa-list"></i>
+                                                        </div>
+                                                        <div class="col-xs-10  qt-carosel-nav-text">
+                                                            <h3>{!! $sliderItem->title !!}</h3>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            @endforeach
+                                </ul> <!-- qt-carosel-nav -->
+
+
+                    </div><!-- qt_home_carosel -->
+
+                </div>
 
             </div>
-
-        </div>
 
     </section>
 
@@ -112,25 +114,25 @@
             </div>
 
             <div class="row">
-
                 <div class="col-md-8">
+                    @if(isset($post))
 
-                    <div class="qt-page-header">
-                        <h2>{!! $post->title !!}</h2>
-                    </div>
+                        <div class="qt-page-header">
+                            <h2>{!! $post->title !!}</h2>
+                        </div>
 
-                    <div class="qt-featured-image qt-page-featured-image">
-                        <img src="{!! $post->image !!}" alt="Welcome to CreaTec Website London">
-                    </div>
+                        <div class="qt-featured-image qt-page-featured-image">
+                            <img src="{!! $post->image !!}" alt="Welcome to CreaTec Website London">
+                        </div>
 
-                    <div class="qt-page-body">
+                        <div class="qt-page-body">
 
-                        {!! $post->content !!}
+                            {!! $post->content !!}
 
-                    </div>
+                        </div>
+                    @endif
 
                 </div>
-
                 <div class="col-md-4">
 
                     <!-- =========================================================================================== -->

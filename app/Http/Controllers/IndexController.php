@@ -10,6 +10,7 @@ use App\Notification;
 use App\Posts;
 use App\Setting;
 use App\Slider;
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
@@ -19,7 +20,7 @@ class IndexController extends Controller
         $slider = Slider::all()->take(3);
         $Menu = Menu::all();
         $news = News::all()->take(3);
-        $post = Posts::all()->take(1)->first();
+        $post = Posts::all()->take(1)->last();
         $notification = Notification::latest('id')->first();
         $gallery = Gallery::all()->take(3);
         return view('index', compact('setting', 'Menu', 'slider',
