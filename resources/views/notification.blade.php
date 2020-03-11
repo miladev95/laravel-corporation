@@ -39,10 +39,10 @@
 
                 <div class="col-md-8">
                     <div class="qt-page-header">
-                        <h2>اخبار<small></small></h2>
+                        <h2>Notification<small></small></h2>
                         <ol class="breadcrumb">
-                            <li class="active">اخبار</li>
-                            <li><a href="{{url("/")}}">صفحه اصلی</a></li>
+                            <li class="active">Notification</li>
+                            <li><a href="{{url("/")}}">Main Page</a></li>
                         </ol>
                     </div>
                     <div class="qt-page-header">

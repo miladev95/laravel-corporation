@@ -39,10 +39,10 @@
 
       <div class="col-md-8">
           <div class="qt-page-header">
-              <h2>اخبار<small></small></h2>
+              <h2>Post<small></small></h2>
               <ol class="breadcrumb">
-                  <li class="active">اخبار</li>
-                  <li><a href="{{url("/")}}">صفحه اصلی</a></li>
+                  <li class="active">Post</li>
+                  <li><a href="{{url("/")}}">Main Page</a></li>
               </ol>
           </div>
         <div class="qt-page-header">
@@ -83,15 +83,15 @@
               <table>
                   <form method="post">
                       <div class="form-group">
-                    <input type="text" name="name" class="form-control" placeholder="نام خود را وارد کنید" required>
+                    <input type="text" name="name" class="form-control" placeholder="Enter your name" required>
                       </div>
                       <div class="form-group">
-                    <input type="email" name="email"  class="form-control" placeholder="ایمیل خود را وارد کنید" required>
+                    <input type="email" name="email"  class="form-control" placeholder="Enter your email" required>
                       </div>
                     <div class="form-group">
-                      <textarea class="form-control" placeholder="کامنت خود را وارد کنید" name="comment" rows="3" required></textarea>
+                      <textarea class="form-control" placeholder="Enter your comment" name="comment" rows="3" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">ارسال</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
                     <input type="hidden" name="id" value="{{ $post->id }}"/>
                   </form>

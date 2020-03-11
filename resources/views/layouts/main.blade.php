@@ -91,7 +91,7 @@
 
       <section class="col-md-6 col-md-push-3">
 
-        <h3>درباره ما</h3>
+        <h3>About us</h3>
 
         <p>{!! $setting[0]['brief_about'] !!}</p>
 
@@ -99,22 +99,21 @@
 
       <nav class="col-md-3 col-md-pull-6 col-sm-6">
 
-        <h3>دسترسی سریع</h3>
+        <h3>Quick Access</h3>
 
         <ul class="qt-footer-nav">
-          <li><a href="#"><i class="fa fa-home fa-fw"></i> صفحه اصلی</a></li>
-          <li><a href="#"><i class="fa fa-group fa-fw"></i> درباره ما</a></li>
-          <li><a href="#"><i class="fa fa-camera fa-fw"></i> گالری تصاویر</a></li>
-          <li><a href="#"><i class="fa fa-folder-open fa-fw"></i> نمونه کارها</a></li>
-          <li><a href="#"><i class="fa fa-calendar fa-fw"></i> اخبار</a></li>
-          <li><a href="#"><i class="fa fa-envelope fa-fw"></i> تماس با ما</a></li>
+          <li><a href="{{action("IndexController@index")}}"><i class="fa fa-home fa-fw"></i> Main Page</a></li>
+          <li><a href="#"><i class="fa fa-group fa-fw"></i> About us</a></li>
+          <li><a href="{{action("GalleryController@index")}}"><i class="fa fa-camera fa-fw"></i> Gallery</a></li>
+          <li><a href="{{action("NewsListController@index")}}"><i class="fa fa-calendar fa-fw"></i> News</a></li>
+          <li><a href="#"><i class="fa fa-envelope fa-fw"></i> Contact us</a></li>
         </ul>
 
       </nav>
 
       <section class="col-md-3 col-sm-6">
 
-        <h3>آدرس و شماره تماس</h3>
+        <h3>Address and phone</h3>
 
         <address>{!! $setting[0]['address'] !!}</address>
 
@@ -132,8 +131,7 @@
       <div class="col-md-12">
         <div class="qt-footer-bottom">
           <p>&copy;
-کلیه حقوق برای این سایت محفوظ می باشد.....
- <a href="#" target="_blank">توسعه</a> و <a href="#" target="_blank">طراحی</a></p>
+All right reserved</p>
         </div>
       </div>
     </div>

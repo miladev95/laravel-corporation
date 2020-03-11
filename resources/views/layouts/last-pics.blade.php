@@ -5,8 +5,8 @@
         <div class="row">
 
             <div class="col-sm-12 col-md-3 text-center">
-                <h3>آخرین تصاویر</h3>
-                <a href="{!! action('GalleryController@index',['page'=>1]) !!}" class="btn btn-primary btn-lg qt-recent-photo-galleries-view-all"><i class="fa fa-camera"></i> نمایش همه</a>
+                <h3>Latest Images</h3>
+                <a href="{!! action('GalleryController@index',['page'=>1]) !!}" class="btn btn-primary btn-lg qt-recent-photo-galleries-view-all"><i class="fa fa-camera"></i>Show More</a>
             </div>
             @foreach($gallery as $galleryItem)
                 <div class="col-sm-4 col-md-3">

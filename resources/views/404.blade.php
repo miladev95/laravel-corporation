@@ -23,10 +23,10 @@
       <div class="col-md-12">
 
         <div class="qt-page-header">
-          <h2>٤٠٤ <small> - صفحه مورد نظروجود ندارد</small></h2>
+          <h2>404 <small>  The page does not exist</small></h2>
           <ol class="breadcrumb">
-	    <li class="active">صفحه 404</li>
-            <li><a href="{{action("IndexController@index")}}">صفحه اصلی</a></li>
+	    <li class="active">Page 404</li>
+            <li><a href="{{action("IndexController@index")}}">Main Page</a></li>
 
           </ol>
         </div>
@@ -45,9 +45,9 @@
 
             <div class="col-sm-8">
               <div class="well well-lg">
-                <p class="lead">صفحه مورد نظر شما یافت نشد</p>
-                <p>مجددا تلاش کنید یا به صفحه اصلی بازگردید</p>
-                <p><br><a href="{{action("IndexController@index")}}" class="btn btn-primary btn-lg"><i class="fa fa-home"></i> &nbsp; صفحه اصلی</a></p>
+                <p class="lead">The page you were looking for was not found</p>
+                <p>Please try again or return to the Home screen</p>
+                <p><br><a href="{{action("IndexController@index")}}" class="btn btn-primary btn-lg"><i class="fa fa-home"></i> &nbsp;Main Page</a></p>
               </div>
             </div>
 

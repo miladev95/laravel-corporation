@@ -26,10 +26,10 @@
                 <div class="col-md-12">
 
                     <div class="qt-page-header">
-                        <h2>آلبوم تصاویر<small></small></h2>
+                        <h2>Gallery<small></small></h2>
                         <ol class="breadcrumb">
-                            <li class="active">آلبوم تصاویر</li>
-                            <li><a href="{!! action('IndexController@index') !!}">صفحه اصلی</a></li>
+                            <li class="active">Gallery</li>
+                            <li><a href="{!! action('IndexController@index') !!}">Main Page</a></li>
                         </ol>
                     </div>
 

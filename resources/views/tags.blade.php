@@ -34,10 +34,10 @@
                 <div class="col-md-8">
 
                     <div class="qt-page-header">
-                        <h2>لیست نوشته ها<small></small></h2>
+                        <h2>Tags<small></small></h2>
                         <ol class="breadcrumb">
-                            <li class="active">لیست اخبار</li>
-                            <li><a href="{{url("/")}}">صفحه اصلی</a></li>
+                            <li class="active">Tags</li>
+                            <li><a href="{{url("/")}}">Main Page</a></li>
                         </ol>
                     </div>
 
@@ -68,7 +68,7 @@
                                     </a>
 
                                     <p>
-                                        {!!  \Illuminate\Support\Str::limit($newsItem->content,100,$end="...")  !!}<a class="qt-sidebar-read-more" href="{{action("SingleNewsController@index",$newsItem->id)}}">ادامه <i class="fa  fa-arrow-circle-right"></i></a>
+                                        {!!  \Illuminate\Support\Str::limit($newsItem->content,100,$end="...")  !!}<a class="qt-sidebar-read-more" href="{{action("SingleNewsController@index",$newsItem->id)}}">Show More <i class="fa  fa-arrow-circle-right"></i></a>
                                     </p>
 
                                 </li>
@@ -101,7 +101,7 @@
                                     </a>
 
                                     <p>
-                                        {!!  \Illuminate\Support\Str::limit($postItem->content,100,$end="...")  !!}<a class="qt-sidebar-read-more" href="{{action("SinglePostController@index",['id'=>$postItem->id])}}">ادامه <i class="fa  fa-arrow-circle-right"></i></a>
+                                        {!!  \Illuminate\Support\Str::limit($postItem->content,100,$end="...")  !!}<a class="qt-sidebar-read-more" href="{{action("SinglePostController@index",['id'=>$postItem->id])}}">Show More <i class="fa  fa-arrow-circle-right"></i></a>
                                     </p>
 
                                 </li>

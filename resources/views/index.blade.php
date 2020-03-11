@@ -42,7 +42,7 @@
                                                     <p>{!! $sliderItem->brief !!}</p>
 
 
-                                                    <a href="{{action('SingleSliderController@index',['id'=>$sliderItem->id])}}" class="btn btn-primary btn-lg qt-carosel-caption-btn">ادامه
+                                                    <a href="{{action('SingleSliderController@index',['id'=>$sliderItem->id])}}" class="btn btn-primary btn-lg qt-carosel-caption-btn">More
                                                         <i
                                                             class="fa fa-arrow-circle-right"></i></a>
 
@@ -108,7 +108,7 @@
                     </div>
                     <div class="col-md-4">
                         <a class="btn btn-lg btn-primary btn-block"
-                           href="{!! action('NotificationController@index')!!}">اطلاعیه <i
+                           href="{!! action('NotificationController@index')!!}"> Notification <i
                                 class="fa fa-arrow-circle-right"></i> </a>
                     </div>
                 </div>
@@ -148,7 +148,7 @@
 
                     <div class="qt-widget-box">
                         <div class="qt-widget-header">
-                            <h3>آخرین اخبار و رویدادها</h3>
+                            <h3>Latest news and eventes</h3>
                         </div>
 
                         <div class="qt-widget-body">
@@ -165,7 +165,7 @@
                                         <p>
                                             {!!  \Illuminate\Support\Str::limit($item_news->content,50,$end="...")  !!}
                                             <a class="qt-sidebar-read-more"
-                                               href="{!! action('SingleNewsController@index',['id'=>$item_news->id]) !!}">ادامه
+                                               href="{!! action('SingleNewsController@index',['id'=>$item_news->id]) !!}">More
                                                 <i class="fa fa-arrow-circle-right"></i></a>
                                         </p>
                                     </li>
@@ -174,7 +174,7 @@
                             </ul>
 
                             <a href="{!! action('NewsListController@index',['page'=>1]) !!}"
-                               class="btn btn-primary btn-lg"><i class="fa fa-newspaper-o"></i> نمایش همه</a>
+                               class="btn btn-primary btn-lg"><i class="fa fa-newspaper-o"></i> Show More</a>
 
                         </div>
                     </div>

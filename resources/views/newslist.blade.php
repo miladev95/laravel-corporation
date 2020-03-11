@@ -33,10 +33,10 @@
       <div class="col-md-8">
 
         <div class="qt-page-header">
-          <h2>لیست نوشته ها<small></small></h2>
+          <h2>News List<small></small></h2>
           <ol class="breadcrumb">
-	<li class="active">لیست اخبار</li>
-            <li><a href="{{url("/")}}">صفحه اصلی</a></li>
+	<li class="active">News List</li>
+            <li><a href="{{url("/")}}">Main Page</a></li>
           </ol>
         </div>
 
@@ -67,7 +67,7 @@
               </a>
 
               <p>
-                  {!!  \Illuminate\Support\Str::limit($newsItem->content,100,$end="...")  !!}<a class="qt-sidebar-read-more" href="{{action("SingleNewsController@index",['id'=>$newsItem->id])}}">ادامه <i class="fa  fa-arrow-circle-right"></i></a>
+                  {!!  \Illuminate\Support\Str::limit($newsItem->content,100,$end="...")  !!}<a class="qt-sidebar-read-more" href="{{action("SingleNewsController@index",['id'=>$newsItem->id])}}">More <i class="fa  fa-arrow-circle-right"></i></a>
               </p>
 
             </li>
@@ -84,12 +84,12 @@
             <div class="row">
               <div class="col-sm-4 col-sm-push-2">
                 @if($totalPages != $currentPage)
-                    <a href="{{action("NewsListController@index",['page'=>$currentPage+1])}}" class="btn btn-primary btn-lg btn-block"> <i class="fa fa-arrow-circle-left"></i> بعدی</a>
+                    <a href="{{action("NewsListController@index",['page'=>$currentPage+1])}}" class="btn btn-primary btn-lg btn-block"> <i class="fa fa-arrow-circle-left"></i> Next</a>
                 @endif
               </div>
               <div class="col-sm-4 col-sm-push-2">
                   @if($currentPage != 1)
-                    <a href="{{action("NewsListController@index",['page'=>$currentPage-1])}}" class="btn btn-primary btn-lg btn-block"> قبلی <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="{{action("NewsListController@index",['page'=>$currentPage-1])}}" class="btn btn-primary btn-lg btn-block"> Previous <i class="fa fa-arrow-circle-right"></i></a>
                   @endif
               </div>
             </div>
