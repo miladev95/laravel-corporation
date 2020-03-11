@@ -20,7 +20,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(array('namespace'=>'Api'),function (){
     Route::get('/news','NewsController@index')->name('news.all');
+    Route::get('/news/{id}/comment','NewsController@comment')->name('news.comment');
     Route::get('/gallery','GalleryController@index')->name('gallery.all');
+    Route::get('/posts','PostController@index')->name('posts.all');
+    Route::get('/notification','NotificationController@index')->name('notification.all');
 
     Route::post('/register','AuthController@register');
     Route::post('/login','AuthController@login');
