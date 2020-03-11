@@ -42,7 +42,7 @@ class SinglePostController extends Controller
             'date' => $date,
         ));
         $postComment->save();
-        return redirect(action('SinglePostController@index',['id'=>$request->id]))->with('status','نظر شما با موفقیت ثبت شد با تشکر');
+        return redirect(action('SinglePostController@index',['id'=>$request->id]))->with('status','Your comment has been successfully submitted Thanks');
     }
 
 }

@@ -39,6 +39,6 @@ class SingleNewsController extends Controller
             'date' => $date,
         ));
         $newsComment->save();
-        return redirect(action('SingleNewsController@index',['id'=>$request->id]))->with('status','نظر شما با موفقیت ثبت شد با تشکر');
+        return redirect(action('SingleNewsController@index',['id'=>$request->id]))->with('status','Your comment has been successfully submitted Thanks');
     }
 }
