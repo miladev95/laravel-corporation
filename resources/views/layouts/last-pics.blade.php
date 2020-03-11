@@ -12,7 +12,7 @@
                 <div class="col-sm-4 col-md-3">
                     <a href="{{ $galleryItem->image  }}" class="qt-fade qt-photo-item">
                         <h4>{!! $galleryItem->title !!}</h4>
-                        <img class="" src="{{ $galleryItem->image  }}" alt="{!! $galleryItem->title !!}">
+                        <img class="" src="{{ asset($galleryItem->image)  }}" alt="{!! $galleryItem->title !!}">
                     </a>
                 </div>
             @endforeach

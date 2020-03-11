@@ -40,85 +40,21 @@
                     <div class="qt-page-header">
                         <h2>اخبار<small></small></h2>
                         <ol class="breadcrumb">
-                            <li class="active">اخبار</li>
+                            <li class="active">اطلاعیه</li>
                             <li><a href="{{url("/")}}">صفحه اصلی</a></li>
                         </ol>
                     </div>
+
                     <div class="qt-page-header">
-                        <h2>{{$news->title}}<small> </small></h2>
-
-                    </div>
-
-                    <div class="qt-post-meta">
-                        <?php
-                        $newsTag = $news->tags;
-                        $newsTag = explode(",",$newsTag);
-                        ?>
-                        <span><i class="fa fa-tags fa-fw"></i>
-                            @foreach($newsTag as $tagItem)
-                                <a href="{{action("TagsController@index",['tag'=>$tagItem])}}">{{$tagItem}}</a>
-                            @endforeach
-            </span>
+                        <h2>{{$slider->title}}<small> </small></h2>
                     </div>
 
                     <div class="qt-page-body">
+                        <img width="500px" height="300px" src="{{asset($slider->image)}}"/>
+                    </div>
 
-                        {!!  $news->content !!}
-
-
-                        <section class="qt-comments-wrapper">
-
-                            <hr>
-
-
-
-                            <!-- Blog Comments -->
-
-                            <!-- Comments Form -->
-                            <div class="well">
-
-                                <h4>گذاشتن نظر</h4>
-
-                                <table>
-                                    <form method="post">
-                                        <div class="form-group">
-                                            <input type="text" name="name" class="form-control" placeholder="نام خود را وارد کنید" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="email" name="email"  class="form-control" placeholder="ایمیل خود را وارد کنید" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <textarea class="form-control" placeholder="کامنت خود را وارد کنید" name="comment" rows="3" required></textarea>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">ارسال</button>
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
-                                        <input type="hidden" name="id" value="{{ $news->id }}"/>
-                                    </form>
-                                </table>
-                                <hr>
-
-                                <!-- Posted Comments -->
-
-                            @foreach($newsComment as $commentItem)
-
-                                <!-- Comment -->
-                                    <div class="media">
-
-                                        <a class="pull-left" href="#">
-                                            <img class="media-object" width="64" alt="">
-                                        </a>
-
-                                        <div class="media-body">
-                                            <h4 class="media-heading">{{ $commentItem->date }} -- {{ $commentItem->name }}  </h4>
-                                            {{$commentItem->comment}}
-                                        </div>
-                                    </div>
-                                @endforeach
-
-                            </div>
-
-                        </section>
-
+                    <div class="qt-page-body">
+                        {!!  $slider->description !!}
                     </div>
 
 

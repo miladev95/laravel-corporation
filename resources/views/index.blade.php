@@ -42,7 +42,7 @@
                                                     <p>{!! $sliderItem->brief !!}</p>
 
 
-                                                    <a href="#" class="btn btn-primary btn-lg qt-carosel-caption-btn">ادامه
+                                                    <a href="{{action('SingleSliderController@index',['id'=>$sliderItem->id])}}" class="btn btn-primary btn-lg qt-carosel-caption-btn">ادامه
                                                         <i
                                                             class="fa fa-arrow-circle-right"></i></a>
 
@@ -89,6 +89,7 @@
                 </div>
 
             </div>
+        </div>
 
     </section>
 

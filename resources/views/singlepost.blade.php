@@ -23,7 +23,7 @@
 
         <!-- For a center image, just wrap tag below in .container -->
         <div class="qt-featured-image qt-header-featured-image qt-header-featured-image-wide">
-            <img src="{{ $gallery[0]->image }}" alt="Blog Listing">
+            <img src="{{ asset($gallery[0]->image) }}" alt="Blog Listing">
         </div>
 
     </section>

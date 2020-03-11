@@ -23,6 +23,7 @@ Route::post('/search','SearchController@search');
 Route::get('singlepost','SinglePostController@index');
 Route::get('notification','NotificationController@index');
 Route::post('singlepost','SinglePostController@addComment');
+Route::get('/slider/{id}','SingleSliderController@index');
 Route::get('/gallery','GalleryController@index');
 Route::get('/admin','Admin\HomeController@index');
 Route::group(array('prefix'=>'admin','namespace'=>'Admin'),function (){
