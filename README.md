@@ -10,16 +10,16 @@
 <center> <img src="https://github.com/milad0x6d/laravel-corporation/blob/master/admin-pic4.png"/></center>
 
 # Restful api
-register : /register
-login : /login
-logout : /logout
+* register : /register
+* login : /login
+* logout : /logout
 
-get all news : /news
-get news comments : /news/{id}/comment
-get gallery : /gallery
-get slider : /slider
-get posts : /posts
-get posts comment : /post/{id}/comment
-get notification : /notification
+* get all news : /news
+* get news comments : /news/{id}/comment
+* get gallery : /gallery
+* get slider : /slider
+* get posts : /posts
+* get posts comment : /post/{id}/comment
+* get notification : /notification
 
 
